@@ -139,6 +139,8 @@ function createStarArray(){
     document.getElementById('background').setAttribute('height', windowHeight+'px');
     document.getElementById('rawBackground').style.mask = 'url(#starArray)';
     document.getElementById('backgroundEffect').style.mask = 'url(#starArray)';
+    document.getElementById('rawBackground').style.webkitMask = 'url(#starArray)';
+    document.getElementById('backgroundEffect').style.webkitMask = 'url(#starArray)';
     console.log(mask);
 }
 createStarArray();
