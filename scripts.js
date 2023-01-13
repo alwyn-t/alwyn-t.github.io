@@ -98,14 +98,19 @@ function createStarArray(){
     while(mask.lastElementChild){
         mask.removeChild(mask.lastElementChild);
     }
-    // svgTest = document.getElementById('svgTest');
-    // svgTest.appendChild(rect.cloneNode(true));
     // https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
     // const windowHeight = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
     //     document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
     document.getElementById('background').setAttribute('height', '0px');
     const windowHeight = document.documentElement.scrollHeight;
     rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+
+    // svgTest = document.getElementById('svgTest');
+    // svgTest.appendChild(rect.cloneNode(true));
+    // while(svgTest.lastElementChild){
+    //     svgTest.removeChild(svgTest.lastElementChild);
+    // }
+
     rect.setAttribute('x', '0');
     rect.setAttribute('y', '0');
     rect.setAttribute('width', '100%');
@@ -117,7 +122,7 @@ function createStarArray(){
     const xOffset = (windowHeight%starSeparation)/2;
     const yOffset = (window.innerWidth %starSeparation)/2;
     for (let i = 0; i < windowHeight/starSeparation; i++) {
-        for (let j = 0; j < window.innerWidth/starSeparation; j++) {
+        for (let j = 0; j < window.innerWidth/starSeparation-1; j++) {
             circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             x = (j+0.5)*starSeparation + xOffset;
             y = (i+0.5)*starSeparation + yOffset;
@@ -132,7 +137,8 @@ function createStarArray(){
     // body.appendChild(svgTest);
     document.getElementById('rawBackground').setAttribute('height', windowHeight+'px');
     document.getElementById('background').setAttribute('height', windowHeight+'px');
-    document.getElementById('background').style.maskImage = 'url(#starArray)';
+    document.getElementById('rawBackground').style.mask = 'url(#starArray)';
+    document.getElementById('backgroundEffect').style.mask = 'url(#starArray)';
     console.log(mask);
 }
 createStarArray();
