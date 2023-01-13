@@ -9,6 +9,8 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     transition-duration: 0.4s;
     overflow: scroll;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 header{
@@ -16,7 +18,7 @@ header{
     min-height: var(--minUnitBlock);
     display: table;
     width: 100%;
-    /* background-color: black; */
+    background-color: black;
 }
 
 nav{
@@ -25,35 +27,12 @@ nav{
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    /* float: middle; */
-    /* margin-right: 5vw; */
-    /* margin-left: auto;
-    margin-right: auto; */
 }
 
 nav a{
-    /* display: table-cell; 
-    vertical-align: middle; 
-    text-align: right;
-    margin: auto;
-    padding-left: 20px;
-    padding-right: 20px; */
     animation: fadeIn 0.5s;
     animation-timing-function: cubic-bezier(0,1);
 }
-
-/* nav a b{
-    background:
-    linear-gradient(-120deg, rgba(50,50,50,1) 0%, rgba(100,100,100,1) 100%);
-    font-size: 24px;
-    padding: 10px;
-    border-radius: 24px;
-    cursor: pointer;
-    color: white;
-} */
-nav a b:hover{
-}
-
 main{
     height: calc(10*var(--unitBlock));
     min-height: calc(10*var(--minUnitBlock));
@@ -92,39 +71,42 @@ main{
 }
 .btn1{
     background-image:
-    linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgb(86, 115, 148) 100%),
+    linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgb(86, 115, 148) 100%),
     url(Circle\ Serenity.png);
-    background-position: 40% 30%;
+    /* background-size: 150%; */
+    background-size: 150% auto;
+    /* 150%;//1500->150 */
+    background-position: 0% 30%;
     animation: fadeIn 1s;
-    animation-timing-function: cubic-bezier(0,1);
+    /* animation-timing-function: cubic-bezier(0,1); */
 }
 .btn2{
     background-image:
     linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgba(255,151,0,1) 100%),
     url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg);
     animation: fadeIn 1.5s;
-    animation-timing-function: cubic-bezier(0,0,1);
+    /* animation-timing-function: cubic-bezier(0,0,1); */
 }
 .btn3{
     background-image:
     linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgba(255,151,0,1) 100%),
     url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg);
     animation: fadeIn 2s;
-    animation-timing-function: cubic-bezier(0,0,0,1);
+    /* animation-timing-function: cubic-bezier(0,0,0,1); */
 }
 .btn4{
     background-image:
     linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgba(255,151,0,1) 100%),
     url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg);
     animation: fadeIn 2.5s;
-    animation-timing-function: cubic-bezier(0,0,0,0,1);
+    /* animation-timing-function: cubic-bezier(0,0,0,0,1); */
 }
 .btn5{
     background-image:
     linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgba(255,151,0,1) 100%),
     url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg);
     animation: fadeIn 3s;
-    animation-timing-function: cubic-bezier(0,0,0,0,0,1);
+    /* animation-timing-function: cubic-bezier(0,0,0,0,0,1); */
 }
 
 .alignLeft{
@@ -138,13 +120,15 @@ main{
 
 .secondary{
     background:
-    linear-gradient(-120deg, rgba(50,50,50,1) 0%, rgba(100,100,100,1) 100%);
+    linear-gradient(-120deg, rgba(100,100,100,1) 0%, rgba(50,50,50,1) 100%);
     font-size: 24px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 20px;
     color: white;
+    text-align: center;
+    display: inline-block;
 }
 
 .secondaryBtn{
@@ -152,6 +136,7 @@ main{
 }
 
 footer{
+    background-color: black;
     height: var(--unitBlock);
     min-height: var(--minUnitBlock);
     display: table;
@@ -173,33 +158,31 @@ footer p{
     animation-timing-function: cubic-bezier(0,0,0,0,0,0,1);
 }
 
-/* footer p b{
-    background-image: 
-    linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgba(255,151,0,1) 100%),
-    url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg);
-    padding: 10px;
-    border-radius: 24px;
-    color: white;
-} */
-
-/* footer p b a{
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-} */
-
-footer p b a:hover{
-}
-
-.backgroundEffect{
+.background{
     z-index: -1;
     table-layout: fixed;
     width: 100vw;
-    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
 }
+/* .rawBackground{ */
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	/* background-size: 400% 400%; */
+	/* animation: gradientAnimation 15s ease infinite;
+}
+@keyframes gradientAnimation {
+	0% {
+        gradientTransform: 'rotate(30)scale(400)translate(100)';
+	}
+	50% {
+        gradientTransform: 'rotate(30)scale(400)translate(-100)';
+	}
+	100% {
+        gradientTransform: 'rotate(30)scale(400)translate(100)';
+	}
+} */
+/* gradientTransform="rotate(30)scale(400)translate(100,0)" */
 
 .dot {
     z-index: 9;

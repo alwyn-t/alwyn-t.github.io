@@ -8,6 +8,8 @@ window.addEventListener('resize', function(event) {
             fullScreen(activeProject);
         }
     }
+    // const gradientPrecent = 200/window.innerWidth*100;
+    // document.getElementById('btn1').style.backgroundImage = 'linear-gradient(-120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) '+gradientPrecent+'%, rgb(86, 115, 148) 100%), url(Circle/ Serenity.png)';
 }, true);
 const btns = document.getElementsByClassName("btn");
 const btnPos = [];
@@ -51,18 +53,6 @@ https://stackoverflow.com/questions/7790725/javascript-track-mouse-position
               (doc && doc.clientTop  || body && body.clientTop  || 0 );
         }
 
-        // Use event.pageX / event.pageY here
-        // document.getElementById(btn1).style.transform = "rotate3D(1, 0, 0, 20deg)";
-        // document.getElementsByClassName("btn").forEach(element => {
-        //     console.log(element.getBoundingClientRect().top);
-        //     element.getBoundingClientRect().top;
-        // });
-        // for(const element of btns){
-        //     btnRect = element.getBoundingClientRect();
-        //     console.log(btnRect.top);
-        // }
-        // console.log(window.innerHeight);
-        // console.log(event.pageX);
         for({element, x, y} of btnPos){
             dx = x-event.pageX;
             dy = y-event.pageY;
@@ -84,12 +74,6 @@ https://stackoverflow.com/questions/7790725/javascript-track-mouse-position
                     element.style.transform = 'rotate(0)';
                 }
             }
-            // element.style.transform = 'rotate('+theta+'rad)';
-            // Math.sin(theta)
-            // element.style.boxShadow = Math.round(dx/100)+'px '+Math.round(dy/100)+'px 0px white';
-            // element.style.boxShadow = Math.round(Math.sin(theta)*10)+'px '+Math.round(Math.cos(theta)*10)+'px 5px white';
-            // console.log(dx+'px '+dy+'px 5px black');
-            // console.log('rotate(theta'+'rad)');
         }
 
         //update backgroundEffect
@@ -101,60 +85,11 @@ https://stackoverflow.com/questions/7790725/javascript-track-mouse-position
         radial.setAttribute('cx', event.pageX/maxSideLength);
         radial.setAttribute('cy', event.pageY/maxSideLength);
         background.setAttribute('fill', 'url(#backgroundEffectRadial)');
-
-        //update background star elements
-        // for({element, x, y} of stars){
-        //     element.getBoundingClientRect
-        //     dx = x-event.pageX;
-        //     dy = y-event.pageY;
-        //     dist = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-        //     if(dist!=0){
-        //         dist = 1/Math.pow(dist,3);
-        //     }else{
-        //         dist = 0;
-        //     }
-        //     dist *=1000000000;
-        //     console.log(dist);
-        //     if(dist>1){
-        //         element.style.opacity = 1;
-        //     }else{
-        //         element.style.opacity = dist;
-        //     }
-        // }
+        // const rawBackground = document.getElementById('rawBackground');
+        // rawBackground.setAttribute('fill', 'url(#backgroundEffectRadial)');
+        // background.setAttribute('fill', 'url(#backgroundEffect)');
     }
 })();
-
-const stars = [];
-// https://stackoverflow.com/questions/14643617/create-table-using-javascript
-function tableCreate() {
-    const body = document.body,
-        tbl = document.createElement('table');
-        tbl.setAttribute('id','backgroundEffectTbl');
-        tbl.style.width = '100vw';
-        tbl.style.height = '100vh';
-  
-    for (let i = 0; i < window.innerHeight/100; i++) {
-        const tr = tbl.insertRow();
-        for (let j = 0; j < window.innerWidth/100; j++) {
-            const td = tr.insertCell();
-            td.appendChild(document.createElement("SPAN"));
-            td.firstElementChild.classList.add("dot");
-            td.firstElementChild.style.display = 'table';
-            td.firstElementChild.style.margin = '0 auto';
-        }
-    }
-    body.appendChild(tbl);
-    for(rows of tbl.firstElementChild.childNodes){
-        for(cell of rows.childNodes){
-            element = cell.firstElementChild;
-            rect = element.getBoundingClientRect();
-            x = (rect.left + rect.right)/2;
-            y = (rect.top + rect.bottom)/2;
-            stars.push({element, x, y});
-        }
-    }
-}
-// tableCreate();
 
 function createStarArray(){
     console.log('createStarArray');
@@ -163,19 +98,25 @@ function createStarArray(){
     while(mask.lastElementChild){
         mask.removeChild(mask.lastElementChild);
     }
-    
+    // svgTest = document.getElementById('svgTest');
+    // svgTest.appendChild(rect.cloneNode(true));
+    // https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
+    // const windowHeight = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+    //     document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+    document.getElementById('background').setAttribute('height', '0px');
+    const windowHeight = document.documentElement.scrollHeight;
     rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     rect.setAttribute('x', '0');
     rect.setAttribute('y', '0');
     rect.setAttribute('width', '100%');
-    rect.setAttribute('height', '100%');
+    rect.setAttribute('height', windowHeight+'px');
     rect.setAttribute('fill', 'black');
     mask.appendChild(rect);
-    // svgTest.appendChild(rect.cloneNode(true));
+    console.log(windowHeight + ' | ' + window.innerHeight);
     const starSeparation = 50;
-    const xOffset = (window.innerHeight%starSeparation)/2;
+    const xOffset = (windowHeight%starSeparation)/2;
     const yOffset = (window.innerWidth %starSeparation)/2;
-    for (let i = 0; i < window.innerHeight/starSeparation; i++) {
+    for (let i = 0; i < windowHeight/starSeparation; i++) {
         for (let j = 0; j < window.innerWidth/starSeparation; j++) {
             circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             x = (j+0.5)*starSeparation + xOffset;
@@ -186,10 +127,11 @@ function createStarArray(){
             circle.setAttribute('fill', '#FFFFFF');
             mask.appendChild(circle);
             // svgTest.appendChild(circle.cloneNode(true));
-            stars.push({circle, x, y});
         }
     }
     // body.appendChild(svgTest);
+    document.getElementById('rawBackground').setAttribute('height', windowHeight+'px');
+    document.getElementById('background').setAttribute('height', windowHeight+'px');
     document.getElementById('background').style.maskImage = 'url(#starArray)';
     console.log(mask);
 }
@@ -218,17 +160,19 @@ function clickTransition(element){
         inTransition = false;
         activeProject = null;
         element.style.transform = 'rotate(0)';
-        // element.style.scale = '1';
-        element.style.zIndex = '1';
         element.style.width = null;
         element.style.height = null;
         element.style.position = null;
-        element.style.left = null;
-        element.style.right = null;
+        element.style.position = 'relative';
         element.style.margin = null;
         element.lastElementChild.classList.remove('projectContentActive');
         element.lastElementChild.classList.add('projectContent');
     }else{
+        document.getElementById('btn1').style.zIndex = null;
+        document.getElementById('btn2').style.zIndex = null;
+        document.getElementById('btn3').style.zIndex = null;
+        document.getElementById('btn4').style.zIndex = null;
+        document.getElementById('btn5').style.zIndex = null;
         inTransition = true;
         activeProject = element;
         element.style.zIndex = '10';
@@ -239,11 +183,6 @@ function clickTransition(element){
     }
 }
 function fullScreen(element){
-    rect = element.getBoundingClientRect();
-    width = rect.right - rect.left;
-    height = rect.bottom - rect.top;
-    scaleFactor = Math.max(window.innerWidth/width, window.innerHeight/height);
-
     if(element.id == 'btn1'){
         element.style.transform = 'rotate(0) translate(0px , 0px)';
     }else if(element.id == 'btn2'){
@@ -255,9 +194,8 @@ function fullScreen(element){
     }else if(element.id == 'btn5'){
         element.style.transform = 'rotate(0) translate(0px , calc(-8*max(var(--minUnitBlock), var(--unitBlock))))';
     }
-    // element.style.transform = 'rotate(0) translate(0px ,'++')';
     element.style.width = '100vw';
-    element.style.height = 'calc(11*max(var(--minUnitBlock), var(--unitBlock)))';
+    element.style.height = 'calc(10*max(var(--minUnitBlock), var(--unitBlock)))';
     element.style.position = 'absolute';
     element.style.left = '0';
     element.style.right = '0';
