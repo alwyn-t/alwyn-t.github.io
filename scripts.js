@@ -118,7 +118,7 @@ function createStarArray(){
     rect.setAttribute('fill', 'black');
     mask.appendChild(rect);
     console.log(windowHeight + ' | ' + window.innerHeight);
-    const starSeparation = 50;
+    const starSeparation = 20;
     const xOffset = (windowHeight%starSeparation)/2;
     const yOffset = (window.innerWidth %starSeparation)/2;
     for (let i = 0; i < windowHeight/starSeparation; i++) {

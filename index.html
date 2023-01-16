@@ -15,11 +15,12 @@
     </head>
     <body>
         <header>
-            <nav>
+            <h1>Personal Portfolio of Alwyn T.</h1>
+            <!-- <nav>
                 <a id="homeBtn"><b class="secondary secondaryBtn">HOME</b></a>
                 <a href="https://linktr.ee/alwynt" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><b class="secondary secondaryBtn">CONTACT</b></a>
                 <a href="https://github.com/alwyn-t" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><b class="secondary secondaryBtn">GIT</b></a>
-            </nav>
+            </nav> -->
         </header>
         <main>
             <!-- <div class="contentBlock">
@@ -65,11 +66,15 @@
             </div>
         </main>
         <footer>
-            <div style="display: table-cell;vertical-align: middle;text-align: center;">
+            <div>
+                <a href="https://linktr.ee/alwynt" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><b class="secondary secondaryBtn">CONTACT</b></a>
+                <a href="https://github.com/alwyn-t" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><b class="secondary secondaryBtn">GITHUB</b></a>
+            </div>
+            <!-- <div style="display: table-cell;vertical-align: middle;text-align: center;">
                 <div class="secondary">
                     <b>Self-created personal portfolio of Alwyn T<a href="allwinejiivl.png" onclick="playEasterEgg()" style="text-decoration: none; color: white; cursor: text;" target="_blank" rel="noopener noreferrer">.</a></b>
                 </div>
-            </div>
+            </div> -->
             <!-- <p><b class="secondary secondaryBtn"><a href="https://linktr.ee/alwynt" style="text-decoration: none; color: white">LINKTREE</a></b></p> -->
             <!-- <p><b class="secondary">Self-created personal portfolio of Alwyn T<a href="allwinejiivl.png" onclick="playEasterEgg()" style="text-decoration: none; color: white; cursor: text;" target="_blank" rel="noopener noreferrer">.</a></b></p> -->
             <!-- <div style="display: table-cell;vertical-align: middle;text-align: center;"><p><b class="secondary">Self-created personal portfolio of Alwyn T<a href="allwinejiivl.png" onclick="playEasterEgg()" style="text-decoration: none; color: white; cursor: text;" target="_blank" rel="noopener noreferrer">.</a></b></p></div> -->
@@ -82,6 +87,10 @@
         <svg id="background" class="background" width="100vw" height="200vh" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <mask id="starArray"></mask>
+                <mask id="starElement">
+                    <rect x="0px" y="0px" width="25px" height="25px" fill="#000000"></rect>
+                    <circle cx="12.5px" cy="12.5px" r="5" fill="#FFFFFF"></circle>
+                </mask>
                 <radialGradient id="backgroundEffectRadial" r="0.1">
                     <stop offset="0%" stop-color="white" stop-opacity="1" />
                     <!-- <stop offset="50%" stop-color="black" /> -->
@@ -97,25 +106,25 @@
                 <!-- https://www.svgbackgrounds.com/animate-svg-gradients/ -->
                 <linearGradient id='SVGBACKGROUNDS' gradientUnits='objectBoundingBox' x1='0' y1='0' x2='1' y2='1'>
                     <stop offset='0' stop-color='red'>
-                       <animate attributeName="stop-color"
-                          values="red;purple;blue;green;yellow;orange;red;" dur="20s" repeatCount="indefinite">
-                       </animate>
+                        <animate attributeName="stop-color"
+                            values="red;purple;blue;green;yellow;orange;red;" dur="20s" repeatCount="indefinite">
+                        </animate>
                     </stop>
                     <stop offset='.5' stop-color='purple'>
-                       <animate attributeName="stop-color"
-                          values="purple;blue;green;yellow;orange;red;purple;" dur="20s" repeatCount="indefinite">
-                       </animate>
+                        <animate attributeName="stop-color"
+                            values="purple;blue;green;yellow;orange;red;purple;" dur="20s" repeatCount="indefinite">
+                        </animate>
                     </stop>
                     <stop offset='1' stop-color='blue'>
-                       <animate attributeName="stop-color"
-                          values="blue;green;yellow;orange;red;purple;blue;" dur="20s" repeatCount="indefinite">
-                       </animate>
+                        <animate attributeName="stop-color"
+                            values="blue;green;yellow;orange;red;purple;blue;" dur="20s" repeatCount="indefinite">
+                        </animate>
                     </stop>
                     <animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5"
-                       dur="20s" repeatCount="indefinite"></animateTransform>
-                 </linearGradient>
+                        dur="20s" repeatCount="indefinite"></animateTransform>
+                </linearGradient>
             </defs>
-            <rect fill="url(#SVGBACKGROUNDS)" id="rawBackground" width="100vw" height="200vh"></rect>
+            <rect fill="url(#SVGBACKGROUNDS)" id="rawBackground" width="100vw" height="200vh" style="mask: url('#starElement');mask-repeat: repeat;"></rect>
             <rect id="backgroundEffect" width="100vw"></rect>
         </svg>
         <!-- <svg id="svgTest" xmlns="http://www.w3.org/2000/svg"></svg> -->
