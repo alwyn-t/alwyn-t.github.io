@@ -7,15 +7,22 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Alwyn's Portfolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
         <!-- <script src="scripts.js"></script> -->
     </head>
     <body>
         <header>
-            <h1>Personal Portfolio of Alwyn T.</h1>
+            <h1>Personal Portfolio of Alwyn T<a href="allwinejiivl.png" onclick="playEasterEgg()" style="text-decoration: none; color: white; cursor: text;" target="_blank" rel="noopener noreferrer">.</a></h1>
             <!-- <nav>
                 <a id="homeBtn"><b class="secondary secondaryBtn">HOME</b></a>
                 <a href="https://linktr.ee/alwynt" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><b class="secondary secondaryBtn">CONTACT</b></a>
@@ -124,8 +131,10 @@
                         dur="20s" repeatCount="indefinite"></animateTransform>
                 </linearGradient>
             </defs>
-            <rect fill="url(#SVGBACKGROUNDS)" id="rawBackground" width="100vw" height="200vh" style="mask: url('#starElement');mask-repeat: repeat;"></rect>
+            <!-- <rect fill="url(#SVGBACKGROUNDS)" id="rawBackground" width="100vw" height="200vh" style="mask: url('#starElement');mask-repeat: repeat;"></rect> -->
+            <rect fill="url(#SVGBACKGROUNDS)" id="rawBackground" width="100vw" height="200vh"></rect>
             <rect id="backgroundEffect" width="100vw"></rect>
+            <rect fill="black" id="backgroundOverlay" width="100vw" style="mask: url('#starElement');mask-repeat: repeat;"></rect>
         </svg>
         <!-- <svg id="svgTest" xmlns="http://www.w3.org/2000/svg"></svg> -->
         <audio constrols id="easterEgg">

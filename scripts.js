@@ -2,6 +2,7 @@ window.onload = function exampleFunction() {
     console.log('Javascript loaded');
 }
 window.addEventListener('resize', function(event) {
+    console.log("resize detected");
     createStarArray();
     if(activeProject){
         if(inTransition){
@@ -115,7 +116,7 @@ function createStarArray(){
     rect.setAttribute('y', '0');
     rect.setAttribute('width', '100%');
     rect.setAttribute('height', windowHeight+'px');
-    rect.setAttribute('fill', 'black');
+    rect.setAttribute('fill', 'white');
     mask.appendChild(rect);
     console.log(windowHeight + ' | ' + window.innerHeight);
     const starSeparation = 20;
@@ -129,7 +130,7 @@ function createStarArray(){
             circle.setAttribute('cx', x);
             circle.setAttribute('cy', y);
             circle.setAttribute('r', 5);
-            circle.setAttribute('fill', '#FFFFFF');
+            circle.setAttribute('fill', 'black');
             mask.appendChild(circle);
             // svgTest.appendChild(circle.cloneNode(true));
         }
@@ -137,10 +138,13 @@ function createStarArray(){
     // body.appendChild(svgTest);
     document.getElementById('rawBackground').setAttribute('height', windowHeight+'px');
     document.getElementById('background').setAttribute('height', windowHeight+'px');
-    document.getElementById('rawBackground').style.mask = 'url(#starArray)';
-    document.getElementById('backgroundEffect').style.mask = 'url(#starArray)';
-    document.getElementById('rawBackground').style.webkitMask = 'url(#starArray)';
-    document.getElementById('backgroundEffect').style.webkitMask = 'url(#starArray)';
+    // document.getElementById('rawBackground').style.mask = 'url(#starArray)';
+    // document.getElementById('backgroundEffect').style.mask = 'url(#starArray)';
+    // document.getElementById('rawBackground').style.webkitMask = 'url(#starArray)';
+    // document.getElementById('backgroundEffect').style.webkitMask = 'url(#starArray)';
+    document.getElementById('backgroundOverlay').style.mask = 'url(#starArray)';
+    document.getElementById('backgroundOverlay').style.webkitMask = 'url(#starArray)';
+    document.getElementById('backgroundOverlay').setAttribute('height', windowHeight+'px');
     console.log(mask);
 }
 createStarArray();
