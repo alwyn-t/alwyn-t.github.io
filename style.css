@@ -174,7 +174,12 @@ main{
     color: white;
     margin-left: 48px;
     margin-right: 48px;
-    width: min(30vw, calc(100vw - 96px));
+    width: 30vw;
+}
+@media only screen and (max-width: 600px) {
+    .content {
+      width: calc(100vw - 96px);
+    }
 }
 .contentBlock h2{
     /* font-size: x-large; */
