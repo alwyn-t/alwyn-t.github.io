@@ -1,0 +1,207 @@
+:root{
+    --headerHeight: 48px;
+    --footerHeight: 48px;
+    --mainHeight: calc(100vh - var(--headerHeight) - var(--footerHeight));
+    /* --contentBlockHeight: var(--mainHeight);
+    --contentBlockWidth: 20vw; */
+    --contentBlockHeight: calc(0.2 * var(--mainHeight));
+    --contentBlockWidth: 100vw;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    max-width: 100%;
+}
+/* general formatting */
+.noMargin{
+    margin: 0;
+}
+.noPadding{
+    padding: 0;
+}
+.noBorder{
+    margin: 0;
+    padding: 0;
+}
+.hidden{
+    position: absolute;
+    visibility: hidden;
+}
+.table{
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-style: hidden!important;
+    border: 0;
+}
+.table .cell{
+    display: table-cell;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-style: hidden!important;
+    border: 0;
+}
+
+/* header formatting */
+header{
+    display: table;
+    height: var(--headerHeight);
+    width: 100vw;
+    background-color: black;
+}
+.logo{
+    position: absolute;
+    left: 48px;
+    top: 0;
+    width: var(--headerHeight);
+    height: var(--headerHeight);
+}
+.title{
+    position: absolute;
+    left: 112px;
+    top: 4px;
+    font-size: 32px;
+    vertical-align: midle;
+    color: white;
+}
+/* main formatting */
+main{
+    background-color: black;
+    width: 100%;
+    height: var(--mainHeight);
+}
+.contentBlock {
+    position: absolute;
+    text-align: left;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    /* background-color: black; */
+    /* display: inline-block; */
+    border: none;
+    width: var(--contentBlockWidth);
+    height: var(--contentBlockHeight);
+}
+.contentBlock:hover{
+    cursor: pointer;
+}
+.btn1{
+    left: 0;
+    top: var(--headerHeight);
+    background-image:
+    linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 30%, rgba(255,255,255,0) 75%),
+    url(/assests/Circle\ Serenity.png);
+    /* background-size: 50%, 25%, 25%; */
+    background-size: cover;
+    /* background-position: -25% 0%; */
+    /* background-size: 150% auto; */
+    /* background-position: 0% 30%; */
+    animation: fadeIn 3s;
+}
+.btn2{
+    left: var(--contentBlockWidth);
+    top: calc(var(--contentBlockHeight) + var(--headerHeight));
+    background-image:
+    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
+    url(/assests/Toronto\ Night.jpeg);
+    /* background-size: contain; */
+    /* background-size: 50%, auto; */
+    background-position: 0% 75%;
+    background-size: cover;
+    animation: fadeIn 3s;
+}
+.btn3{
+    left: calc(2 * var(--contentBlockWidth));
+    top: calc(2 * var(--contentBlockHeight) + var(--headerHeight));
+    background-image:
+    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
+    url(/assests/Toronto\ Night.jpeg);
+    background-position: 0% 75%;
+    background-size: cover;
+    animation: fadeIn 3s;
+}
+.btn4{
+    left: calc(3 * var(--contentBlockWidth));
+    top: calc(3 * var(--contentBlockHeight) + var(--headerHeight));
+    background-image:
+    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
+    url(/assests/Toronto\ Night.jpeg);
+    background-position: 0% 75%;
+    background-size: cover;
+    animation: fadeIn 3s;
+}
+.btn5{
+    left: calc(4 * var(--contentBlockWidth));
+    top: calc(4 * var(--contentBlockHeight) + var(--headerHeight));
+    background-image:
+    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
+    url(/assests/Toronto\ Night.jpeg);
+    background-position: 0% 75%;
+    background-size: cover;
+    animation: fadeIn 3s;
+}
+.horizontal{
+    left: 0;
+}
+.vertical{
+    top: var(--headerHeight);
+}
+.contentBlockActive{
+    left: 0;
+    top: var(--headerHeight);
+    width: 100vw;
+    height: var(--mainHeight);
+}
+.contentBlockDeactiveUp{
+    top: var(--headerHeight);
+    height: 0;
+}
+.contentBlockDeactiveDown{
+    top: calc(var(--headerHeight) + var(--mainHeight));
+    height: 0;
+}
+.contentBlockDeactiveLeft{
+    left: 0;
+    width: 0;
+}
+.contentBlockDeactiveRight{
+    left: 100vw;
+    width: 0;
+}
+.content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin-left: 48px;
+    margin-right: 48px;
+    width: min(30vw, calc(100vw - 96px));
+}
+.contentBlock h2{
+    /* font-size: x-large; */
+    font-size: 3.5vh;
+}
+.contentBlock h3{
+    font-size: 2vh;
+}
+.contentBlock p{
+    font-size: 2vh;
+}
+/* footer formatting */
+footer{
+    position: absolute;
+    left: 0;
+    top: calc(var(--headerHeight) + var(--mainHeight));
+    width: 100vw;
+    height: var(--footerHeight);
+    background-color: black;
+    z-index: 10;
+}
+.footnote{
+    position: absolute;
+    left: 48px;
+    top: 2px;
+    font-size: 32px;
+    color: white;
+}
+.link{
+    text-decoration: underline;
+    color: white;
+}
