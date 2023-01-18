@@ -9,8 +9,10 @@
 }
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
     max-width: 100%;
+    background-color: black;
 }
 /* general formatting */
 .noMargin{
