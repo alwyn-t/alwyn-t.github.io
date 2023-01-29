@@ -1,19 +1,16 @@
 :root{
-    --headerHeight: 48px;
-    --footerHeight: 48px;
+    --headerHeight: 64px;
+    --footerHeight: 64px;
     --mainHeight: calc(100vh - var(--headerHeight) - var(--footerHeight));
-    /* --contentBlockHeight: var(--mainHeight);
-    --contentBlockWidth: 20vw; */
-    --contentBlockHeight: calc(0.2 * var(--mainHeight));
-    --contentBlockWidth: 100vw;
+    /* --contentBlockHeight: 10em;
+    --contentBlockBreak: 1em; */
+    --contentBlockHeight: 216px;
+    --contentBlockPadding: 32px;
+    --contentBlockBreak: 32px;
+    --menu: 0;
+    color: white;
 }
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    overflow: scroll;
-    overflow-x: hidden;
-    max-width: 100%;
-    background-color: black;
-}
+
 /* general formatting */
 .noMargin{
     margin: 0;
@@ -44,171 +41,362 @@ body{
     border: 0;
 }
 
+body{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    overflow-x: hidden;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.icon{
+    background-color: rgb(0, 0, 0);
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+.icon img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 4px;
+    left: 4px;
+}
+.icon:hover > img{
+    opacity: 80%;
+}
+
 /* header formatting */
 header{
-    display: table;
-    height: var(--headerHeight);
+    background-color: #282A3A;
     width: 100vw;
-    background-color: black;
+    height: var(--headerHeight);
+    box-shadow: 0px 8px 4px #735F32;
+    position: absolute;
+    z-index: 10;
+
 }
 .logo{
+    background-color: black;
     position: absolute;
-    left: 48px;
-    top: 0;
-    width: var(--headerHeight);
-    height: var(--headerHeight);
+    top: 8px;
+    left: 8px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 8px;
+}
+.logo img{
+    width: 48px;
+    height: 48px;
+    top: 0px;
+    left: 0px;
+}
+.logo:hover{
+    cursor: pointer;
 }
 .title{
     position: absolute;
-    left: 112px;
-    top: 4px;
-    font-size: 32px;
-    vertical-align: midle;
-    color: white;
+    top: calc((var(--headerHeight) - 1em) / 2);
+    left: calc(8px * 2 + 48px);
 }
-/* main formatting */
-main{
-    background-color: black;
-    width: 100%;
-    height: var(--mainHeight);
-}
-.contentBlock {
+nav{
     position: absolute;
-    text-align: left;
-    transition-duration: 0.4s;
-    text-decoration: none;
-    /* background-color: black; */
-    /* display: inline-block; */
-    border: none;
-    width: var(--contentBlockWidth);
-    height: var(--contentBlockHeight);
+    top: calc((var(--headerHeight) - 48px) / 2);
+    left: calc(100vw - 48px * 5 - 8px * 5);
+    width: calc(48px * 5 + 8px * 4);
+    height: 48px;
+    transition-duration: 0.2s;
 }
-.contentBlock:hover{
+.navAct{
+    left: calc(100vw - 48px - 8px);
+    width: calc(48px);
+}
+nav:hover{
+    left: calc(100vw - 48px * 5 - 8px * 5);
+    width: calc(48px * 5 + 8px * 4);
+}
+.projLogo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+/* .projLogo::before{
+    content: "";
+    background-size: cover;
+    opacity: 40%;
+    position: inherit;
+    top: inherit;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    padding: inherit;
+    border: inherit;
+    border-radius: inherit;
+    transition-duration: inherit;
+}
+.projLogo:nth-child(1)::before{
+    background-image: url("/assests/circle-white.svg");
+}
+.projLogo:nth-child(2)::before{
+    background-image: url("/assests/chess-white.svg");
+}
+.projLogo:nth-child(3)::before{
+    background-image: url("");
+}
+.projLogo:nth-child(4)::before{
+    background-image: url("");
+}
+.projLogo:nth-child(5)::before{
+    background-image: url("");
+} */
+/* .projLogo:hover:before{
+    cursor: pointer;
+    opacity: 80%;
+} */
+.projLogo:hover{
     cursor: pointer;
 }
-.btn1{
-    left: 0;
-    top: var(--headerHeight);
-    background-image:
-    linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 30%, rgba(255,255,255,0) 75%),
-    url(/assests/Circle\ Serenity.png);
-    /* background-size: 50%, 25%, 25%; */
-    background-size: cover;
-    /* background-position: -25% 0%; */
-    /* background-size: 150% auto; */
-    /* background-position: 0% 30%; */
-    animation: fadeIn 3s;
+.projLogo:hover > img{
+    opacity: 80%;
 }
-.btn2{
-    left: var(--contentBlockWidth);
-    top: calc(var(--contentBlockHeight) + var(--headerHeight));
-    background-image:
-    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
-    url(/assests/Toronto\ Night.jpeg);
-    /* background-size: contain; */
-    /* background-size: 50%, auto; */
-    background-position: 0% 75%;
-    background-size: cover;
-    animation: fadeIn 3s;
+.projLogo:nth-child(1){
+    left: 0px;
 }
-.btn3{
-    left: calc(2 * var(--contentBlockWidth));
-    top: calc(2 * var(--contentBlockHeight) + var(--headerHeight));
-    background-image:
-    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
-    url(/assests/Toronto\ Night.jpeg);
-    background-position: 0% 75%;
-    background-size: cover;
-    animation: fadeIn 3s;
+.projLogo:nth-child(2){
+    left: calc(48px + 8px);
 }
-.btn4{
-    left: calc(3 * var(--contentBlockWidth));
-    top: calc(3 * var(--contentBlockHeight) + var(--headerHeight));
-    background-image:
-    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
-    url(/assests/Toronto\ Night.jpeg);
-    background-position: 0% 75%;
-    background-size: cover;
-    animation: fadeIn 3s;
+.projLogo:nth-child(3){
+    left: calc(48px * 2 + 8px * 2);
 }
-.btn5{
-    left: calc(4 * var(--contentBlockWidth));
-    top: calc(4 * var(--contentBlockHeight) + var(--headerHeight));
-    background-image:
-    linear-gradient(60deg, rgba(255,151,0,1) 0%, rgba(255,151,0,1) 30%, rgba(255,255,255,0) 75%),
-    url(/assests/Toronto\ Night.jpeg);
-    background-position: 0% 75%;
-    background-size: cover;
-    animation: fadeIn 3s;
+.projLogo:nth-child(4){
+    left: calc(48px * 3 + 8px * 3);
 }
-.horizontal{
-    left: 0;
+.projLogo:nth-child(5){
+    left: calc(48px * 4 + 8px * 4);
 }
-.vertical{
-    top: var(--headerHeight);
+.projLogo:nth-child(2){
+    left: calc(48px + 8px);
 }
-.contentBlockActive{
-    left: 0;
-    top: var(--headerHeight);
+.projLogo:nth-child(3){
+    left: calc(48px * 2 + 8px * 2);
+}
+.projLogo:nth-child(4){
+    left: calc(48px * 3 + 8px * 3);
+}
+.projLogo:nth-child(5){
+    left: calc(48px * 4 + 8px * 4);
+}
+.navAct:hover > .projLogo:nth-child(1){
+    left: 0px;
+}
+.navAct:hover > .projLogo:nth-child(2){
+    left: calc(48px + 8px);
+}
+.navAct:hover > .projLogo:nth-child(3){
+    left: calc(48px * 2 + 8px * 2);
+}
+.navAct:hover > .projLogo:nth-child(4){
+    left: calc(48px * 3 + 8px * 3);
+}
+.navAct:hover > .projLogo:nth-child(5){
+    left: calc(48px * 4 + 8px * 4);
+}
+.navAct > .projLogo{
+    left: 0px;
+}
+
+/* main formatting */
+main{
+    background-color: #282A3A;
     width: 100vw;
-    height: var(--mainHeight);
+    height: max(calc(var(--headerHeight) + var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight)), 100vh);
 }
-.contentBlockDeactiveUp{
-    top: var(--headerHeight);
-    height: 0;
+.contentBlock {
+    transition-duration: 0.4s;
+    position: absolute;
+    width: 60vw;
+    height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) * 2);
+    padding: var(--contentBlockPadding);
+    border-radius: 32px;
+    box-shadow: 8px 8px 4px #735F32;
+    cursor: default;
 }
-.contentBlockDeactiveDown{
-    top: calc(var(--headerHeight) + var(--mainHeight));
-    height: 0;
+.contentBlock:nth-child(1){
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Circle\ Serenity.png);
+    top: calc( var(--headerHeight) + var(--contentBlockBreak) );
+    left: 10vw;
 }
-.contentBlockDeactiveLeft{
-    left: 0;
-    width: 0;
+.contentBlock:nth-child(2){
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 2 + var(--contentBlockHeight));
+    left: 30vw;
 }
-.contentBlockDeactiveRight{
-    left: 100vw;
-    width: 0;
+.contentBlock:nth-child(3){
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 3 + var(--contentBlockHeight) * 2);
+    left: 10vw;
 }
-.content{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    margin-left: 48px;
-    margin-right: 48px;
-    width: 30vw;
+.contentBlock:nth-child(4){
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 4 + var(--contentBlockHeight) * 3);
+    left: 30vw;
 }
+.contentBlock:nth-child(5){
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 5 + var(--contentBlockHeight) * 4);
+    left: 10vw;
+}
+.contentBlockLink{
+    height: 1em;
+    text-decoration: none;
+}
+.contentBlockLink svg{
+    position: relative;
+    width: 1em;
+    height: 1em;
+    top: 2px;
+}
+.contentBlockLink:hover{
+    cursor: pointer;
+}
+.contentBlockLink:hover svg{
+    animation: oscillate 0.9s forwards infinite ease-in-out;
+}
+@keyframes oscillate {
+    0%  {left: 0px;}
+    50%  {left: 4px;}
+    100%  {left: 0px;}
+}
+
 @media only screen and (max-width: 600px) {
     .content {
       width: calc(100vw - 96px);
     }
 }
-.contentBlock h2{
-    /* font-size: x-large; */
-    font-size: 3.5vh;
+
+.projectBlock{
+    /* position: relative; */
+    position: absolute;
+    top: var(--headerHeight);
+    /* top: -calc(var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight)); */
+    left: 0;
+    width: 100vw;
+    height: calc(var(--headerHeight) + var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight));
+    visibility: hidden;
+    /* background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 30%, rgba(255,255,255,0) 75%), url(/assests/Circle\ Serenity.png); */
 }
-.contentBlock h3{
-    font-size: 2vh;
+.projectBlock:nth-child(6){
+    background-image: linear-gradient(60deg, rgb(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Circle\ Serenity.png);
 }
-.contentBlock p{
-    font-size: 2vh;
+.projectBlock:nth-child(7){
+    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
 }
+.projectBlock:nth-child(8){
+    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+.projectBlock:nth-child(9){
+    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+.projectBlock:nth-child(10){
+    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+
+.projectContentBlock{
+    transition-duration: 0.4s;
+    position: absolute;
+    top: var(--contentBlockBreak);
+    left: 10vw;
+    width: 60vw;
+    /* height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) * 2); */
+    padding: var(--contentBlockPadding);
+    border-radius: 32px;
+    box-shadow: 8px 8px 4px #735F32;
+    cursor: default;
+}
+.projectBlock:nth-child(6) > .projectContentBlock{
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Circle\ Serenity.png);
+}
+.projectBlock:nth-child(7) > .projectContentBlock{
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+.projectBlock:nth-child(8) > .projectContentBlock{
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+.projectBlock:nth-child(9) > .projectContentBlock{
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+.projectBlock:nth-child(10) > .projectContentBlock{
+    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
+    url(/assests/Toronto\ Night.jpeg);
+}
+
+@keyframes fadeOut {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
 /* footer formatting */
 footer{
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: calc(var(--headerHeight) + var(--mainHeight));
+    top: calc(100vh - var(--footerHeight));
     width: 100vw;
     height: var(--footerHeight);
-    background-color: black;
-    z-index: 10;
+    background-color: #282A3A;
+    /* z-index: 10; */
+    box-shadow: 0px -8px 4px #735F32;
 }
-.footnote{
-    position: absolute;
-    left: 48px;
-    top: 2px;
-    font-size: 32px;
-    color: white;
+
+.githubIcon{
+    position: fixed;
+    top: calc(100vh - var(--footerHeight) + 8px);
+    left: 8px;
 }
-.link{
-    text-decoration: underline;
-    color: white;
+
+.itchioIcon{
+    position: fixed;
+    top: calc(100vh - var(--footerHeight) + 8px);
+    left: calc(48px + 8px * 2);
+}
+
+.modeIcon{
+    position: fixed;
+    top: calc(100vh - var(--footerHeight) + 8px);
+    left: calc(100vw - 48px - 8px);
+    cursor: pointer;
 }
