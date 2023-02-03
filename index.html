@@ -44,103 +44,131 @@
                 <img id="logo" src="/icon/logo_white.svg" alt="logo" role="img" />
             </a>
             <h1 class="title noMargin">Alwyn [Portfolio]</h1>
-            <nav id="nav">
-                <a class="icon projLogo projLogo1" onclick="transition(1)">
-                    <img id="circle" src="/assests/circle-white.svg" alt="circle serenity" role="img" />
-                </a>
-                <a class="icon projLogo projLogo2" onclick="transition(2)">
-                    <img id="chess" src="/assests/chess-white.svg" alt="chess ai" role="img" />
-                </a>
-                <a class="icon projLogo projLogo3" onclick="transition(3)"></a>
-                <a class="icon projLogo projLogo4" onclick="transition(4)"></a>
-                <a class="icon projLogo projLogo5" onclick="transition(5)"></a>
-            </nav>
+            <div class="navHolder">
+                <nav id="nav">
+                    <a class="icon projLogo projLogo1" onclick="transition(1)">
+                        <img id="circle" src="/assests/circle-white.svg" alt="circle serenity" role="img" />
+                    </a>
+                    <a class="icon projLogo projLogo2" onclick="transition(2)">
+                        <img id="chess" src="/assests/chess-white.svg" alt="chess ai" role="img" />
+                    </a>
+                    <a class="icon projLogo projLogo3" onclick="transition(3)"></a>
+                    <a class="icon projLogo projLogo4" onclick="transition(4)"></a>
+                    <a class="icon projLogo projLogo5" onclick="transition(5)"></a>
+                </nav>
+            </div>
         </header>
         <main>
-            <div class="contentBlock contentBlock1">
-                <h2 class="content"><b>Circle Serenity</b></h2>
-                <h3 class="content">Relaxing game about popping circles</h3>
-                <a class="contentBlockLink" onclick="transition(1)">
-                    Click to learn more
-                    <svg>
-                        <use xlink:href="#linkArrow"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="contentBlock contentBlock2">
-                <h2 class="content"><b>Chess AI</b></h2>
-                <h3 class="content">Chess AI under development</h3>
-                <a class="contentBlockLink" onclick="transition(2)">
-                    Click to learn more
-                    <svg>
-                        <use xlink:href="#linkArrow"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="contentBlock contentBlock3">
-                <h2 class="content"><b>Project 3 Placeholder</b></h2>
-                <h3 class="content">Project 3 Description Placeholder</h3>
-                <a class="contentBlockLink" onclick="transition(3)">
-                    Click to learn more
-                    <svg>
-                        <use xlink:href="#linkArrow"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="contentBlock contentBlock4">
-                <h2 class="content"><b>Project 4 Placeholder</b></h2>
-                <h3 class="content">Project 4 Description Placeholder</h3>
-                <a class="contentBlockLink" onclick="transition(4)">
-                    Click to learn more
-                    <svg>
-                        <use xlink:href="#linkArrow"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="contentBlock contentBlock5">
-                <h2 class="content"><b>Project 5 Placeholder</b></h2>
-                <h3 class="content">Project 5 Description Placeholder</h3>
-                <a class="contentBlockLink" onclick="transition(5)">
-                    Click to learn more
-                    <svg>
-                        <use xlink:href="#linkArrow"/>
-                    </svg>
-                </a>
+            <div class="contentTable">
+                <table>
+                    <td>
+                        <div class="contentBlock contentBlock1" style="background-color: var(--project1Color)">
+                            <img class="contentBlockImage" src="/assests/Circle Serenity.png" alt="circle serenity">
+                            <h2 class="content"><b>Circle Serenity</b></h2>
+                            <h3 class="content">Relaxing game about popping circles</h3>
+                            <a class="contentBlockLink" onclick="transition(1)">
+                                Click to learn more
+                                <svg>
+                                    <use xlink:href="#linkArrow"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="contentBlock contentBlock2" style="background-color: var(--project2Color)">
+                            <img class="contentBlockImage" src="/assests/Toronto Night.jpeg" alt="Toronto Night">
+                            <h2 class="content"><b>Chess AI</b></h2>
+                            <h3 class="content">Chess AI under development</h3>
+                            <a class="contentBlockLink" onclick="transition(2)">
+                                Click to learn more
+                                <svg>
+                                    <use xlink:href="#linkArrow"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="contentBlock contentBlock3" style="background-color: var(--project3Color)">
+                            <h2 class="content"><b>Project 3 Placeholder</b></h2>
+                            <h3 class="content">Project 3 Description Placeholder</h3>
+                            <a class="contentBlockLink" onclick="transition(3)">
+                                Click to learn more
+                                <svg>
+                                    <use xlink:href="#linkArrow"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="contentBlock contentBlock4" style="background-color: var(--project4Color)">
+                            <h2 class="content"><b>Project 4 Placeholder</b></h2>
+                            <h3 class="content">Project 4 Description Placeholder</h3>
+                            <a class="contentBlockLink" onclick="transition(4)">
+                                Click to learn more
+                                <svg>
+                                    <use xlink:href="#linkArrow"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="contentBlock contentBlock5" style="background-color: var(--project5Color)">
+                            <h2 class="content"><b>Project 5 Placeholder</b></h2>
+                            <h3 class="content">Project 5 Description Placeholder</h3>
+                            <a class="contentBlockLink" onclick="transition(5)">
+                                Click to learn more
+                                <svg>
+                                    <use xlink:href="#linkArrow"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </td>
+                </table>
             </div>
             <div class="projectBlock" id="projectBlock1">
-                <div class="projectContentBlock">
-                    <h2>Circle Serenity</h2>
-                    <h3>Relaxing game about popping circles</h3>
-                    <p>Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.</p>
-                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1886880"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
+                <div style="padding: var(--contentTablePadding); height: 100%;">
+                    <div class="projectContentBlock" style="background-color: var(--project1Color)">
+                        <h2>Circle Serenity</h2>
+                        <h3>Relaxing game about popping circles</h3>
+                        <p>Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.</p>
+                        <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1886880"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
+                    </div>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock2">
-                <div class="projectContentBlock">
-                    <h2><b>Chess AI</b></h2>
-                    <h3>Chess AI under development</h3>
-                    <p>This chess AI, is a joint project with a fellow friend. The goal is to create a AI capable of ~2500 ELO. More information is to come</p>
+                <div style="padding: var(--contentTablePadding);">
+                    <div class="projectContentBlock" style="background-color: var(--project2Color)">
+                        <h2><b>Chess AI</b></h2>
+                        <h3>Chess AI under development</h3>
+                        <p>This chess AI, is a joint project with a fellow friend. The goal is to create a AI capable of ~2500 ELO. More information is to come</p>
+                    </div>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock3">
-                <div class="projectContentBlock">
-                    <h2>Project 3 Placeholder</h2>
-                    <h3>Project 3 Description Placeholder</h3>
-                    <p>This project does not exist, please check back in the future.</p>
+                <div style="padding: var(--contentTablePadding);">
+                    <div class="projectContentBlock" style="background-color: var(--project3Color)">
+                        <h2>Project 3 Placeholder</h2>
+                        <h3>Project 3 Description Placeholder</h3>
+                        <p>This project does not exist, please check back in the future.</p>
+                    </div>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock4">
-                <div class="projectContentBlock">
-                    <h2>Project 4 Placeholder</h2>
-                    <h3>Project 4 Description Placeholder</h3>
-                    <p>This project does not exist, please check back in the future.</p>
+                <div style="padding: var(--contentTablePadding);">
+                    <div class="projectContentBlock" style="background-color: var(--project4Color)">
+                        <h2>Project 4 Placeholder</h2>
+                        <h3>Project 4 Description Placeholder</h3>
+                        <p>This project does not exist, please check back in the future.</p>
+                    </div>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock5">
-                <div class="projectContentBlock">
-                    <h2>Project 5 Placeholder</h2>
-                    <h3>Project 5 Description Placeholder</h3>
-                    <p>This project does not exist, please check back in the future.</p>
+                <div style="padding: var(--contentTablePadding);">
+                    <div class="projectContentBlock" style="background-color: var(--project5Color)">
+                        <h2>Project 5 Placeholder</h2>
+                        <h3>Project 5 Description Placeholder</h3>
+                        <p>This project does not exist, please check back in the future.</p>
+                    </div>
                 </div>
             </div>
         </main>
@@ -151,9 +179,12 @@
             <a class="icon itchioIcon" href="https://alwynt.itch.io/" target="_blank">
                 <img id="itchioIcon" src="/assests/itchio-logo-textless-white.svg" alt="itch.io" role="img" />
             </a>
-            <a class="icon modeIcon" onclick="switchMode()">
-                <img id="modeIcon" src="/assests/dark_mode_FILL1_wght400_GRAD0_opsz40.svg" alt="light mode" role="img" />
-            </a>
+            <div style="position: relative; top: calc(8px - 48px); left: calc(100vw - 48px - 8px);">
+                <a class="icon modeIcon" onclick="switchMode()">
+                    <img id="modeIcon" src="/assests/dark_mode_FILL1_wght400_GRAD0_opsz40.svg" alt="light mode" role="img" />
+                </a>
+            </div>
+            
         </footer>
 
 

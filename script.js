@@ -1,85 +1,3 @@
-// window.onload = function exampleFunction() {
-//     console.log('Javascript loaded');
-//     updateContentBlocks();
-// }
-
-// window.addEventListener('resize', function(event) {
-//     console.log("resize detected");
-//     updateContentBlocks();
-// }, true);
-
-// function updateContentBlocks(){
-//     console.log('Updating Content Blocks');
-//     if(this.window.innerHeight > this.window.innerWidth){
-//         console.log('Swapping to horizontal blocks');
-//         alignLeft = false;
-//         document.documentElement.style.setProperty('--contentBlockHeight', 'calc(0.2 * var(--mainHeight))');
-//         document.documentElement.style.setProperty('--contentBlockWidth', '100vw');
-//         for(let i = 0; i < contentBlocks.length; i++){
-//             contentBlocks[i].classList.remove('vertical');
-//             contentBlocks[i].classList.add('horizontal');
-//         }
-//     }else{
-//         console.log('Swapping to vertical blocks');
-//         alignLeft = true;
-//         document.documentElement.style.setProperty('--contentBlockHeight', 'var(--mainHeight)');
-//         document.documentElement.style.setProperty('--contentBlockWidth', '20vw');
-//         for(let i = 0; i < contentBlocks.length; i++){
-//             contentBlocks[i].classList.remove('horizontal');
-//             contentBlocks[i].classList.add('vertical');
-//         }
-//     }
-
-// }
-
-// var alignLeft = false;
-// const contentBlocks = document.getElementsByClassName('contentBlock');
-// function toggleFullScreen(element){
-//     for(let i = 0; i < contentBlocks.length; i++){
-//         if(contentBlocks[i]==element){
-//             index = i;
-//         }
-//     }
-//     console.log(element + " | toggleFullScreen");
-//     if(element.classList.contains('contentBlockActive')){
-//         element.classList.remove('contentBlockActive');
-//         element.lastElementChild.classList.add('hidden');
-//         for(let i = 0; i < contentBlocks.length; i++){
-//             if(i < index){
-//                 if(alignLeft){
-//                     contentBlocks[i].classList.remove('contentBlockDeactiveLeft');
-//                 }else{
-//                     contentBlocks[i].classList.remove('contentBlockDeactiveUp');
-//                 }
-//             }else if(i > index){
-//                 if(alignLeft){
-//                     contentBlocks[i].classList.remove('contentBlockDeactiveRight');
-//                 }else{
-//                     contentBlocks[i].classList.remove('contentBlockDeactiveDown');
-//                 }
-//             }
-//         }
-//     }else{
-//         element.classList.add('contentBlockActive');
-//         element.lastElementChild.classList.remove('hidden');
-//         for(let i = 0; i < contentBlocks.length; i++){
-//             if(i < index){
-//                 if(alignLeft){
-//                     contentBlocks[i].classList.add('contentBlockDeactiveLeft');
-//                 }else{
-//                     contentBlocks[i].classList.add('contentBlockDeactiveUp');
-//                 }
-//             }else if(i > index){
-//                 if(alignLeft){
-//                     contentBlocks[i].classList.add('contentBlockDeactiveRight');
-//                 }else{
-//                     contentBlocks[i].classList.add('contentBlockDeactiveDown');
-//                 }
-//             }
-//         }
-//     }
-// }
-
 const allContentBlock = document.getElementsByClassName('contentBlock');
 const allProjectBlock = [document.getElementById('projectBlock1'), 
                          document.getElementById('projectBlock2'), 
@@ -152,13 +70,13 @@ function switchMode(){
     if(mode=='dark'){
         mode = 'light';
         for (let i = 0; i < allIcons.length; i++) {
-            allIcons[i].style.setProperty('background-color', '#F8F4EA');
+            allIcons[i].style.setProperty('background-color', 'white');
         }
         for (let i = 0; i < allContentBlock.length; i++){
-            allContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #579BB1');
+            // allContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #579BB1');
         }
         for (let i = 0; i < allProjectContentBlock.length; i++){
-            allProjectContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #579BB1');
+            // allProjectContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #579BB1');
         }
         document.getElementById('circle').src = "/assests/circle-black.svg";
         document.getElementById('chess').src = "/assests/chess-black.svg";
@@ -173,21 +91,28 @@ function switchMode(){
         document.documentElement.style.setProperty('color', '#282A3A');
         document.getElementById('linkArrow').firstElementChild.style.setProperty('stroke', '#282A3A');
         document.getElementById('linkArrow').lastElementChild.style.setProperty('stroke', '#282A3A');
-        document.getElementsByTagName('header')[0].style.setProperty('box-shadow', '0px 8px 4px #579BB1');
-        document.getElementsByTagName('footer')[0].style.setProperty('box-shadow', '0px -8px 4px #579BB1');
-        document.getElementsByTagName('header')[0].style.setProperty('background-color', '#EAE0DA');
-        document.getElementsByTagName('main')[0].style.setProperty('background-color', '#EAE0DA');
-        document.getElementsByTagName('footer')[0].style.setProperty('background-color', '#EAE0DA');
+        // document.getElementsByTagName('header')[0].style.setProperty('box-shadow', '0px 8px 4px #579BB1');
+        // document.getElementsByTagName('footer')[0].style.setProperty('box-shadow', '0px -8px 4px #579BB1');
+        // document.getElementsByTagName('header')[0].style.setProperty('background-color', '#EAE0DA');
+        // document.getElementsByTagName('main')[0].style.setProperty('background-color', '#EAE0DA');
+        // document.getElementsByTagName('footer')[0].style.setProperty('background-color', '#EAE0DA');
+        document.documentElement.style.setProperty('--backgroundColor', '#f1f6f0');
+        document.documentElement.style.setProperty('--accentColor', '#d5d6db');
+        document.documentElement.style.setProperty('--project1Color', 'rgb(61, 144, 238)');
+        document.documentElement.style.setProperty('--project2Color', 'rgb(247, 139, 39)');
+        document.documentElement.style.setProperty('--project3Color', 'rgb(95, 223, 66)');
+        document.documentElement.style.setProperty('--project4Color', 'rgb(236, 47, 47)');
+        document.documentElement.style.setProperty('--project5Color', 'rgb(173, 46, 236)');
     }else{
         mode = 'dark';
         for (let i = 0; i < allIcons.length; i++) {
             allIcons[i].style.setProperty('background-color', 'black');
         }
         for (let i = 0; i < allContentBlock.length; i++){
-            allContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #735F32');
+            // allContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #735F32');
         }
         for (let i = 0; i < allProjectContentBlock.length; i++){
-            allProjectContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #735F32');
+            // allProjectContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #735F32');
         }
         document.getElementById('circle').src = "/assests/circle-white.svg";
         document.getElementById('chess').src = "/assests/chess-white.svg";
@@ -201,10 +126,17 @@ function switchMode(){
         document.documentElement.style.setProperty('color', 'white');
         document.getElementById('linkArrow').firstElementChild.style.setProperty('stroke', 'white');
         document.getElementById('linkArrow').lastElementChild.style.setProperty('stroke', 'white');
-        document.getElementsByTagName('header')[0].style.setProperty('box-shadow', '0px 8px 4px #735F32');
-        document.getElementsByTagName('footer')[0].style.setProperty('box-shadow', '0px -8px 4px #735F32');
-        document.getElementsByTagName('header')[0].style.setProperty('background-color', '#282A3A');
-        document.getElementsByTagName('main')[0].style.setProperty('background-color', '#282A3A');
-        document.getElementsByTagName('footer')[0].style.setProperty('background-color', '#282A3A');
+        // document.getElementsByTagName('header')[0].style.setProperty('box-shadow', '0px 8px 4px #735F32');
+        // document.getElementsByTagName('footer')[0].style.setProperty('box-shadow', '0px -8px 4px #735F32');
+        // document.getElementsByTagName('header')[0].style.setProperty('background-color', '#282A3A');
+        // document.getElementsByTagName('main')[0].style.setProperty('background-color', '#282A3A');
+        // document.getElementsByTagName('footer')[0].style.setProperty('background-color', '#282A3A');
+        document.documentElement.style.setProperty('--backgroundColor', '#14233a');
+        document.documentElement.style.setProperty('--accentColor', '#303843');
+        document.documentElement.style.setProperty('--project1Color', 'rgb(49, 85, 126)');
+        document.documentElement.style.setProperty('--project2Color', 'rgb(211, 120, 35)');
+        document.documentElement.style.setProperty('--project3Color', 'rgb(74, 157, 56)');
+        document.documentElement.style.setProperty('--project4Color', 'rgb(166, 51, 51)');
+        document.documentElement.style.setProperty('--project5Color', 'rgb(135, 59, 174)');
     }
 }

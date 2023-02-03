@@ -4,11 +4,23 @@
     --mainHeight: calc(100vh - var(--headerHeight) - var(--footerHeight));
     /* --contentBlockHeight: 10em;
     --contentBlockBreak: 1em; */
-    --contentBlockHeight: 216px;
+    /* --contentBlockHeight: 216px;
     --contentBlockPadding: 32px;
-    --contentBlockBreak: 32px;
+    --contentBlockBreak: 32px; */
+    --contentTablePadding: 32px;
+    --contentBlockWidth: min(512px, calc(100vw - 64px));
+    --contentBlockHeight: calc(196px);
+    --contentBlockPadding: 32px;
+    --contentBlockImageHeight: min(calc(var(--mainHeight) - var(--contentTablePadding) * 2 - var(--contentBlockHeight)), var(--contentBlockWidth));
     --menu: 0;
     color: white;
+    --backgroundColor: #14233a;
+    --accentColor: #303843;
+    --project1Color: rgb(49, 85, 126);
+    --project2Color: rgb(211, 120, 35);
+    --project3Color: rgb(74, 157, 56);
+    --project4Color: rgb(166, 51, 51);
+    --project5Color: rgb(135, 59, 174);
 }
 
 /* general formatting */
@@ -46,11 +58,13 @@ body{
     font-size: 16px;
     font-weight: 500;
     margin: 0;
-    overflow-x: hidden;
 
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow: hidden;
+    /* overflow-x: hidden; */
+
+    /* overflow-y: scroll; */
+    /* -ms-overflow-style: none;
+    scrollbar-width: none; */
 }
 body::-webkit-scrollbar{
     display: none;
@@ -58,6 +72,7 @@ body::-webkit-scrollbar{
 
 .icon{
     background-color: rgb(0, 0, 0);
+    display: inline-block;
     width: 48px;
     height: 48px;
     padding: 0;
@@ -75,13 +90,18 @@ body::-webkit-scrollbar{
 .icon:hover > img{
     opacity: 80%;
 }
+h2{
+    margin-top: 0px;
+}/*_________________________________________________________________________________________________*/
 
 /* header formatting */
 header{
-    background-color: #282A3A;
+    /* background-color: #282A3A; */
+    background-color: var(--backgroundColor);
     width: 100vw;
     height: var(--headerHeight);
-    box-shadow: 0px 8px 4px #735F32;
+    /* box-shadow: 0px 8px 4px #735F32; */
+    box-shadow: 0px 8px 8px var(--accentColor);
     position: absolute;
     z-index: 10;
 
@@ -110,20 +130,25 @@ header{
     top: calc((var(--headerHeight) - 1em) / 2);
     left: calc(8px * 2 + 48px);
 }
-nav{
+.navHolder{
     position: absolute;
+    top: 0;
+    left: 100vw;
+}
+nav{
+    position: relative;
     top: calc((var(--headerHeight) - 48px) / 2);
-    left: calc(100vw - 48px * 5 - 8px * 5);
+    right: calc(48px * 5 + 8px * 5);
     width: calc(48px * 5 + 8px * 4);
     height: 48px;
     transition-duration: 0.2s;
 }
 .navAct{
-    left: calc(100vw - 48px - 8px);
+    right: calc(48px + 8px);
     width: calc(48px);
 }
 nav:hover{
-    left: calc(100vw - 48px * 5 - 8px * 5);
+    right: calc(48px * 5 + 8px * 5);
     width: calc(48px * 5 + 8px * 4);
 }
 .projLogo{
@@ -137,39 +162,6 @@ nav:hover{
     border-radius: 8px;
     transition-duration: 0.2s;
 }
-/* .projLogo::before{
-    content: "";
-    background-size: cover;
-    opacity: 40%;
-    position: inherit;
-    top: inherit;
-    left: 0px;
-    width: inherit;
-    height: inherit;
-    padding: inherit;
-    border: inherit;
-    border-radius: inherit;
-    transition-duration: inherit;
-}
-.projLogo:nth-child(1)::before{
-    background-image: url("/assests/circle-white.svg");
-}
-.projLogo:nth-child(2)::before{
-    background-image: url("/assests/chess-white.svg");
-}
-.projLogo:nth-child(3)::before{
-    background-image: url("");
-}
-.projLogo:nth-child(4)::before{
-    background-image: url("");
-}
-.projLogo:nth-child(5)::before{
-    background-image: url("");
-} */
-/* .projLogo:hover:before{
-    cursor: pointer;
-    opacity: 80%;
-} */
 .projLogo:hover{
     cursor: pointer;
 }
@@ -224,49 +216,58 @@ nav:hover{
 
 /* main formatting */
 main{
-    background-color: #282A3A;
+    /* background-color: #282A3A; */
+    background-color: var(--backgroundColor);
     width: 100vw;
     height: max(calc(var(--headerHeight) + var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight)), 100vh);
 }
-.contentBlock {
-    transition-duration: 0.4s;
+.contentTable{
     position: absolute;
-    width: 60vw;
+    top: var(--headerHeight);
+    height: var(--mainHeight);
+    width: 100vw;
+    overflow-x: auto;
+}
+.contentTable table{
+    height: 100%;
+    width: calc(var(--contentBlockWidth) * 5 + var(--contentBlockPadding) * 10);
+}
+.contentTable td{
+    padding: var(--contentTablePadding);
+    border: none;
+    width: 100vw;
+    
+}
+.contentBlock {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(var(--contentBlockWidth) - var(--contentBlockPadding) * 2);
     height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) * 2);
     padding: var(--contentBlockPadding);
+    padding-bottom: calc(var(--contentBlockImageHeight));
     border-radius: 32px;
-    box-shadow: 8px 8px 4px #735F32;
+    box-shadow: 8px 8px 8px var(--accentColor);
     cursor: default;
 }
-.contentBlock:nth-child(1){
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Circle\ Serenity.png);
-    top: calc( var(--headerHeight) + var(--contentBlockBreak) );
-    left: 10vw;
+.contentBlockImage{
+    position: absolute;
+    width: var(--contentBlockWidth);
+    height: var(--contentBlockImageHeight);
+    top: calc(var(--contentBlockHeight) - var(--contentBlockPadding));
+    left: 0;
+
+    border-radius: 32px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    object-fit: cover;
 }
-.contentBlock:nth-child(2){
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 2 + var(--contentBlockHeight));
-    left: 30vw;
-}
-.contentBlock:nth-child(3){
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 3 + var(--contentBlockHeight) * 2);
-    left: 10vw;
-}
-.contentBlock:nth-child(4){
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 4 + var(--contentBlockHeight) * 3);
-    left: 30vw;
-}
-.contentBlock:nth-child(5){
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-    top: calc( var(--headerHeight) + var(--contentBlockBreak) * 5 + var(--contentBlockHeight) * 4);
-    left: 10vw;
+@media only screen and (max-height: calc(var(--headerHeight) + var(--contentTablePadding) * 2 + var(--contentBlockHeight) + 128px + var(--footerHeight))){
+    .contentBlockImage{
+        height: 0;
+        /* visibility: hidden; */
+    }
 }
 .contentBlockLink{
     height: 1em;
@@ -297,68 +298,30 @@ main{
 }
 
 .projectBlock{
-    /* position: relative; */
     position: absolute;
     top: var(--headerHeight);
-    /* top: -calc(var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight)); */
     left: 0;
     width: 100vw;
-    height: calc(var(--headerHeight) + var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight));
+    height: var(--mainHeight);
+    overflow-y: auto;
     visibility: hidden;
-    /* background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 30%, rgba(255,255,255,0) 75%), url(/assests/Circle\ Serenity.png); */
-}
-.projectBlock:nth-child(6){
-    background-image: linear-gradient(60deg, rgb(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Circle\ Serenity.png);
-}
-.projectBlock:nth-child(7){
-    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-}
-.projectBlock:nth-child(8){
-    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-}
-.projectBlock:nth-child(9){
-    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-}
-.projectBlock:nth-child(10){
-    background-image: linear-gradient(60deg, rgba(71, 97, 126) 0%, rgba(71, 97, 126) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
 }
 
 .projectContentBlock{
-    transition-duration: 0.4s;
-    position: absolute;
-    top: var(--contentBlockBreak);
-    left: 10vw;
-    width: 60vw;
-    /* height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) * 2); */
+    position: relative;
+    left: calc(100vw / 2 - var(--contentBlockWidth) - var(--contentTablePadding));
+    width: calc(var(--contentBlockWidth) * 2 - var(--contentBlockPadding) * 2);
+    max-height: calc(var(--mainHeight) - 32px * 2);
     padding: var(--contentBlockPadding);
     border-radius: 32px;
-    box-shadow: 8px 8px 4px #735F32;
+    box-shadow: 8px 8px 8px var(--accentColor);
     cursor: default;
 }
-.projectBlock:nth-child(6) > .projectContentBlock{
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Circle\ Serenity.png);
-}
-.projectBlock:nth-child(7) > .projectContentBlock{
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-}
-.projectBlock:nth-child(8) > .projectContentBlock{
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-}
-.projectBlock:nth-child(9) > .projectContentBlock{
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
-}
-.projectBlock:nth-child(10) > .projectContentBlock{
-    background-image: linear-gradient(60deg, rgba(86, 115, 148) 0%, rgba(86, 115, 148) 70%, rgba(255,255,255,0) 100%),
-    url(/assests/Toronto\ Night.jpeg);
+@media only screen and (max-width: 1024px){
+    .projectContentBlock{
+        left: 0;
+        width: calc(100vw - var(--contentBlockPadding) * 2);
+    }
 }
 
 @keyframes fadeOut {
@@ -377,26 +340,26 @@ footer{
     top: calc(100vh - var(--footerHeight));
     width: 100vw;
     height: var(--footerHeight);
-    background-color: #282A3A;
+    /* background-color: #282A3A; */
+    background-color: var(--backgroundColor);
     /* z-index: 10; */
-    box-shadow: 0px -8px 4px #735F32;
+    /* box-shadow: 0px -8px 4px #735F32; */
+    box-shadow: 0px -8px 8px var(--accentColor);
 }
 
 .githubIcon{
-    position: fixed;
-    top: calc(100vh - var(--footerHeight) + 8px);
+    position: relative;
+    top: 8px;
     left: 8px;
 }
 
 .itchioIcon{
-    position: fixed;
-    top: calc(100vh - var(--footerHeight) + 8px);
-    left: calc(48px + 8px * 2);
+    position: relative;
+    top: 8px;
+    left: calc(8px * 2);
 }
 
 .modeIcon{
-    position: fixed;
-    top: calc(100vh - var(--footerHeight) + 8px);
-    left: calc(100vw - 48px - 8px);
+    position: relative;
     cursor: pointer;
 }
