@@ -37,8 +37,12 @@
         </svg>
     </head>
     <body>
+        <!-- loading screen -->
+        <div id="loadingScreen" style="width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 20; background-color: black;">
+            <img src="/icon/logo_white.svg" alt="logo" role="img" style="width: 40%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; animation: fadeIn 1s linear forwards;"/>
+        </div>
 
-
+        <!-- header -->
         <header>
             <a class="icon logo" onclick="transition(0)">
                 <img id="logo" src="/icon/logo_white.svg" alt="logo" role="img" />
@@ -58,6 +62,7 @@
                 </nav>
             </div>
         </header>
+        <!-- main -->
         <main>
             <div class="contentTable">
                 <table>
@@ -72,6 +77,7 @@
                                     <use xlink:href="#linkArrow"/>
                                 </svg>
                             </a>
+                            <!-- <div style="display: flex;"></div> -->
                         </div>
                     </td>
                     <td>
@@ -89,6 +95,7 @@
                     </td>
                     <td>
                         <div class="contentBlock contentBlock3" style="background-color: var(--project3Color)">
+                            <img class="contentBlockImage">
                             <h2 class="content"><b>Project 3 Placeholder</b></h2>
                             <h3 class="content">Project 3 Description Placeholder</h3>
                             <a class="contentBlockLink" onclick="transition(3)">
@@ -101,6 +108,7 @@
                     </td>
                     <td>
                         <div class="contentBlock contentBlock4" style="background-color: var(--project4Color)">
+                            <img class="contentBlockImage">
                             <h2 class="content"><b>Project 4 Placeholder</b></h2>
                             <h3 class="content">Project 4 Description Placeholder</h3>
                             <a class="contentBlockLink" onclick="transition(4)">
@@ -113,6 +121,7 @@
                     </td>
                     <td>
                         <div class="contentBlock contentBlock5" style="background-color: var(--project5Color)">
+                            <img class="contentBlockImage">
                             <h2 class="content"><b>Project 5 Placeholder</b></h2>
                             <h3 class="content">Project 5 Description Placeholder</h3>
                             <a class="contentBlockLink" onclick="transition(5)">
@@ -126,52 +135,43 @@
                 </table>
             </div>
             <div class="projectBlock" id="projectBlock1">
-                <div style="padding: var(--contentTablePadding); height: 100%;">
-                    <div class="projectContentBlock" style="background-color: var(--project1Color)">
-                        <h2>Circle Serenity</h2>
-                        <h3>Relaxing game about popping circles</h3>
-                        <p>Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.</p>
-                        <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1886880"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
-                    </div>
+                <div class="projectContentBlock" style="background-color: var(--project1Color)">
+                    <h2>Circle Serenity</h2>
+                    <h3>Relaxing game about popping circles</h3>
+                    <p>Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.</p>
+                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1886880"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock2">
-                <div style="padding: var(--contentTablePadding);">
-                    <div class="projectContentBlock" style="background-color: var(--project2Color)">
-                        <h2><b>Chess AI</b></h2>
-                        <h3>Chess AI under development</h3>
-                        <p>This chess AI, is a joint project with a fellow friend. The goal is to create a AI capable of ~2500 ELO. More information is to come</p>
-                    </div>
+                <div class="projectContentBlock" style="background-color: var(--project2Color)">
+                    <h2><b>Chess AI</b></h2>
+                    <h3>Chess AI under development</h3>
+                    <p>This chess AI, is a joint project with a fellow friend. The goal is to create a AI capable of ~2500 ELO. More information is to come</p>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock3">
-                <div style="padding: var(--contentTablePadding);">
-                    <div class="projectContentBlock" style="background-color: var(--project3Color)">
-                        <h2>Project 3 Placeholder</h2>
-                        <h3>Project 3 Description Placeholder</h3>
-                        <p>This project does not exist, please check back in the future.</p>
-                    </div>
+                <div class="projectContentBlock" style="background-color: var(--project3Color)">
+                    <h2>Project 3 Placeholder</h2>
+                    <h3>Project 3 Description Placeholder</h3>
+                    <p>This project does not exist, please check back in the future.</p>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock4">
-                <div style="padding: var(--contentTablePadding);">
-                    <div class="projectContentBlock" style="background-color: var(--project4Color)">
-                        <h2>Project 4 Placeholder</h2>
-                        <h3>Project 4 Description Placeholder</h3>
-                        <p>This project does not exist, please check back in the future.</p>
-                    </div>
+                <div class="projectContentBlock" style="background-color: var(--project4Color)">
+                    <h2>Project 4 Placeholder</h2>
+                    <h3>Project 4 Description Placeholder</h3>
+                    <p>This project does not exist, please check back in the future.</p>
                 </div>
             </div>
             <div class="projectBlock" id="projectBlock5">
-                <div style="padding: var(--contentTablePadding);">
-                    <div class="projectContentBlock" style="background-color: var(--project5Color)">
-                        <h2>Project 5 Placeholder</h2>
-                        <h3>Project 5 Description Placeholder</h3>
-                        <p>This project does not exist, please check back in the future.</p>
-                    </div>
+                <div class="projectContentBlock" style="background-color: var(--project5Color)">
+                    <h2>Project 5 Placeholder</h2>
+                    <h3>Project 5 Description Placeholder</h3>
+                    <p>This project does not exist, please check back in the future.</p>
                 </div>
             </div>
         </main>
+        <!-- footer -->
         <footer>
             <a class="icon githubIcon" href="https://github.com/alwyn-t" target="_blank">
                 <img id="githubIcon" src="/assests/github-mark-white.svg" alt="github.com" role="img" />

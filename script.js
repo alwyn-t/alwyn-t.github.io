@@ -7,6 +7,18 @@ const allProjectBlock = [document.getElementById('projectBlock1'),
 const allProjectLogo = document.getElementsByClassName('projLogo');
 const allProjectContentBlock = document.getElementsByClassName('projectContentBlock');
 
+window.onload = function(){
+    setTimeout(() => {
+        document.getElementById('loadingScreen').lastElementChild.style.animation = "fadeOut 0.5s linear forwards";
+        setTimeout(() => {
+            document.getElementById('loadingScreen').style.animation = "fadeOut 0.5s linear forwards";
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.zIndex = -1;
+            }, 500);
+        }, 500);
+    }, 1000);
+}
+
 function transition(menu){
     if(menu==0){
         document.getElementById('nav').classList.remove('navAct');
@@ -22,19 +34,19 @@ function transition(menu){
             allProjectLogo[menu-1].style.setProperty('z-index', 10);
         }
         showContent(menu);
-    }, 200);
+    }, 500);
 }
 
 function hideContent(){
     for (let i = 0; i < allContentBlock.length; i++) {
-        allContentBlock[i].style.animation = "fadeOut 0.2s linear forwards";
+        allContentBlock[i].style.animation = "fadeOut 0.5s linear forwards";
         allContentBlock[i].lastElementChild.style.setProperty('pointer-events', 'none');
     }
     for (let i = 0; i < allProjectBlock.length; i++) {
-        allProjectBlock[i].style.animation = "fadeOut 0.2s linear forwards";
+        allProjectBlock[i].style.animation = "fadeOut 0.5s linear forwards";
     }
     for (let i = 0; i < allProjectContentBlock.length; i++) {
-        allProjectContentBlock[i].style.animation = "fadeOut 0.2s linear forwards";
+        allProjectContentBlock[i].style.animation = "fadeOut 0.5s linear forwards";
     }
     setTimeout(() => {
         for (let i = 0; i < allContentBlock.length; i++) {
@@ -46,21 +58,21 @@ function hideContent(){
         for (let i = 0; i < allProjectContentBlock.length; i++) {
             allProjectContentBlock[i].style.setProperty('visibility', 'hidden');
         }
-    },200);
+    },500);
 }
 
 function showContent(menu){
     if(menu == 0){
         for (let i = 0; i < allContentBlock.length; i++) {
             allContentBlock[i].style.setProperty('visibility', 'visible');
-            allContentBlock[i].style.animation = "fadeIn 0.2s linear forwards";
+            allContentBlock[i].style.animation = "fadeIn 0.5s linear forwards";
             allContentBlock[i].lastElementChild.style.setProperty('pointer-events', 'auto');
         }
     }else{
         allProjectBlock[menu-1].style.setProperty('visibility', 'visible');
-        allProjectBlock[menu-1].style.animation = "fadeIn 0.2s linear forwards";
+        allProjectBlock[menu-1].style.animation = "fadeIn 0.5s linear forwards";
         allProjectContentBlock[menu-1].style.setProperty('visibility', 'visible');
-        allProjectContentBlock[menu-1].style.animation = "fadeIn 0.2s linear forwards";
+        allProjectContentBlock[menu-1].style.animation = "fadeIn 0.5s linear forwards";
     }
 }
 

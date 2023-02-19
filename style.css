@@ -2,11 +2,6 @@
     --headerHeight: 64px;
     --footerHeight: 64px;
     --mainHeight: calc(100vh - var(--headerHeight) - var(--footerHeight));
-    /* --contentBlockHeight: 10em;
-    --contentBlockBreak: 1em; */
-    /* --contentBlockHeight: 216px;
-    --contentBlockPadding: 32px;
-    --contentBlockBreak: 32px; */
     --contentTablePadding: 32px;
     --contentBlockWidth: min(512px, calc(100vw - 64px));
     --contentBlockHeight: calc(196px);
@@ -60,11 +55,6 @@ body{
     margin: 0;
 
     overflow: hidden;
-    /* overflow-x: hidden; */
-
-    /* overflow-y: scroll; */
-    /* -ms-overflow-style: none;
-    scrollbar-width: none; */
 }
 body::-webkit-scrollbar{
     display: none;
@@ -92,29 +82,25 @@ body::-webkit-scrollbar{
 }
 h2{
     margin-top: 0px;
-}/*_________________________________________________________________________________________________*/
+}
+/*_________________________________________________________________________________________________*/
+/* loading screen */
 
+/*_________________________________________________________________________________________________*/
 /* header formatting */
 header{
-    /* background-color: #282A3A; */
     background-color: var(--backgroundColor);
     width: 100vw;
     height: var(--headerHeight);
-    /* box-shadow: 0px 8px 4px #735F32; */
     box-shadow: 0px 8px 8px var(--accentColor);
     position: absolute;
     z-index: 10;
 
 }
 .logo{
-    background-color: black;
-    position: absolute;
+    position: relative;
     top: 8px;
     left: 8px;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 8px;
 }
 .logo img{
     width: 48px;
@@ -129,6 +115,11 @@ header{
     position: absolute;
     top: calc((var(--headerHeight) - 1em) / 2);
     left: calc(8px * 2 + 48px);
+}
+@media only screen and (max-width: calc(265px + 48px * 6 + 8px * 8)){
+    .title{
+        visibility: hidden;
+    }
 }
 .navHolder{
     position: absolute;
@@ -153,14 +144,8 @@ nav:hover{
 }
 .projLogo{
     position: absolute;
-    top: 0px;
-    left: 0px;
     width: 48px;
     height: 48px;
-    padding: 0;
-    border: 0;
-    border-radius: 8px;
-    transition-duration: 0.2s;
 }
 .projLogo:hover{
     cursor: pointer;
@@ -216,7 +201,6 @@ nav:hover{
 
 /* main formatting */
 main{
-    /* background-color: #282A3A; */
     background-color: var(--backgroundColor);
     width: 100vw;
     height: max(calc(var(--headerHeight) + var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight)), 100vh);
@@ -242,36 +226,27 @@ main{
     position: relative;
     top: 0;
     left: 0;
-    width: calc(var(--contentBlockWidth) - var(--contentBlockPadding) * 2);
-    height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) * 2);
-    padding: var(--contentBlockPadding);
-    padding-bottom: calc(var(--contentBlockImageHeight));
+    width: calc(var(--contentBlockWidth));
+    height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) + var(--contentBlockImageHeight));
     border-radius: 32px;
     box-shadow: 8px 8px 8px var(--accentColor);
     cursor: default;
+    display: flex;
+    flex-flow: column;
 }
-.contentBlockImage{
-    position: absolute;
-    width: var(--contentBlockWidth);
-    height: var(--contentBlockImageHeight);
-    top: calc(var(--contentBlockHeight) - var(--contentBlockPadding));
-    left: 0;
-
-    border-radius: 32px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-
-    object-fit: cover;
+.contentBlock > *{
+    padding-left: var(--contentBlockPadding);
+    padding-right: var(--contentBlockPadding);
+    padding-top: 16px;
+    margin: 0;
 }
-@media only screen and (max-height: calc(var(--headerHeight) + var(--contentTablePadding) * 2 + var(--contentBlockHeight) + 128px + var(--footerHeight))){
-    .contentBlockImage{
-        height: 0;
-        /* visibility: hidden; */
-    }
+.contentBlock h2{
+    padding-top: 20px;
 }
 .contentBlockLink{
-    height: 1em;
+    display:inline-block;
     text-decoration: none;
+    padding-bottom: 20px;
 }
 .contentBlockLink svg{
     position: relative;
@@ -285,15 +260,23 @@ main{
 .contentBlockLink:hover svg{
     animation: oscillate 0.9s forwards infinite ease-in-out;
 }
-@keyframes oscillate {
-    0%  {left: 0px;}
-    50%  {left: 4px;}
-    100%  {left: 0px;}
-}
+.contentBlockImage{
+    display:inline-block;
+    width: var(--contentBlockWidth);
+    height: calc(var(--contentBlockHeight) - - 20px * 4);
+    height: 100%;
+    padding: 0;
 
-@media only screen and (max-width: 600px) {
-    .content {
-      width: calc(100vw - 96px);
+    border-radius: 32px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    object-fit: cover;
+}
+/* media queries can't use root variables */
+@media only screen and (max-height: 416px){
+    .contentBlockImage{
+        visibility: hidden;
     }
 }
 
@@ -303,16 +286,16 @@ main{
     left: 0;
     width: 100vw;
     height: var(--mainHeight);
-    overflow-y: auto;
     visibility: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .projectContentBlock{
-    position: relative;
-    left: calc(100vw / 2 - var(--contentBlockWidth) - var(--contentTablePadding));
-    width: calc(var(--contentBlockWidth) * 2 - var(--contentBlockPadding) * 2);
-    max-height: calc(var(--mainHeight) - 32px * 2);
+    width: calc(var(--contentBlockWidth) * 2 - var(--contentBlockPadding) * 2 - var(--contentTablePadding) * 2);
+    margin: var(--contentTablePadding);
     padding: var(--contentBlockPadding);
+    overflow-y: auto;
     border-radius: 32px;
     box-shadow: 8px 8px 8px var(--accentColor);
     cursor: default;
@@ -324,26 +307,14 @@ main{
     }
 }
 
-@keyframes fadeOut {
-    0% {opacity: 100%;}
-    100% {opacity: 0%;}
-}
-@keyframes fadeIn {
-    0% {opacity: 0%;}
-    100% {opacity: 100%;}
-}
-
 /* footer formatting */
 footer{
     position: fixed;
     left: 0;
-    top: calc(100vh - var(--footerHeight));
+    top: calc(100vh - var(--footerHeight) - env(safe-area-inset-bottom));
     width: 100vw;
     height: var(--footerHeight);
-    /* background-color: #282A3A; */
     background-color: var(--backgroundColor);
-    /* z-index: 10; */
-    /* box-shadow: 0px -8px 4px #735F32; */
     box-shadow: 0px -8px 8px var(--accentColor);
 }
 
@@ -362,4 +333,20 @@ footer{
 .modeIcon{
     position: relative;
     cursor: pointer;
+}
+
+/*_________________________________________________________________________________________________*/
+/* animations */
+@keyframes oscillate {
+    0%  {left: 0px;}
+    50%  {left: 4px;}
+    100%  {left: 0px;}
+}
+@keyframes fadeOut {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
 }
