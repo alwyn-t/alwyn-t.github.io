@@ -218,6 +218,9 @@ main{
     width: 100vw;
     height: var(--mainHeight);
     overflow-x: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
 }
@@ -230,6 +233,9 @@ main{
     border-radius: 32px;
     box-shadow: 8px 8px 8px var(--accentColor);
     cursor: default;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     flex-flow: column;
 }
@@ -285,6 +291,9 @@ main{
     width: 100vw;
     height: var(--mainHeight);
     visibility: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center;
 }
