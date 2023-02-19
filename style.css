@@ -318,8 +318,8 @@ main{
 footer{
     position: fixed;
     left: 0;
-    /* top: calc(100% - var(--footerHeight)); */
-    bottom: 0;
+    top: calc(100% - var(--footerHeight));
+    /* bottom: 0; */
     width: 100vw;
     height: var(--footerHeight);
     background-color: var(--backgroundColor);
