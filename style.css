@@ -49,6 +49,11 @@
 }
 
 body{
+    top: 100vh;     /* fall back */
+    min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
+
     font-family: 'Varela Round', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -313,11 +318,7 @@ main{
 footer{
     position: fixed;
     left: 0;
-    top: 100vh;     /* fall back */
-    min-height: -moz-available;
-    min-height: -webkit-fill-available;
-    min-height: fill-available;
-    transform: translate(0, calc(-1 * var(--footerHeight)));
+    top: calc(100% - var(--footerHeight));
     width: 100vw;
     height: var(--footerHeight);
     background-color: var(--backgroundColor);
