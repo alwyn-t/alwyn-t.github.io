@@ -49,7 +49,7 @@
 }
 
 body{
-    top: 100vh;     /* fall back */
+    min-height: 100vh;     /* fall back */
     min-height: -moz-available;
     min-height: -webkit-fill-available;
     min-height: fill-available;
@@ -318,7 +318,8 @@ main{
 footer{
     position: fixed;
     left: 0;
-    top: calc(100% - var(--footerHeight));
+    /* top: calc(100% - var(--footerHeight)); */
+    bottom: 0;
     width: 100vw;
     height: var(--footerHeight);
     background-color: var(--backgroundColor);
