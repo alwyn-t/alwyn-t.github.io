@@ -308,10 +308,16 @@ main{
 }
 
 /* footer formatting */
+/* fix for mobile devices */
+/* https://ilxanlar.medium.com/you-shouldnt-rely-on-css-100vh-and-here-s-why-1b4721e74487 */
 footer{
     position: fixed;
     left: 0;
-    top: calc(100vh - var(--footerHeight) - env(safe-area-inset-bottom));
+    top: 100vh;     /* fall back */
+    min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
+    transform: translate(0, calc(-1 * var(--footerHeight)));
     width: 100vw;
     height: var(--footerHeight);
     background-color: var(--backgroundColor);
