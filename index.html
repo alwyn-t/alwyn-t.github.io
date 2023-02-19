@@ -38,7 +38,7 @@
     </head>
     <body>
         <!-- loading screen -->
-        <div id="loadingScreen" style="width: 100vw; height: 100vh; min-height: 100vh; min-height: -moz-available; min-height: -webkit-fill-available; min-height: fill-available; position: absolute; top: 0; left: 0; z-index: 20; background-color: black;">
+        <div id="loadingScreen" style="width: 100vw; height: 100%; min-height: 100vh; min-height: -moz-available; min-height: -webkit-fill-available; min-height: fill-available; position: absolute; top: 0; left: 0; z-index: 20; background-color: black;">
             <img src="/icon/logo_white.svg" alt="logo" role="img" style="width: 40%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; animation: fadeIn 1s linear forwards;"/>
         </div>
 
@@ -65,74 +65,61 @@
         <!-- main -->
         <main>
             <div class="contentTable">
-                <table>
-                    <td>
-                        <div class="contentBlock contentBlock1" style="background-color: var(--project1Color)">
-                            <img class="contentBlockImage" src="/assests/Circle Serenity.png" alt="circle serenity">
-                            <h2 class="content"><b>Circle Serenity</b></h2>
-                            <h3 class="content">Relaxing game about popping circles</h3>
-                            <a class="contentBlockLink" onclick="transition(1)">
-                                Click to learn more
-                                <svg>
-                                    <use xlink:href="#linkArrow"/>
-                                </svg>
-                            </a>
-                            <!-- <div style="display: flex;"></div> -->
-                        </div>
-                    </td>
-                    <td>
-                        <div class="contentBlock contentBlock2" style="background-color: var(--project2Color)">
-                            <img class="contentBlockImage" src="/assests/Toronto Night.jpeg" alt="Toronto Night">
-                            <h2 class="content"><b>Chess AI</b></h2>
-                            <h3 class="content">Chess AI under development</h3>
-                            <a class="contentBlockLink" onclick="transition(2)">
-                                Click to learn more
-                                <svg>
-                                    <use xlink:href="#linkArrow"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="contentBlock contentBlock3" style="background-color: var(--project3Color)">
-                            <img class="contentBlockImage">
-                            <h2 class="content"><b>Project 3 Placeholder</b></h2>
-                            <h3 class="content">Project 3 Description Placeholder</h3>
-                            <a class="contentBlockLink" onclick="transition(3)">
-                                Click to learn more
-                                <svg>
-                                    <use xlink:href="#linkArrow"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="contentBlock contentBlock4" style="background-color: var(--project4Color)">
-                            <img class="contentBlockImage">
-                            <h2 class="content"><b>Project 4 Placeholder</b></h2>
-                            <h3 class="content">Project 4 Description Placeholder</h3>
-                            <a class="contentBlockLink" onclick="transition(4)">
-                                Click to learn more
-                                <svg>
-                                    <use xlink:href="#linkArrow"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="contentBlock contentBlock5" style="background-color: var(--project5Color)">
-                            <img class="contentBlockImage">
-                            <h2 class="content"><b>Project 5 Placeholder</b></h2>
-                            <h3 class="content">Project 5 Description Placeholder</h3>
-                            <a class="contentBlockLink" onclick="transition(5)">
-                                Click to learn more
-                                <svg>
-                                    <use xlink:href="#linkArrow"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </td>
-                </table>
+                <div class="contentBlock contentBlock1" style="background-color: var(--project1Color)">
+                    <img class="contentBlockImage" src="/assests/Circle Serenity.png" alt="circle serenity">
+                    <h2 class="content"><b>Circle Serenity</b></h2>
+                    <h3 class="content">Relaxing game about popping circles</h3>
+                    <a class="contentBlockLink" onclick="transition(1)">
+                        Click to learn more
+                        <svg>
+                            <use xlink:href="#linkArrow"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="contentBlock contentBlock2" style="background-color: var(--project2Color)">
+                    <img class="contentBlockImage" src="/assests/Toronto Night.jpeg" alt="Toronto Night">
+                    <h2 class="content"><b>Chess AI</b></h2>
+                    <h3 class="content">Chess AI under development</h3>
+                    <a class="contentBlockLink" onclick="transition(2)">
+                        Click to learn more
+                        <svg>
+                            <use xlink:href="#linkArrow"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="contentBlock contentBlock3" style="background-color: var(--project3Color)">
+                    <img class="contentBlockImage">
+                    <h2 class="content"><b>Project 3 Placeholder</b></h2>
+                    <h3 class="content">Project 3 Description Placeholder</h3>
+                    <a class="contentBlockLink" onclick="transition(3)">
+                        Click to learn more
+                        <svg>
+                            <use xlink:href="#linkArrow"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="contentBlock contentBlock4" style="background-color: var(--project4Color)">
+                    <img class="contentBlockImage">
+                    <h2 class="content"><b>Project 4 Placeholder</b></h2>
+                    <h3 class="content">Project 4 Description Placeholder</h3>
+                    <a class="contentBlockLink" onclick="transition(4)">
+                        Click to learn more
+                        <svg>
+                            <use xlink:href="#linkArrow"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="contentBlock contentBlock5" style="background-color: var(--project5Color)">
+                    <img class="contentBlockImage">
+                    <h2 class="content"><b>Project 5 Placeholder</b></h2>
+                    <h3 class="content">Project 5 Description Placeholder</h3>
+                    <a class="contentBlockLink" onclick="transition(5)">
+                        Click to learn more
+                        <svg>
+                            <use xlink:href="#linkArrow"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="projectBlock" id="projectBlock1">
                 <div class="projectContentBlock" style="background-color: var(--project1Color)">

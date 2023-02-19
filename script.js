@@ -84,18 +84,9 @@ function switchMode(){
         for (let i = 0; i < allIcons.length; i++) {
             allIcons[i].style.setProperty('background-color', 'white');
         }
-        for (let i = 0; i < allContentBlock.length; i++){
-            // allContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #579BB1');
-        }
-        for (let i = 0; i < allProjectContentBlock.length; i++){
-            // allProjectContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #579BB1');
-        }
         document.getElementById('circle').src = "/assests/circle-black.svg";
         document.getElementById('chess').src = "/assests/chess-black.svg";
-        // console.log(window.getComputedStyle(document.getElementById('circle'), 'before'));
-        // window.getComputedStyle(document.getElementById('circle'), 'before').style.setProperty('background-image', '/assests/circle-black.svg');
-        // window.getComputedStyle(document.getElementById('chess'), 'before').style.setProperty('background-image', '/assests/chess-black.svg');
-
+        
         document.getElementById('logo').src = "/icon/logo_black.svg";
         document.getElementById('githubIcon').src = "/assests/github-mark-black.svg";
         document.getElementById('itchioIcon').src = "/assests/itchio-logo-textless-black.svg";
@@ -103,11 +94,6 @@ function switchMode(){
         document.documentElement.style.setProperty('color', '#282A3A');
         document.getElementById('linkArrow').firstElementChild.style.setProperty('stroke', '#282A3A');
         document.getElementById('linkArrow').lastElementChild.style.setProperty('stroke', '#282A3A');
-        // document.getElementsByTagName('header')[0].style.setProperty('box-shadow', '0px 8px 4px #579BB1');
-        // document.getElementsByTagName('footer')[0].style.setProperty('box-shadow', '0px -8px 4px #579BB1');
-        // document.getElementsByTagName('header')[0].style.setProperty('background-color', '#EAE0DA');
-        // document.getElementsByTagName('main')[0].style.setProperty('background-color', '#EAE0DA');
-        // document.getElementsByTagName('footer')[0].style.setProperty('background-color', '#EAE0DA');
         document.documentElement.style.setProperty('--backgroundColor', '#f1f6f0');
         document.documentElement.style.setProperty('--accentColor', '#d5d6db');
         document.documentElement.style.setProperty('--project1Color', 'rgb(61, 144, 238)');
@@ -120,17 +106,9 @@ function switchMode(){
         for (let i = 0; i < allIcons.length; i++) {
             allIcons[i].style.setProperty('background-color', 'black');
         }
-        for (let i = 0; i < allContentBlock.length; i++){
-            // allContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #735F32');
-        }
-        for (let i = 0; i < allProjectContentBlock.length; i++){
-            // allProjectContentBlock[i].style.setProperty('box-shadow', '8px 8px 4px #735F32');
-        }
         document.getElementById('circle').src = "/assests/circle-white.svg";
         document.getElementById('chess').src = "/assests/chess-white.svg";
-        // window.getComputedStyle(document.getElementById('circle'), 'before').style.setProperty('background-image', '/assests/circle-white.svg');
-        // window.getComputedStyle(document.getElementById('chess'), 'before').style.setProperty('background-image', '/assests/chess-white.svg');
-
+        
         document.getElementById('logo').src = "/icon/logo_white.svg";
         document.getElementById('githubIcon').src = "/assests/github-mark-white.svg";
         document.getElementById('itchioIcon').src = "/assests/itchio-logo-textless-white.svg";
@@ -138,11 +116,6 @@ function switchMode(){
         document.documentElement.style.setProperty('color', 'white');
         document.getElementById('linkArrow').firstElementChild.style.setProperty('stroke', 'white');
         document.getElementById('linkArrow').lastElementChild.style.setProperty('stroke', 'white');
-        // document.getElementsByTagName('header')[0].style.setProperty('box-shadow', '0px 8px 4px #735F32');
-        // document.getElementsByTagName('footer')[0].style.setProperty('box-shadow', '0px -8px 4px #735F32');
-        // document.getElementsByTagName('header')[0].style.setProperty('background-color', '#282A3A');
-        // document.getElementsByTagName('main')[0].style.setProperty('background-color', '#282A3A');
-        // document.getElementsByTagName('footer')[0].style.setProperty('background-color', '#282A3A');
         document.documentElement.style.setProperty('--backgroundColor', '#14233a');
         document.documentElement.style.setProperty('--accentColor', '#303843');
         document.documentElement.style.setProperty('--project1Color', 'rgb(49, 85, 126)');

@@ -1,7 +1,7 @@
 :root{
     --headerHeight: 64px;
     --footerHeight: 64px;
-    --mainHeight: calc(100vh - var(--headerHeight) - var(--footerHeight));
+    --mainHeight: calc(100% - var(--headerHeight) - var(--footerHeight));
     --contentTablePadding: 32px;
     --contentBlockWidth: min(512px, calc(100vw - 64px));
     --contentBlockHeight: calc(196px);
@@ -204,35 +204,29 @@ nav:hover{
     left: 0px;
 }
 
+/*_________________________________________________________________________________________________*/
 /* main formatting */
 main{
     background-color: var(--backgroundColor);
+    position: relative;
     width: 100vw;
-    height: max(calc(var(--headerHeight) + var(--contentBlockHeight) * 5 + var(--contentBlockPadding) * 6 + var(--footerHeight)), 100vh);
+    height: 100%;
 }
 .contentTable{
     position: absolute;
     top: var(--headerHeight);
+    width: 100vw;
     height: var(--mainHeight);
-    width: 100vw;
     overflow-x: auto;
-}
-.contentTable table{
-    height: 100%;
-    width: calc(var(--contentBlockWidth) * 5 + var(--contentBlockPadding) * 10);
-}
-.contentTable td{
-    padding: var(--contentTablePadding);
-    border: none;
-    width: 100vw;
-    
+    display: flex;
+    flex-direction: row;
 }
 .contentBlock {
+    margin: var(--contentTablePadding);
     position: relative;
     top: 0;
     left: 0;
-    width: calc(var(--contentBlockWidth));
-    height: calc(var(--contentBlockHeight) - var(--contentBlockPadding) + var(--contentBlockImageHeight));
+    height: calc(100% - var(--contentTablePadding) * 2);
     border-radius: 32px;
     box-shadow: 8px 8px 8px var(--accentColor);
     cursor: default;
@@ -249,7 +243,7 @@ main{
     padding-top: 20px;
 }
 .contentBlockLink{
-    display:inline-block;
+    display: inline-block;
     text-decoration: none;
     padding-bottom: 20px;
 }
@@ -266,9 +260,8 @@ main{
     animation: oscillate 0.9s forwards infinite ease-in-out;
 }
 .contentBlockImage{
-    display:inline-block;
+    display: table-cell;
     width: var(--contentBlockWidth);
-    height: calc(var(--contentBlockHeight) - - 20px * 4);
     height: 100%;
     padding: 0;
 
@@ -279,7 +272,7 @@ main{
     object-fit: cover;
 }
 /* media queries can't use root variables */
-@media only screen and (max-height: 416px){
+@media only screen and (max-height: 416px), (max-width: 200px){
     .contentBlockImage{
         visibility: hidden;
     }
@@ -312,6 +305,7 @@ main{
     }
 }
 
+/*_________________________________________________________________________________________________*/
 /* footer formatting */
 /* fix for mobile devices */
 /* https://ilxanlar.medium.com/you-shouldnt-rely-on-css-100vh-and-here-s-why-1b4721e74487 */
