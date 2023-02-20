@@ -31,7 +31,7 @@ function transition(menu){
             allProjectLogo[i].style.zIndex = null;
         }
         if(menu!=0){
-            allProjectLogo[menu-1].style.setProperty('z-index', 10);
+            allProjectLogo[menu-1].style.setProperty('z-index', 1);
         }
         showContent(menu);
     }, 500);

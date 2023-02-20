@@ -38,7 +38,7 @@
     </head>
     <body>
         <!-- loading screen -->
-        <div id="loadingScreen" style="width: 100vw; height: 100%; min-height: 100vh; min-height: -moz-available; min-height: -webkit-fill-available; min-height: fill-available; position: absolute; top: 0; left: 0; z-index: 20; background-color: black;">
+        <div id="loadingScreen" style="width: 100%; height: 100%; min-height: 100vh; min-height: -moz-available; min-height: -webkit-fill-available; min-height: fill-available; position: absolute; top: 0; left: 0; z-index: 20; background-color: black;">
             <img src="/icon/logo_white.svg" alt="logo" role="img" style="width: 40%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; animation: fadeIn 1s linear forwards;"/>
         </div>
 
@@ -166,13 +166,11 @@
             <a class="icon itchioIcon" href="https://alwynt.itch.io/" target="_blank">
                 <img id="itchioIcon" src="/assests/itchio-logo-textless-white.svg" alt="itch.io" role="img" />
             </a>
-            <div style="position: relative; top: calc(8px - 48px); left: calc(100vw - 48px - 8px);">
-                <a class="icon modeIcon" onclick="switchMode()">
-                    <img id="modeIcon" src="/assests/dark_mode_FILL1_wght400_GRAD0_opsz40.svg" alt="light mode" role="img" />
-                </a>
-            </div>
-            
+            <a class="icon modeIcon" onclick="switchMode()">
+                <img id="modeIcon" src="/assests/dark_mode_FILL1_wght400_GRAD0_opsz40.svg" alt="light mode" role="img" />
+            </a>
         </footer>
+        
 
 
 

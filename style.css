@@ -19,40 +19,14 @@
 }
 
 /* general formatting */
-.noMargin{
-    margin: 0;
-}
-.noPadding{
-    padding: 0;
-}
-.noBorder{
-    margin: 0;
-    padding: 0;
-}
-.hidden{
-    position: absolute;
-    visibility: hidden;
-}
-.table{
-    display: table;
-    border-spacing: 0;
-    border-collapse: collapse;
-    border-style: hidden!important;
-    border: 0;
-}
-.table .cell{
-    display: table-cell;
-    border-spacing: 0;
-    border-collapse: collapse;
-    border-style: hidden!important;
-    border: 0;
-}
-
 body{
     min-height: 100vh;     /* fall back */
     min-height: -moz-available;
     min-height: -webkit-fill-available;
     min-height: fill-available;
+    min-width: 100vw;
+    width: 100%;
+    height: 100%;
 
     font-family: 'Varela Round', sans-serif;
     font-size: 16px;
@@ -60,6 +34,7 @@ body{
     margin: 0;
 
     overflow: hidden;
+    /* overflow-x: hidden; */
 }
 body::-webkit-scrollbar{
     display: none;
@@ -99,8 +74,7 @@ header{
     height: var(--headerHeight);
     box-shadow: 0px 8px 8px var(--accentColor);
     position: absolute;
-    z-index: 10;
-
+    z-index: 1;
 }
 .logo{
     position: relative;
@@ -118,7 +92,8 @@ header{
 }
 .title{
     position: absolute;
-    top: calc((var(--headerHeight) - 1em) / 2);
+    /* top: calc((var(--headerHeight) - 1em) / 2); */
+    top: -8px;
     left: calc(8px * 2 + 48px);
 }
 @media only screen and (max-width: calc(265px + 48px * 6 + 8px * 8)){
@@ -128,23 +103,29 @@ header{
 }
 .navHolder{
     position: absolute;
-    top: 0;
-    left: 100vw;
+    top: 8px;
+    left: calc(100% - 48px * 5 - 8px * 5);
 }
 nav{
     position: relative;
-    top: calc((var(--headerHeight) - 48px) / 2);
-    right: calc(48px * 5 + 8px * 5);
+    top: 0px;
+    left: 0px;
     width: calc(48px * 5 + 8px * 4);
     height: 48px;
     transition-duration: 0.2s;
 }
 .navAct{
-    right: calc(48px + 8px);
-    width: calc(48px);
+    left: 0px;
+    width: calc(48px * 5 + 8px * 4);
+}
+@media only screen and (min-width: calc(265px + 48px * 6 + 8px * 8)){
+    .navAct{
+        left: calc(48px * 4 + 8px * 4);
+        width: calc(48px);
+    }
 }
 nav:hover{
-    right: calc(48px * 5 + 8px * 5);
+    left: 0px;
     width: calc(48px * 5 + 8px * 4);
 }
 .projLogo{
@@ -200,8 +181,10 @@ nav:hover{
 .navAct:hover > .projLogo:nth-child(5){
     left: calc(48px * 4 + 8px * 4);
 }
-.navAct > .projLogo{
-    left: 0px;
+@media only screen and (min-width: calc(265px + 48px * 6 + 8px * 8)){
+    .navAct > .projLogo{
+        left: 0px;
+    }
 }
 
 /*_________________________________________________________________________________________________*/
@@ -319,7 +302,7 @@ main{
 /* fix for mobile devices */
 /* https://ilxanlar.medium.com/you-shouldnt-rely-on-css-100vh-and-here-s-why-1b4721e74487 */
 footer{
-    position: fixed;
+    position: absolute;
     left: 0;
     top: calc(100% - var(--footerHeight));
     /* bottom: 0; */
@@ -344,6 +327,8 @@ footer{
 .modeIcon{
     position: relative;
     cursor: pointer;
+    top: 8px;
+    left: calc(100% - 48px * 3 - 8px * 2);
 }
 
 /*_________________________________________________________________________________________________*/
