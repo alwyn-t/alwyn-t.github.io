@@ -1,0 +1,478 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    --headerHeight: 64px;
+    --footerHeight: 64px;
+    font-family: 'Poppins', Helvetica;
+    font-weight:normal;
+    font-size:16px;
+    overflow: hidden;
+    background-color: #22223B;
+}
+
+.base-center{
+    display: flex;
+}
+.v-center{
+    align-items: center;
+}
+.h-center{
+    justify-content: center;
+}
+.column-gap{
+    column-gap: 8px;
+}
+.row-gap{
+    row-gap: 8px;
+}
+.column-gap-16{
+    column-gap: 16px;
+}
+.row-gap-16{
+    row-gap: 16px;
+}
+.margin-0{
+    margin: 0;
+}
+.push{
+    margin-left: auto;
+}
+.fs32{
+    font-size: 32px;
+}
+.fs24{
+    font-size: 24px;
+}
+.overflow-y{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header{
+    position: fixed;
+    height: calc(-8px + var(--headerHeight) - 8px);
+    width: calc(-8px + 100% - 8px);
+    padding: 8px;
+    top: 0;
+    background-color: #4A4E69;
+    z-index: 2;
+}
+header .icon{
+    cursor: pointer;
+}
+
+.icon{
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+.icon img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 4px;
+    left: 4px;
+}
+.icon:hover > img{
+    opacity: 80%;
+}
+.title{
+    color: #F2E9E4;
+}
+.nav-toggle{
+    display: none;
+}
+.nav-toggle-label{
+    cursor: pointer;
+    margin-right: 8px;
+    position: relative;
+}
+.nav-toggle-label :is(.top, .middle, .bottom){
+    fill: #F2E9E4;
+    transition: transform 150ms ease-in 150ms, rotate 150ms ease-in, opacity 0ms 150ms;
+    transform-origin: center;
+}
+.nav-toggle:checked ~ .nav-toggle-label :is(.top, .middle, .bottom){
+    transition: transform 150ms ease-in, rotate 150ms ease-in 150ms, opacity 0ms 150ms;
+}
+.nav-toggle:checked ~ .nav-toggle-label .top{
+    transform: translateY(12px);
+    rotate: 45deg;
+}
+.nav-toggle:checked ~ .nav-toggle-label .middle{
+    opacity: 0;
+}
+.nav-toggle:checked ~ .nav-toggle-label .bottom{
+    transform: translateY(-12px);
+    rotate: -45deg;
+}
+nav{
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    transition-duration: 1s;
+}
+.nav-toggle:checked ~ nav{
+    right: 0;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+nav ul li{
+    padding-inline: 8px;
+    background-color: #4A4E69;
+}
+nav ul li .page-label{
+    cursor: pointer;
+    color: #F2E9E4;
+}
+nav ul li .page-label:hover{
+    color: #9A8C98;
+}
+nav ul li .page-label::before{
+    height: 0%;
+    width: 4px;
+    border-radius: 2px;
+    background-color: #F2E9E4;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 17px;
+    left: 0%;
+    transition-duration: 150ms;
+}
+nav ul li:nth-child(2) .page-label::before{
+    top: calc(1.5 * 36.4px);
+}
+nav ul li:nth-child(3) .page-label::before{
+    top: calc(2.5 * 36.4px);
+}
+nav ul li:nth-child(4) .page-label::before{
+    top: calc(3.5 * 36.4px);
+}
+nav ul li:nth-child(5) .page-label::before{
+    top: calc(4.5 * 36.4px);
+}
+nav ul li:nth-child(6) .page-label::before{
+    top: calc(5.5 * 36.4px);
+}
+nav ul li:nth-child(7) .page-label::before{
+    top: calc(6.5 * 36.4px);
+}
+nav ul li .page-label:hover::before{
+    height: 17px;/* for some reason, css is weird and the height is based on content, not the parent element*/
+    width: 4px;
+    top: 8.5px;
+    left: 0%;
+}
+nav ul li:nth-child(2) .page-label:hover::before{
+    top: calc(1.25 * 36.4px);
+}
+nav ul li:nth-child(3) .page-label:hover::before{
+    top: calc(2.25 * 36.4px);
+}
+nav ul li:nth-child(4) .page-label:hover::before{
+    top: calc(3.25 * 36.4px);
+}
+nav ul li:nth-child(5) .page-label:hover::before{
+    top: calc(4.25 * 36.4px);
+}
+nav ul li:nth-child(6) .page-label:hover::before{
+    top: calc(5.25 * 36.4px);
+}
+nav ul li:nth-child(7) .page-label:hover::before{
+    top: calc(6.25 * 36.4px);
+}
+nav ul li .page-radio{
+    display: none;
+}
+nav ul li .page-radio:checked + .page-label::before{
+    height: 34px;
+    width: 4px;
+    top: 0px;
+    left: 0%;
+}
+nav ul li:nth-child(2) .page-radio:checked + .page-label::before{
+    top: calc(36.4px);
+}
+nav ul li:nth-child(3) .page-radio:checked + .page-label::before{
+    top: calc(2 * 36.4px);
+}
+nav ul li:nth-child(4) .page-radio:checked + .page-label::before{
+    top: calc(3 * 36.4px);
+}
+nav ul li:nth-child(5) .page-radio:checked + .page-label::before{
+    top: calc(4 * 36.4px);
+}
+nav ul li:nth-child(6) .page-radio:checked + .page-label::before{
+    top: calc(5 * 36.4px);
+}
+nav ul li:nth-child(7) .page-radio:checked + .page-label::before{
+    top: calc(6 * 36.4px);
+}
+n{
+    font-family: 'Roboto Mono', monospace;
+}
+@media only screen and (min-width: 1400px) {
+    .nav-toggle-label{
+        display: none;
+    }
+    nav{
+        position: relative;
+        display: inline;
+        top: 0;
+        right: 0;
+    }
+    nav li{
+        display: inline-block;
+        padding: 0;
+    }
+    nav ul li:nth-child(1n) .page-label::before{
+        height: 4px;
+        width: 0%;
+        display: block;
+        position: relative;
+        top: 0%;
+        left: 50%;
+    }
+    nav ul li:nth-child(1n) .page-label:hover::before{
+        height: 4px;
+        width: 50%;
+        top: 0%;
+        left: 25%;
+    }
+    nav ul li:nth-child(1n) .page-radio:checked + .page-label::before{
+        height: 4px;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+    }
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    transition-duration: 200ms;
+    color: #F2E9E4;
+}
+a:hover{
+    color: #9A8C98;
+}
+
+
+footer{
+    position: fixed;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    height: var(--footerHeight);
+    width: calc(100% - 8px);
+    bottom: 0;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    color: #F2E9E4;
+}
+
+
+section{
+    height: 100dvh;
+    width: 100%;
+}
+section .banner{
+    height: 400px;
+    /* background-size: cover; */
+    flex-direction: column;
+    position: relative;
+}
+section .banner::before{
+    background-size: cover;
+    opacity: 0.75;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+section .banner :is(h2, h3){
+    margin: 0;
+    padding-inline: max(10%, 50px);
+    color: #F2E9E4;
+    z-index: 1;
+}
+section .banner h2{
+    margin-inline: 8px;
+    font-size: 64px;
+}
+section .description{
+    margin-block: 32px;
+    padding-inline: max(10%, 50px);
+    color: #F2E9E4;
+}
+
+
+.landing-page{
+    height: calc(100dvh - var(--headerHeight));
+    padding-top: var(--headerHeight);
+    background-color: #22223B;
+}
+.landing-page .banner::before{
+    background-image: url("/assests/Toronto Night.jpeg");
+    /* background-position: 0 600px; */
+    background-position: 0 -30dvw;
+}
+.landing-page-content{
+    padding-block: 10dvh;
+    min-height: calc(100dvh - var(--headerHeight) - 400px - 2 * 10dvh);
+    flex-wrap: wrap;
+    max-width: max(calc(100% - 2 * 10%), 300px);
+    padding-inline: min(10%, calc(50% - 150px));
+}
+.landing-page .content::before{
+    background-size: cover;
+    opacity: 0.75;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border-radius: 8px;
+}
+#c1{
+    background-color: #000;
+}
+#c2{
+    background-color: #000;
+}
+#c1::before{
+    background-image: url("/assests/Circle\ Serenity.png");
+}
+#c2::before{
+    background-image: url("/assests/chess.jpg");
+    /* image from FelixMittermeier on pixabay.com */
+}
+.landing-page .content{
+    position: relative;
+    padding-block: 8px;
+    padding-inline: 14px;
+    /* min-height: 200px; */
+    min-height: max(20dvh, 200px);
+    width: max(30%, 300px);
+    border-radius: 12px;
+    background-color: #4a4e69;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 0.001fr auto;
+    grid-template-rows: 2fr 36px 24px;
+    column-gap: 8px;
+    align-items: center;
+}
+.landing-page .content:hover::before{
+    opacity: 0.9;
+}
+.landing-page .content:hover{
+    cursor: pointer;
+}
+.landing-page .content .icon{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    z-index: 1;
+}
+.landing-page .content h2{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 0;
+    color: #F2E9E4;
+    z-index: 1;
+}
+.landing-page .content div{
+    color: #F2E9E4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    z-index: 1;
+}
+
+
+
+
+.circle-page{
+    position: absolute;
+    top: 0;
+    left: 100dvw;
+    height: calc(100dvh - var(--headerHeight));
+    padding-top: var(--headerHeight);
+    background-color: #22223B;
+}
+.circle-page .banner::before{
+    background-image: url("/assests/Circle\ Serenity.png");
+    background-position: 0 -10dvw;
+}
+.circle-page iframe{
+    padding-inline: max(10%, 50px);
+}
+
+
+
+.chess-page{
+    position: absolute;
+    top: 0;
+    left: 200dvw;
+    height: calc(100dvh - var(--headerHeight));
+    padding-top: var(--headerHeight);
+    background-color: #22223B;
+}
+.chess-page .banner::before{
+    background-image: url("/assests/chess.jpg");
+    background-position: 0 -10dvw;
+}
+
+
+
+
+.contact-page{
+    height: calc(100dvh - var(--headerHeight));
+    padding-top: var(--headerHeight);
+    background-color: #22223B;
+}
+.contact-page-content{
+    padding-block: calc(8px + 20dvh);
+    min-height: calc(100dvh - var(--headerHeight) - 2 * 8px - 2 * 20dvh);
+    flex-wrap: wrap;
+    max-width: max(calc(100% - 2 * 20%), 300px);
+    padding-inline: min(20%, calc(50% - 150px));
+}
+@media only screen and (max-width: 800px) {
+    .contact-page-content{
+        flex-direction: column;
+    }
+}
+.contact-page .content{
+    padding-block: 8px;
+    padding-inline: 14px;
+    border-radius: 12px;
+    background-color: #4A4E69;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 8px;
+    align-items: center;
+}
+.contact-page .content .icon{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.contact-page .content h2{
+    margin: 0;
+    color: #F2E9E4;
+}
+/* :active{
+    background-color: red;
+} */

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -7,176 +7,175 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Alwyn [Portfolio]</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/icon/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon/favicon-16x16.png">
-        <link rel="icon" type="image/x-icon" href="/icon/favicon/favicon.ico">
-        <link rel="manifest" href="/icon/favicon/site.webmanifest">
-        <link rel="mask-icon" href="/icon/favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-
-        <!-- 'Varela Round' By Joe Prince -->
-        <!-- https://fonts.google.com/specimen/Varela+Round -->
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-
-        <svg width="0" height="0" style="position: absolute;">
-            <defs>
-                <symbol viewBox="0 0 64 64" id="linkArrow">
-                    <line x1="48" y1="32" x2="24" y2="8" style="stroke: white;" stroke-width="12px" stroke-linecap="round" />
-                    <line x1="48" y1="32" x2="24" y2="56" style="stroke: white;" stroke-width="12px" stroke-linecap="round" />
-                </symbol>
-            </defs>
-        </svg>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Poppins:wght@200;400&family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- loading screen -->
-        <div id="loadingScreen" style="width: 100%; height: 100%; min-height: 100vh; min-height: -moz-available; min-height: -webkit-fill-available; min-height: fill-available; position: absolute; top: 0; left: 0; z-index: 20; background-color: black;">
-            <img src="/icon/logo_white.svg" alt="logo" role="img" style="width: 40%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; animation: fadeIn 1s linear forwards;"/>
-        </div>
-
-        <!-- header -->
-        <header>
-            <a class="icon logo" onclick="transition(0)">
-                <img id="logo" src="/icon/logo_white.svg" alt="logo" role="img" />
-            </a>
-            <h1 class="title noMargin">Alwyn [Portfolio]</h1>
-            <div class="navHolder">
-                <nav id="nav">
-                    <a class="icon projLogo projLogo1" onclick="transition(1)">
-                        <img id="circle" src="/assests/circle-white.svg" alt="circle serenity" role="img" />
-                    </a>
-                    <a class="icon projLogo projLogo2" onclick="transition(2)">
-                        <img id="chess" src="/assests/chess-white.svg" alt="chess ai" role="img" />
-                    </a>
-                    <a class="icon projLogo projLogo3" onclick="transition(3)"></a>
-                    <a class="icon projLogo projLogo4" onclick="transition(4)"></a>
-                    <a class="icon projLogo projLogo5" onclick="transition(5)"></a>
-                </nav>
-            </div>
-        </header>
-        <!-- main -->
-        <main>
-            <div class="contentTable">
-                <div class="contentBlock contentBlock1" style="background-color: var(--project1Color)">
-                    <img class="contentBlockImage" src="/assests/Circle Serenity.png" alt="circle serenity">
-                    <h2 class="content"><b>Circle Serenity</b></h2>
-                    <h3 class="content">Relaxing game about popping circles</h3>
-                    <a class="contentBlockLink" onclick="transition(1)">
-                        Click to learn more
-                        <svg>
-                            <use xlink:href="#linkArrow"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="contentBlock contentBlock2" style="background-color: var(--project2Color)">
-                    <img class="contentBlockImage" src="/assests/Toronto Night.jpeg" alt="Toronto Night">
-                    <h2 class="content"><b>Chess AI</b></h2>
-                    <h3 class="content">Chess AI under development</h3>
-                    <a class="contentBlockLink" onclick="transition(2)">
-                        Click to learn more
-                        <svg>
-                            <use xlink:href="#linkArrow"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="contentBlock contentBlock3" style="background-color: var(--project3Color)">
-                    <img class="contentBlockImage">
-                    <h2 class="content"><b>Project 3 Placeholder</b></h2>
-                    <h3 class="content">Project 3 Description Placeholder</h3>
-                    <a class="contentBlockLink" onclick="transition(3)">
-                        Click to learn more
-                        <svg>
-                            <use xlink:href="#linkArrow"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="contentBlock contentBlock4" style="background-color: var(--project4Color)">
-                    <img class="contentBlockImage">
-                    <h2 class="content"><b>Project 4 Placeholder</b></h2>
-                    <h3 class="content">Project 4 Description Placeholder</h3>
-                    <a class="contentBlockLink" onclick="transition(4)">
-                        Click to learn more
-                        <svg>
-                            <use xlink:href="#linkArrow"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="contentBlock contentBlock5" style="background-color: var(--project5Color)">
-                    <img class="contentBlockImage">
-                    <h2 class="content"><b>Project 5 Placeholder</b></h2>
-                    <h3 class="content">Project 5 Description Placeholder</h3>
-                    <a class="contentBlockLink" onclick="transition(5)">
-                        Click to learn more
-                        <svg>
-                            <use xlink:href="#linkArrow"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="projectBlock" id="projectBlock1">
-                <div class="projectContentBlock" style="background-color: var(--project1Color)">
-                    <h2>Circle Serenity</h2>
-                    <h3>Relaxing game about popping circles</h3>
-                    <p>Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.</p>
-                    <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/1886880"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
-                </div>
-            </div>
-            <div class="projectBlock" id="projectBlock2">
-                <div class="projectContentBlock" style="background-color: var(--project2Color)">
-                    <h2><b>Chess AI</b></h2>
-                    <h3>Chess AI under development</h3>
-                    <p>This chess AI, is a joint project with a fellow friend. The goal is to create a AI capable of ~2500 ELO. More information is to come</p>
-                </div>
-            </div>
-            <div class="projectBlock" id="projectBlock3">
-                <div class="projectContentBlock" style="background-color: var(--project3Color)">
-                    <h2>Project 3 Placeholder</h2>
-                    <h3>Project 3 Description Placeholder</h3>
-                    <p>This project does not exist, please check back in the future.</p>
-                </div>
-            </div>
-            <div class="projectBlock" id="projectBlock4">
-                <div class="projectContentBlock" style="background-color: var(--project4Color)">
-                    <h2>Project 4 Placeholder</h2>
-                    <h3>Project 4 Description Placeholder</h3>
-                    <p>This project does not exist, please check back in the future.</p>
-                </div>
-            </div>
-            <div class="projectBlock" id="projectBlock5">
-                <div class="projectContentBlock" style="background-color: var(--project5Color)">
-                    <h2>Project 5 Placeholder</h2>
-                    <h3>Project 5 Description Placeholder</h3>
-                    <p>This project does not exist, please check back in the future.</p>
-                </div>
-            </div>
-        </main>
-        <!-- footer -->
-        <footer>
-            <a class="icon githubIcon" href="https://github.com/alwyn-t" target="_blank">
-                <img id="githubIcon" src="/assests/github-mark-white.svg" alt="github.com" role="img" />
-            </a>
-            <a class="icon itchioIcon" href="https://alwynt.itch.io/" target="_blank">
-                <img id="itchioIcon" src="/assests/itchio-logo-textless-white.svg" alt="itch.io" role="img" />
-            </a>
-            <a class="icon modeIcon" onclick="switchMode()">
-                <img id="modeIcon" src="/assests/dark_mode_FILL1_wght400_GRAD0_opsz40.svg" alt="light mode" role="img" />
-            </a>
-        </footer>
         
+        <header class="base-center v-center column-gap">
+            <label class="icon" for="p0" onclick="window.location='#landing-page';">
+                <img src="/icon/logo_white.svg" alt="AT logo">
+            </label>
+            <h1 class="title margin-0 fs32">Project Showcase</h1>
+            <input class="nav-toggle" id="nav-toggle" type="checkbox">
+            <label class="push nav-toggle-label base-center v-center" for="nav-toggle">
+                <svg viewbox="0 0 40 40" width="40px">
+                    <rect class="top" width="40" height="4" rx="2" y="6"></rect>
+                    <rect class="middle" width="40" height="4" rx="2" y="18"></rect>
+                    <rect class="bottom" width="40" height="4" rx="2" y="30"></rect>
+                </svg>
+            </label>
+            <nav class="push fs24">
+                <ul>
+                    <li>
+                        <input class="page-radio" type="radio" id="p0" name="page">
+                        <label class="page-label" for="p0" onclick="window.location='#landing-page';"><n>0/</n>My Work</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p1" name="page">
+                        <label class="page-label" for="p1" onclick="window.location='#circle-page';"><n>1/</n>Circle Serenity</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p2" name="page">
+                        <label class="page-label" for="p2" onclick="window.location='#chess-page';"><n>2/</n>Chess AI</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p3" name="page">
+                        <label class="page-label" for="p3" onclick="window.location='#landing-page';"><n>3/</n>Proj 3</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p4" name="page">
+                        <label class="page-label" for="p4" onclick="window.location='#landing-page';"><n>4/</n>Proj 4</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p5" name="page">
+                        <label class="page-label" for="p5" onclick="window.location='#landing-page';"><n>5/</n>Proj 5</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p6" name="page">
+                        <label class="page-label" for="p6" onclick="window.location='#contact-page';"><n>6/</n>Contact</label>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="landing-page" id="landing-page">
+            <div class="overflow-y">
+                <div class="banner base-center h-center">
+                    <h2>Alwyn</h2>
+                    <h3>// Side Project Documentation</h3>
+                </div>
+                <div class="landing-page-content base-center v-center h-center column-gap-16 row-gap-16">
+                    <label for="p1" id="c1" class="content" onclick="window.location='#circle-page';">
+                        <div class="icon">
+                            <img src="/assests/circle-white.svg" alt="circle-white">
+                        </div>
+                        <h2 class="margin-0">Circle Serenity</h2>
+                        <div>// Project 1</div>
+                    </label>
+                    <label for="p2" id="c2" class="content" onclick="window.location='#chess-page';">
+                        <div class="icon">
+                            <img src="/assests/chess-white.svg" alt="chess-white">
+                        </div>
+                        <h2 class="margin-0">Chess AI</h2>
+                        <div>// Project 2</div>
+                    </label>
+                    <label for="p3" id="c3" class="content" onclick="window.location='#landing-page';">
+                        <div class="icon"></div>
+                        <h2 class="margin-0">Coming Soon</h2>
+                        <div>// Project 3</div>
+                    </label>
+                    <label for="p4" id="c4" class="content" onclick="window.location='#landing-page';">
+                        <div class="icon"></div>
+                        <h2 class="margin-0">Coming Soon</h2>
+                        <div>// Project 4</div>
+                    </label>
+                    <label for="p5" id="c5" class="content" onclick="window.location='#landing-page';">
+                        <div class="icon"></div>
+                        <h2 class="margin-0">Coming Soon</h2>
+                        <div>// Project 5</div>
+                    </label>
+                </div>
+            </div>
+        </section>
 
+        <section class="circle-page" id="circle-page">
+            <div class="overflow-y">
+                <div class="banner base-center h-center">
+                    <h2>Circle Serenity</h2>
+                    <h3>// First official game focused on popping circles while being relaxing</h3>
+                </div>
+                <div class="description">
+                    Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.
+                </div>
+                <iframe frameborder="0" src="https://itch.io/embed/1886880?dark=true" width="552" height="167"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
+            </div>
+        </section>
 
+        <section class="chess-page" id="chess-page">
+            <div class="overflow-y">
+                <div class="banner base-center h-center">
+                    <h2>Chess AI</h2>
+                    <h3>// Chess game engine and AI project</h3>
+                </div>
+                <div class="description">
+                    This Chess AI is a joint partner project currently underdevelopment. The goal is to create an AI capable of ~2500 ELO on chess.com; This requires a chess game engine to be built to support our development of an AI. Additional information will come.
+                </div>
+            </div>
+        </section>
 
-
-
-
+        <footer class="base-center">
+            Created by Alwyn
+            <a href="https://github.com/alwyn-t/alwyn-t.github.io/blob/main/LICENSE" target="_blank"> Licensed under AGPL-3.0 license</a>
+        </footer>
+        <section class="contact-page" id="contact-page">
+            <div class="overflow-y">
+                <div class="contact-page-content base-center v-center h-center column-gap row-gap">
+                    <div class="content">
+                        <a class="icon" href="https://github.com/alwyn-t" target="_blank">
+                            <img src="/assests/github-mark-white.svg" alt="github-mark-white">
+                        </a>
+                        <h2 class="margin-0">Github Profile</h2>
+                        <a href="https://github.com/alwyn-t" target="_blank">@alwyn-t</a>
+                    </div>
+                    <div class="content">
+                        <a class="icon" href="https://alwynt.itch.io" target="_blank">
+                            <img src="/assests/itchio-logo-textless-white.svg" alt="itchio-logo-textless-white">
+                        </a>
+                        <h2 class="margin-0">Itch.io Profile</h2>
+                        <a href="https://alwynt.itch.io" target="_blank">@alwynT</a>
+                    </div>
+                    <div class="content">
+                        <a class="icon" href="https://www.instagram.com/alwyn.archives" target="_blank">
+                            <img src="/assests/Instagram_Glyph_White.svg" alt="Instagram_Glyph_White">
+                        </a>
+                        <h2 class="margin-0">Instagram Profile</h2>
+                        <a href="https://www.instagram.com/alwyn.archives" target="_blank">@alwyn.archives</a>
+                    </div>
+                    <div class="content">
+                        <a class="icon" href="https://www.youtube.com/@9594S" target="_blank">
+                            <img src="/assests/yt_icon_mono_dark.png" alt="yt_icon_mono_dark" style="height: auto; top: 50%; transform: translateY(-50%); -ms-transform: translateY(-50%);">
+                        </a>
+                        <h2 class="margin-0">Youtube Profile</h2>
+                        <a href="https://www.youtube.com/@9594S" target="_blank">@9594S</a>
+                    </div>
+                    <div class="content">
+                        <a class="icon" href="https://www.youtube.com/@alwyntong" target="_blank">
+                            <img src="/assests/yt_icon_mono_dark.png" alt="yt_icon_mono_dark" style="height: auto; top: 50%; transform: translateY(-50%); -ms-transform: translateY(-50%);">
+                        </a>
+                        <h2 class="margin-0">Youtube Profile</h2>
+                        <a href="https://www.youtube.com/@alwyntong" target="_blank">@alwyntong</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <!--[if lt IE 7]>

@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
-   sodipodi:docname="favicon.svg"
+   sodipodi:docname="logo_white.svg"
    inkscape:export-filename="Personal Site 3/icon/logo_black.svg"
    inkscape:export-xdpi="98"
    inkscape:export-ydpi="98"
@@ -28,12 +28,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.7377314"
-     inkscape:cx="102.82236"
+     inkscape:cx="103.55289"
      inkscape:cy="88.394355"
      inkscape:window-width="1470"
      inkscape:window-height="822"
      inkscape:window-x="0"
-     inkscape:window-y="37"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -52,39 +52,40 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#000000;stroke-width:0.264583"
+       style="fill:#000000;stroke-width:0.319935"
        id="path420"
-       cx="8.4666672"
-       cy="36.688889"
-       r="2.8222225" />
+       cx="4.9240837"
+       cy="39.050587"
+       r="3.4126468" />
     <circle
-       style="fill:#000000;stroke-width:0.264583"
+       style="fill:#000000;stroke-width:0.319935"
        id="path420-2"
-       cx="19.755554"
-       cy="14.111113"
-       r="2.8222225" />
+       cx="18.574667"
+       cy="11.749415"
+       r="3.4126468" />
     <circle
-       style="fill:#000000;stroke-width:0.264583"
+       style="fill:#000000;stroke-width:0.319935"
        id="path420-2-7"
-       cx="31.044441"
-       cy="36.688889"
-       r="2.8222225" />
+       cx="32.22525"
+       cy="39.050587"
+       r="3.4126468" />
     <circle
-       style="fill:#000000;stroke-width:0.264583"
+       style="fill:#000000;stroke-width:0.319935"
        id="path420-2-0"
-       cx="31.044443"
-       cy="14.111113"
-       r="2.8222225" />
+       cx="32.225254"
+       cy="11.749415"
+       r="3.4126468" />
     <circle
-       style="fill:#000000;stroke-width:0.264583"
+       style="fill:#000000;stroke-width:0.319935"
        id="path420-2-3"
-       cx="42.333336"
-       cy="14.111113"
-       r="2.8222225" />
+       cx="45.875847"
+       cy="11.749415"
+       r="3.4126468" />
     <g
        id="g320"
        inkscape:label="T"
-       clip-path="url(#clipPath2415)">
+       clip-path="url(#clipPath2415)"
+       transform="matrix(1.2092055,0,0,1.2092055,-5.3138568,-5.3138194)">
       <path
          style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
          d="m 16.933334,11.28889 h 28.222225 v 5.644445 H 16.933332 Z"
@@ -96,7 +97,8 @@
     </g>
     <g
        id="g324"
-       inkscape:label="A">
+       inkscape:label="A"
+       transform="matrix(1.2092055,0,0,1.2092055,-5.3138568,-5.3138194)">
       <path
          style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
          d="m 16.933331,11.28889 11.288886,28.22222 h 5.644445 L 22.577775,11.28889 Z"
