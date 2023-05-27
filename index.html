@@ -24,7 +24,7 @@
             <label class="icon" for="p0" onclick="window.location='#landing-page';">
                 <img src="/icon/logo_white.svg" alt="AT logo">
             </label>
-            <h1 class="title margin-0 fs32">Project Showcase</h1>
+            <h1 class="title margin-0 fs24">Project Showcase</h1>
             <input class="nav-toggle" id="nav-toggle" type="checkbox">
             <label class="push nav-toggle-label base-center v-center" for="nav-toggle">
                 <svg viewbox="0 0 40 40" width="40px">
@@ -33,35 +33,39 @@
                     <rect class="bottom" width="40" height="4" rx="2" y="30"></rect>
                 </svg>
             </label>
-            <nav class="push fs24">
-                <ul>
+            <nav class="push">
+                <ul class="base-center h-center v-center">
                     <li>
                         <input class="page-radio" type="radio" id="p0" name="page">
-                        <label class="page-label" for="p0" onclick="window.location='#landing-page';"><n>0/</n>My Work</label>
+                        <label class="page-label" for="p0" onclick="window.location='#landing-page';">My Work</label>
                     </li>
                     <li>
                         <input class="page-radio" type="radio" id="p1" name="page">
-                        <label class="page-label" for="p1" onclick="window.location='#circle-page';"><n>1/</n>Circle Serenity</label>
+                        <label class="page-label" for="p1" onclick="window.location='#circle-page';">Circle Serenity</label>
                     </li>
                     <li>
                         <input class="page-radio" type="radio" id="p2" name="page">
-                        <label class="page-label" for="p2" onclick="window.location='#chess-page';"><n>2/</n>Chess AI</label>
+                        <label class="page-label" for="p2" onclick="window.location='#chess-page';">Chess AI</label>
                     </li>
                     <li>
                         <input class="page-radio" type="radio" id="p3" name="page">
-                        <label class="page-label" for="p3" onclick="window.location='#landing-page';"><n>3/</n>Proj 3</label>
+                        <label class="page-label" for="p3" onclick="window.location='#landing-page';">Proj 3</label>
                     </li>
                     <li>
                         <input class="page-radio" type="radio" id="p4" name="page">
-                        <label class="page-label" for="p4" onclick="window.location='#landing-page';"><n>4/</n>Proj 4</label>
+                        <label class="page-label" for="p4" onclick="window.location='#landing-page';">Proj 4</label>
                     </li>
                     <li>
                         <input class="page-radio" type="radio" id="p5" name="page">
-                        <label class="page-label" for="p5" onclick="window.location='#landing-page';"><n>5/</n>Proj 5</label>
+                        <label class="page-label" for="p5" onclick="window.location='#landing-page';">Proj 5</label>
                     </li>
                     <li>
                         <input class="page-radio" type="radio" id="p6" name="page">
-                        <label class="page-label" for="p6" onclick="window.location='#contact-page';"><n>6/</n>Contact</label>
+                        <label class="page-label" for="p6" onclick="window.location='#landing-page';">Proj 6</label>
+                    </li>
+                    <li>
+                        <input class="page-radio" type="radio" id="p7" name="page">
+                        <label class="page-label" for="p7" onclick="window.location='#contact-page';">Contact</label>
                     </li>
                 </ul>
             </nav>
@@ -102,6 +106,11 @@
                         <h2 class="margin-0">Coming Soon</h2>
                         <div>// Project 5</div>
                     </label>
+                    <label for="p6" id="c6" class="content" onclick="window.location='#landing-page';">
+                        <div class="icon"></div>
+                        <h2 class="margin-0">Coming Soon</h2>
+                        <div>// Project 6</div>
+                    </label>
                 </div>
             </div>
         </section>
@@ -132,8 +141,10 @@
         </section>
 
         <footer class="base-center">
-            Created by Alwyn
-            <a href="https://github.com/alwyn-t/alwyn-t.github.io/blob/main/LICENSE" target="_blank"> Licensed under AGPL-3.0 license</a>
+            <div>
+                Created by Alwyn
+                <a href="https://github.com/alwyn-t/alwyn-t.github.io/blob/main/LICENSE" target="_blank"> Licensed under AGPL-3.0 license</a>
+            </div>
         </footer>
         <section class="contact-page" id="contact-page">
             <div class="overflow-y">

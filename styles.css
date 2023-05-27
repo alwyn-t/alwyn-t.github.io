@@ -45,6 +45,9 @@ body{
 .fs24{
     font-size: 24px;
 }
+.fs14{
+    font-size: 14px;
+}
 .overflow-y{
     height: 100%;
     overflow-x: hidden;
@@ -57,7 +60,8 @@ header{
     width: calc(-8px + 100% - 8px);
     padding: 8px;
     top: 0;
-    background-color: #4A4E69;
+    /* background-color: #4A4E69; */
+    background-color: #00000050;
     z-index: 2;
 }
 header .icon{
@@ -117,20 +121,37 @@ header .icon{
 nav{
     position: absolute;
     top: 100%;
-    right: -50%;
-    transition-duration: 1s;
+    /* right: -50%; */
+    left: 0px;
+    width: 100%;
+    height: calc(100dvh - 64px);
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 0.3s;
+    font-size: 20px;
+    /* background-color: #4A4E69; */
+    /* background-color: #00000050; */
+    background-color: #00000075;
 }
 .nav-toggle:checked ~ nav{
-    right: 0;
+    /* right: 0; */
+    opacity: 1;
+    visibility: visible;
+    z-index: 0;
 }
 nav ul{
+    height: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
+    flex-direction: column;
 }
 nav ul li{
     padding-inline: 8px;
-    background-color: #4A4E69;
+    /* background-color: #4A4E69; */
+    /* background-color: #00000030; */
+    --li_size: 27.3px;
+    text-align: center;
 }
 nav ul li .page-label{
     cursor: pointer;
@@ -141,104 +162,121 @@ nav ul li .page-label:hover{
 }
 nav ul li .page-label::before{
     height: 0%;
-    width: 4px;
-    border-radius: 2px;
+    width: 1px;
     background-color: #F2E9E4;
     content: "";
     display: inline-block;
     position: absolute;
-    top: 17px;
+    top: calc(0.5 * var(--li_size));
     left: 0%;
     transition-duration: 150ms;
-}
-nav ul li:nth-child(2) .page-label::before{
-    top: calc(1.5 * 36.4px);
-}
-nav ul li:nth-child(3) .page-label::before{
-    top: calc(2.5 * 36.4px);
-}
-nav ul li:nth-child(4) .page-label::before{
-    top: calc(3.5 * 36.4px);
-}
-nav ul li:nth-child(5) .page-label::before{
-    top: calc(4.5 * 36.4px);
-}
-nav ul li:nth-child(6) .page-label::before{
-    top: calc(5.5 * 36.4px);
-}
-nav ul li:nth-child(7) .page-label::before{
-    top: calc(6.5 * 36.4px);
-}
-nav ul li .page-label:hover::before{
-    height: 17px;/* for some reason, css is weird and the height is based on content, not the parent element*/
-    width: 4px;
-    top: 8.5px;
-    left: 0%;
-}
-nav ul li:nth-child(2) .page-label:hover::before{
-    top: calc(1.25 * 36.4px);
-}
-nav ul li:nth-child(3) .page-label:hover::before{
-    top: calc(2.25 * 36.4px);
-}
-nav ul li:nth-child(4) .page-label:hover::before{
-    top: calc(3.25 * 36.4px);
-}
-nav ul li:nth-child(5) .page-label:hover::before{
-    top: calc(4.25 * 36.4px);
-}
-nav ul li:nth-child(6) .page-label:hover::before{
-    top: calc(5.25 * 36.4px);
-}
-nav ul li:nth-child(7) .page-label:hover::before{
-    top: calc(6.25 * 36.4px);
 }
 nav ul li .page-radio{
     display: none;
 }
+/* nav ul li:nth-child(2) .page-label::before{
+    top: calc(1.5 * var(--li_size));
+}
+nav ul li:nth-child(3) .page-label::before{
+    top: calc(2.5 * var(--li_size));
+}
+nav ul li:nth-child(4) .page-label::before{
+    top: calc(3.5 * var(--li_size));
+}
+nav ul li:nth-child(5) .page-label::before{
+    top: calc(4.5 * var(--li_size));
+}
+nav ul li:nth-child(6) .page-label::before{
+    top: calc(5.5 * var(--li_size));
+}
+nav ul li:nth-child(7) .page-label::before{
+    top: calc(6.5 * var(--li_size));
+}
+nav ul li:nth-child(8) .page-label::before{
+    top: calc(7.5 * var(--li_size));
+}
+nav ul li .page-label:hover::before{
+    height: calc(0.5 * var(--li_size));// for some reason, css is weird and the height is based on content, not the parent element
+    width: 1px;
+    top: calc(0.25 * var(--li_size));
+    left: 0%;
+}
+nav ul li:nth-child(2) .page-label:hover::before{
+    top: calc(1.25 * var(--li_size));
+}
+nav ul li:nth-child(3) .page-label:hover::before{
+    top: calc(2.25 * var(--li_size));
+}
+nav ul li:nth-child(4) .page-label:hover::before{
+    top: calc(3.25 * var(--li_size));
+}
+nav ul li:nth-child(5) .page-label:hover::before{
+    top: calc(4.25 * var(--li_size));
+}
+nav ul li:nth-child(6) .page-label:hover::before{
+    top: calc(5.25 * var(--li_size));
+}
+nav ul li:nth-child(7) .page-label:hover::before{
+    top: calc(6.25 * var(--li_size));
+}
+nav ul li:nth-child(8) .page-label:hover::before{
+    top: calc(7.25 * var(--li_size));
+}
 nav ul li .page-radio:checked + .page-label::before{
-    height: 34px;
-    width: 4px;
+    height: var(--li_size);
+    width: 1px;
     top: 0px;
     left: 0%;
 }
 nav ul li:nth-child(2) .page-radio:checked + .page-label::before{
-    top: calc(36.4px);
+    top: calc(var(--li_size));
 }
 nav ul li:nth-child(3) .page-radio:checked + .page-label::before{
-    top: calc(2 * 36.4px);
+    top: calc(2 * var(--li_size));
 }
 nav ul li:nth-child(4) .page-radio:checked + .page-label::before{
-    top: calc(3 * 36.4px);
+    top: calc(3 * var(--li_size));
 }
 nav ul li:nth-child(5) .page-radio:checked + .page-label::before{
-    top: calc(4 * 36.4px);
+    top: calc(4 * var(--li_size));
 }
 nav ul li:nth-child(6) .page-radio:checked + .page-label::before{
-    top: calc(5 * 36.4px);
+    top: calc(5 * var(--li_size));
 }
 nav ul li:nth-child(7) .page-radio:checked + .page-label::before{
-    top: calc(6 * 36.4px);
+    top: calc(6 * var(--li_size));
 }
+nav ul li:nth-child(8) .page-radio:checked + .page-label::before{
+    top: calc(7 * var(--li_size));
+} */
 n{
-    font-family: 'Roboto Mono', monospace;
+    font-family: Helvetica, 'Roboto Mono', monospace;
 }
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 900px) {
     .nav-toggle-label{
         display: none;
     }
     nav{
         position: relative;
         display: inline;
+        height: auto;
+        width: auto;
         top: 0;
         right: 0;
+        font-size: 14px;
+        visibility: visible;
+        opacity: 1;
+        background-color: #00000000;
+    }
+    nav ul{
+        flex-direction: row;
     }
     nav li{
         display: inline-block;
         padding: 0;
     }
     nav ul li:nth-child(1n) .page-label::before{
-        height: 4px;
+        height: 1px;
         width: 0%;
         display: block;
         position: relative;
@@ -246,13 +284,13 @@ n{
         left: 50%;
     }
     nav ul li:nth-child(1n) .page-label:hover::before{
-        height: 4px;
+        height: 1px;
         width: 50%;
         top: 0%;
         left: 25%;
     }
     nav ul li:nth-child(1n) .page-radio:checked + .page-label::before{
-        height: 4px;
+        height: 1px;
         width: 100%;
         top: 0%;
         left: 0%;
@@ -272,15 +310,22 @@ a:hover{
 
 footer{
     position: fixed;
-    padding-right: 8px;
+    padding-left: 8px;
     padding-bottom: 4px;
     height: var(--footerHeight);
     width: calc(100% - 8px);
     bottom: 0;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: end;
     color: #F2E9E4;
+    z-index: 2;
+    visibility: hidden;
+}
+footer > div{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -321,8 +366,9 @@ section .description{
 
 
 .landing-page{
-    height: calc(100dvh - var(--headerHeight));
-    padding-top: var(--headerHeight);
+    /* height: calc(100dvh - var(--headerHeight)); */
+    /* padding-top: var(--headerHeight); */
+    height: 100dvh;
     background-color: #22223B;
 }
 .landing-page .banner::before{
@@ -405,11 +451,12 @@ section .description{
 
 
 .circle-page{
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 100dvw;
-    height: calc(100dvh - var(--headerHeight));
-    padding-top: var(--headerHeight);
+    left: 100dvw; */
+    /* height: calc(100dvh - var(--headerHeight)); */
+    /* padding-top: var(--headerHeight); */
+    height: 100dvh;
     background-color: #22223B;
 }
 .circle-page .banner::before{
@@ -417,17 +464,20 @@ section .description{
     background-position: 0 -10dvw;
 }
 .circle-page iframe{
-    padding-inline: max(10%, 50px);
+    /* padding-inline: max(10%, 50px); */
+    width: 100%;
+    margin-bottom: 32px;
 }
 
 
 
 .chess-page{
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 200dvw;
-    height: calc(100dvh - var(--headerHeight));
-    padding-top: var(--headerHeight);
+    left: 200dvw; */
+    /* height: calc(100dvh - var(--headerHeight)); */
+    /* padding-top: var(--headerHeight); */
+    height: 100dvh;
     background-color: #22223B;
 }
 .chess-page .banner::before{
