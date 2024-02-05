@@ -107,7 +107,7 @@
     height: calc(100vh - 16px - 8px - 32px - 8px - 16px - 16px - 48px - 32px);
     min-height: 320px;
     padding: 16px;
-    width: 100%;
+    width: calc(100% - 32px);
 
     cursor: default;
     pointer-events: none;
