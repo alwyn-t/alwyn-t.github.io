@@ -90,6 +90,7 @@ label:hover {
     transition-duration: 0.5s;
     opacity: 0;
     visibility: hidden;
+    max-width: 90vw;
 }
 
 /* #nav-bar:has(#proj:checked) > #sub-nav-bar,  */

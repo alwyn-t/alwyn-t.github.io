@@ -36,6 +36,7 @@
     padding-block: 0.5rem;
     height: 1.5rem;
     vertical-align: top;
+    white-space: nowrap;
 }
 
 #homeSect h4{
@@ -71,20 +72,20 @@
     margin-top: 0;
 }
 #homeSect #scrollDescription::after {
-    height: 0.5rem;
+    height: 0.75rem;
     width: 100%;
     position: absolute;
     top: 0rem;
     content: '';
-    background-image: linear-gradient(0deg, transparent, white);
+    background-image: linear-gradient(0deg, transparent, white, white, white);
 }
 #homeSect #scrollDescription::before {
-    height: 0.5rem;
+    height: 0.75rem;
     width: 100%;
     position: absolute;
-    bottom: 0rem;
+    bottom: -0.5rem;
     content: '';
-    background-image: linear-gradient(0deg, white, transparent);
+    background-image: linear-gradient(0deg, white, white, white, transparent);
     z-index: 1;
 }
 @keyframes scroll {
