@@ -1,0 +1,184 @@
+#homeSect #hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 16px - 8px - 32px - 8px - 16px - 16px);
+}
+
+#homeSect #hero #desc, #hook {
+    flex: 1;
+}
+#homeSect #hero #hook {
+    margin: 4rem;
+}
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    #homeSect #hero {
+        flex-direction: row;
+    }
+}
+
+#homeSect h1{
+    font-size: 1rem;
+    position: relative;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+
+#homeSect h2{
+    font-size: 2rem;
+    margin-bottom: 0em;
+}
+
+#homeSect h3{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0;
+    padding-block: 0.5rem;
+    height: 1.5rem;
+    vertical-align: top;
+}
+
+#homeSect h4{
+    position: relative;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+
+#homeSect #scrollDescription {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    height: 1.5rem;
+    padding-block: 0.5rem;
+    overflow-y: hidden;
+    transition-duration: 0.5s;
+}
+#homeSect #scrollDescription > h3 {
+    display: block;
+    margin-block: 0.5rem;
+    padding: 0;
+    -webkit-animation-name: "scroll";
+       -moz-animation-name: "scroll";
+        -ms-animation-name: "scroll";
+         -o-animation-name: "scroll";
+            animation-name: "scroll";
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(.75, 0, .25, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+#homeSect #scrollDescription > h3:first-of-type {
+    margin-top: 0;
+}
+#homeSect #scrollDescription::after {
+    height: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0rem;
+    content: '';
+    background-image: linear-gradient(0deg, transparent, white);
+}
+#homeSect #scrollDescription::before {
+    height: 0.5rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+    content: '';
+    background-image: linear-gradient(0deg, white, transparent);
+    z-index: 1;
+}
+@keyframes scroll {
+    from {transform: translateY(0%);}
+    10%  {transform: translateY(calc(-2rem * 1));}
+    20%  {transform: translateY(calc(-2rem * 2));}
+    30%  {transform: translateY(calc(-2rem * 3));}
+    40%  {transform: translateY(calc(-2rem * 4));}
+    50%  {transform: translateY(calc(-2rem * 5));}
+    60%  {transform: translateY(calc(-2rem * 6));}
+    70%  {transform: translateY(calc(-2rem * 7));}
+    80%  {transform: translateY(calc(-2rem * 8));}
+    90%  {transform: translateY(calc(-2rem * 9));}
+    to   {transform: translateY(calc(-2rem * 10));}
+}
+#homeSect #scrollDescription #descriptionCheckBox {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    animation-name: none;
+}
+#homeSect #scrollDescription #descriptionCheckBox + label{
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    /* height: 1.5rem; */
+    height: 100%;
+    /* height: calc(100% - 1rem); */
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+    animation-name: none;
+}
+#homeSect #scrollDescription #descriptionCheckBox:focus:not(:checked) + label {
+    outline: 2px solid lightgray;
+}
+#homeSect #scrollDescription:has(#descriptionCheckBox:checked) {
+    height: calc(10 * 2rem - 0.5rem);
+}
+#homeSect #scrollDescription:has(#descriptionCheckBox:checked) > h3{
+    animation-play-state: paused;
+}
+#homeSect:has(#scrollDescription #descriptionCheckBox:checked) h1, #homeSect:has(#scrollDescription #descriptionCheckBox:checked) h4 {
+    opacity: 0;
+}
+
+#homeSect #description {
+    margin-block: 1rem;
+    /* padding: 1rem; */
+    /* margin-right: min(40%, 20rem); */
+}
+#homeSect #description p{
+    margin: 0;
+    font-weight: lighter;
+}
+#homeSect #descriptionClick {
+    margin-top: 1rem;
+    /* padding: 0.5rem; */
+    display: inline-block;
+    font-weight: normal;
+    /* background-color: lightskyblue; */
+    /* color: white; */
+    /* cursor: pointer; */
+}
+
+/* hook styling */
+#homeSect #hero #hook {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    #homeSect #hero #hook {
+        flex-direction: column;
+    }
+}
+#homeSect #hero #hook .projectIcon {
+    border-radius: 22.767871093%;
+    transition-duration: 0.5s;
+}
+#homeSect #hero #hook a:nth-child(odd) .projectIcon {
+    transform: translate3d(20%, 20%, 0);
+}
+#homeSect #hero #hook a:nth-child(even) .projectIcon {
+    transform: translate3d(-20%, -20%, 0);
+}
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    #homeSect #hero #hook .projectIcon:nth-child(odd) {
+        transform: translate3d(-20%, 20%, 0);
+    }
+    #homeSect #hero #hook .projectIcon:nth-child(even) {
+        transform: translate3d(20%, -20%, 0);
+    }
+}
+#homeSect #hero #hook .projectIcon:hover {
+    box-shadow: 0px 0px 8px black;
+}

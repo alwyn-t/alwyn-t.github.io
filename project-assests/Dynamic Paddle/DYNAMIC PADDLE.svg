@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1024 1024"
+   fill="none"
+   version="1.1"
+   id="svg304"
+   sodipodi:docname="DYNAMIC PADDLE.svg"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title1002">Dynamic Paddle</title>
+  <sodipodi:namedview
+     id="namedview306"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.351071"
+     inkscape:cx="969.88929"
+     inkscape:cy="471.41462"
+     inkscape:window-width="1390"
+     inkscape:window-height="1205"
+     inkscape:window-x="252"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g180" />
+  <g
+     clip-path="url(#clip1_0_1)"
+     id="g180"
+     transform="translate(-1088)">
+    <g
+       style="mix-blend-mode:exclusion"
+       id="g170"
+       transform="matrix(1.1428571,0,0,1.1428571,-301.71429,0)">
+      <rect
+         x="1216"
+         width="896"
+         height="896"
+         rx="204"
+         fill="#f0f0f0"
+         id="rect162"
+         y="0" />
+      <rect
+         x="1396"
+         y="504"
+         width="512"
+         height="128"
+         rx="64"
+         fill="#0f0f0f"
+         id="rect164" />
+      <rect
+         x="1600"
+         y="260"
+         width="128"
+         height="160"
+         rx="64"
+         fill="#aeaeae"
+         id="rect166" />
+      <circle
+         cx="1664"
+         cy="324"
+         r="64"
+         fill="#0f0f0f"
+         id="circle168" />
+    </g>
+  </g>
+  <defs
+     id="defs302">
+    <clipPath
+       id="clip0_0_1">
+      <rect
+         width="1024"
+         height="1024"
+         fill="#ffffff"
+         id="rect290"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clip1_0_1">
+      <rect
+         width="1024"
+         height="1024"
+         fill="#ffffff"
+         transform="translate(1088)"
+         id="rect293"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clip2_0_1">
+      <rect
+         width="1024"
+         height="1024"
+         fill="#ffffff"
+         transform="translate(2176)"
+         id="rect296"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clip3_0_1">
+      <rect
+         width="1024"
+         height="1024"
+         fill="#ffffff"
+         transform="translate(3264)"
+         id="rect299"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata1000">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alwyn T</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Required to disclose source and state changes as per AGPL-3.0 license</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:language>English</dc:language>
+        <dc:title>Dynamic Paddle</dc:title>
+        <dc:identifier>Dynamic Paddle SVG</dc:identifier>
+        <cc:license
+           rdf:resource="https://www.gnu.org/licenses/agpl-3.0.en.html#license-text" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,27 @@
+#abouSect p {
+    margin: 0;
+    font-weight: lighter;
+}
+
+#abouSect .flex-centre {
+    flex-direction: column;
+}
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    #abouSect .flex-centre {
+        flex-direction: row;
+    }
+}
+
+#abouSect .card {
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+}
+
+#abouSect .card > :first-child {
+    margin-top: 0;
+}
+
+#abouSect h2 {
+    margin: 0;
+    padding-block: 1rem;
+}

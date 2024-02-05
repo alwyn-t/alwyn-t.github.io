@@ -1,2 +1,5 @@
-# Website
-Personal Portfolio Site
+# Alwyn's Portfolio
+With the intention of developing this site as a personal portfolio, it has turned into a constant drain of my time to develop this website without using any libraries. Nevertheless, I will continue to update this site whenever I find the time to do so and when I have new projects to put up. Because it is always in a state of development, there many be features or parts of the page that are not fully functional or buggy. If you find anything that isn't intentional, do not hesitate to let me know, you can use the contact page to link with me.
+## Notes
+- If you wish to use parts of my site, I would appreciate if you let me know beforehand so I am aware, but it is not required as outlined in the AGPL 3.0 license.
+- I am open to collaborating or simply talking about other topics, just reach out through my contact page!

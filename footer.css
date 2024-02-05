@@ -1,0 +1,22 @@
+#footSect {
+    padding-block: 2rem;
+    padding-inline: max(2rem, 20% - 2rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: max(2rem, 10%);
+}
+
+#footSect > * {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+#footSect h4 {
+    margin-bottom: 1rem;
+}
+#footSect a {
+    margin-block: 0.25rem;
+}
+#footSect p {
+    margin-block: 0.25rem;
+}

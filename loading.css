@@ -1,0 +1,82 @@
+#loading-screen {
+    --loadingBackColour: black;
+    background-color: black;
+    --loadingBarColour: rgb(0, 132, 255);
+    --loadingBarShineColour: rgb(0, 81, 255);
+    --loadingProgress: 0%;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+#loading-screen .loading-bar {
+    height: 4px;
+    background-image: conic-gradient(at var(--loadingProgress) 50%, black 50%, white 50%), radial-gradient(circle at var(--loadingProgress) 50%, var(--loadingBarColour) calc(2px * 0.75), var(--loadingBackColour) 150%);
+    /* background-image: conic-gradient(at   0% 50%, black 50%, white 50%), radial-gradient(circle at   0% 50%, var(--loadingBarColour) calc(2px * 0.75), var(--loadingBackColour) 150%); */
+    background-blend-mode: darken;
+    animation-name: loadBar;
+}
+#loading-screen .loading-bar::after {
+    height: inherit;
+    width: calc(100% - var(--loadingProgress));
+    left: var(--loadingProgress);
+    top: -4px;
+    position: relative;
+    display: block;
+    content: "";
+    background-image: conic-gradient(at 0% 50%, white 50%, black 50%), radial-gradient(2px at 0% 50%, var(--loadingBarColour) 100%, var(--loadingBackColour) 200%);
+    /* background-image: conic-gradient(at 0% 50%, white 50%, black 50%), radial-gradient(2px at 0% 50%, var(--loadingBarColour) 100%, var(--loadingBackColour) 200%); */
+    background-blend-mode: darken;
+    animation-name: loadBarAfter;
+}
+
+#loading-screen .loading-bar .loading-bar-shine {
+    height: inherit;
+    width: inherit;
+    position: relative;
+}
+/* I have no clue why chrome continues to not display the linear gradients while safari and firefox are ok :shrug: */
+#loading-screen .loading-bar .loading-bar-shine::after {
+    height: 8px;
+    width: inherit;
+    position: relative;
+    display: block;
+    content: "";
+    /* scaling factor = (w/sqrt(2))/( sqrt(w^2+h^2)*sin(atan(h/w)+45deg) )*/
+    /* background-image: linear-gradient(135deg, white calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) - 1px), black calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) + 3px)); */
+    /* background-image: linear-gradient(15deg, var(--loadingBackColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) * 0.5 + 0px), blue calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) + 6px)); */
+    /* background-image: -webkit-linear-gradient(135deg, white calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) - 1px), black calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) + 3px)),
+                      -webkit-linear-gradient(15deg, var(--loadingBackColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) * 0.5 + 0px), var(--loadingBarShineColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) + 6px));
+    background-image: -moz-linear-gradient(135deg, white calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) - 1px), black calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) + 3px)),
+                      -moz-linear-gradient(15deg, var(--loadingBackColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) * 0.5 + 0px), var(--loadingBarShineColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) + 6px)); */
+    background-image: linear-gradient(135deg, white calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) - 1px), black calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) + 3px)),
+                      linear-gradient(15deg, var(--loadingBackColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) * 0.5 + 0px), var(--loadingBarShineColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) + 6px));
+    background-blend-mode: multiply;
+    bottom: 4px;
+}
+#loading-screen .loading-bar .loading-bar-shine::before {
+    height: 8px;
+    width: inherit;
+    position: relative;
+    display: block;
+    content: "";
+    /* scaling factor = (w/sqrt(2))/( sqrt(w^2+h^2)*sin(atan(h/w)+45deg) )*/
+    /* background-image: linear-gradient(45deg, white calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) - 1px), black calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) + 3px)); */
+    /* background-image: linear-gradient(165deg, var(--loadingBackColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) * 0.5 + 0px), blue calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) + 6px)); */
+    background-image: linear-gradient(45deg, white calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) - 1px), black calc((64 / sqrt(2)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 45deg)) * var(--loadingProgress) + 3px)),
+                      linear-gradient(165deg, var(--loadingBackColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) * 0.5 + 0px), var(--loadingBarShineColour) calc((64 * sin(15deg)) / (sqrt(64 * 64 + 8 * 8) * sin(atan(8 / 64) + 15deg)) * var(--loadingProgress) + 6px));
+    background-blend-mode: multiply;
+    bottom: 8px;
+}
+/* @keyframes hideLoadScreen {
+    from {opacity: 1;}
+    to   {opacity: 0;}
+} */
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

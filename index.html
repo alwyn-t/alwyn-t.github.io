@@ -7,184 +7,458 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Alwyn's Portfolio</title>
+        <meta name="description" content="Alwyn's Portfolio">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="icon/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon/favicon-16x16.png">
+        <link rel="manifest" href="icon/favicon/site.webmanifest">
+        <link rel="mask-icon" href="icon/favicon/safari-pinned-tab.svg" color="#2d89ef">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#2d89ef">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Poppins:wght@200;400&family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="utility.css">
+        <link rel="stylesheet" href="loading.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="proj.css">
+        <link rel="stylesheet" href="about.css">
+        <link rel="stylesheet" href="contact.css">
+        <link rel="stylesheet" href="footer.css">
     </head>
-    <body>
-        
-        <header class="base-center v-center column-gap">
-            <label class="icon" for="p0" onclick="window.location='#landing-page';">
-                <img src="/icon/logo_white.svg" alt="AT logo">
-            </label>
-            <h1 class="title margin-0 fs24">Project Showcase</h1>
-            <input class="nav-toggle" id="nav-toggle" type="checkbox">
-            <label class="push nav-toggle-label base-center v-center" for="nav-toggle">
-                <svg viewbox="0 0 40 40" width="40px">
-                    <rect class="top" width="40" height="4" rx="2" y="6"></rect>
-                    <rect class="middle" width="40" height="4" rx="2" y="18"></rect>
-                    <rect class="bottom" width="40" height="4" rx="2" y="30"></rect>
-                </svg>
-            </label>
-            <nav class="push">
-                <ul class="base-center h-center v-center">
-                    <li>
-                        <input class="page-radio" type="radio" id="p0" name="page">
-                        <label class="page-label" for="p0" onclick="window.location='#landing-page';">My Work</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p1" name="page">
-                        <label class="page-label" for="p1" onclick="window.location='#circle-page';">Circle Serenity</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p2" name="page">
-                        <label class="page-label" for="p2" onclick="window.location='#chess-page';">Chess AI</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p3" name="page">
-                        <label class="page-label" for="p3" onclick="window.location='#landing-page';">Proj 3</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p4" name="page">
-                        <label class="page-label" for="p4" onclick="window.location='#landing-page';">Proj 4</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p5" name="page">
-                        <label class="page-label" for="p5" onclick="window.location='#landing-page';">Proj 5</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p6" name="page">
-                        <label class="page-label" for="p6" onclick="window.location='#landing-page';">Proj 6</label>
-                    </li>
-                    <li>
-                        <input class="page-radio" type="radio" id="p7" name="page">
-                        <label class="page-label" for="p7" onclick="window.location='#contact-page';">Contact</label>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <section class="landing-page" id="landing-page">
-            <div class="overflow-y">
-                <div class="banner base-center h-center">
-                    <h2>Alwyn</h2>
-                    <h3>// Side Project Documentation</h3>
-                </div>
-                <div class="landing-page-content base-center v-center h-center column-gap-16 row-gap-16">
-                    <label for="p1" id="c1" class="content" onclick="window.location='#circle-page';">
-                        <div class="icon">
-                            <img src="/assests/circle-white.svg" alt="circle-white">
-                        </div>
-                        <h2 class="margin-0">Circle Serenity</h2>
-                        <div>// Project 1</div>
-                    </label>
-                    <label for="p2" id="c2" class="content" onclick="window.location='#chess-page';">
-                        <div class="icon">
-                            <img src="/assests/chess-white.svg" alt="chess-white">
-                        </div>
-                        <h2 class="margin-0">Chess AI</h2>
-                        <div>// Project 2</div>
-                    </label>
-                    <label for="p3" id="c3" class="content" onclick="window.location='#landing-page';">
-                        <div class="icon"></div>
-                        <h2 class="margin-0">Coming Soon</h2>
-                        <div>// Project 3</div>
-                    </label>
-                    <label for="p4" id="c4" class="content" onclick="window.location='#landing-page';">
-                        <div class="icon"></div>
-                        <h2 class="margin-0">Coming Soon</h2>
-                        <div>// Project 4</div>
-                    </label>
-                    <label for="p5" id="c5" class="content" onclick="window.location='#landing-page';">
-                        <div class="icon"></div>
-                        <h2 class="margin-0">Coming Soon</h2>
-                        <div>// Project 5</div>
-                    </label>
-                    <label for="p6" id="c6" class="content" onclick="window.location='#landing-page';">
-                        <div class="icon"></div>
-                        <h2 class="margin-0">Coming Soon</h2>
-                        <div>// Project 6</div>
-                    </label>
+    <body class="disableScroll">
+        <div class="overlay loading-screen grid-centre" id="loading-screen">
+            <div class="grid">
+                <img src="/icon/logo_white.svg" height="64px">
+                <div class="loading-bar">
+                    <div class="loading-bar-shine"></div>
                 </div>
             </div>
-        </section>
-
-        <section class="circle-page" id="circle-page">
-            <div class="overflow-y">
-                <div class="banner base-center h-center">
+        </div>
+        <div id="nav-bar" class="card">
+            <input id ="home" type="radio" name="pages" value="home"/>
+            <label for="home" onclick="(() => {window.location.hash = 'home';})()">Home</label>
+            <input id ="proj" type="radio" name="pages" value="proj"/>
+            <label for="proj" onclick="(() => {window.location.hash = 'proj';})()">Projects</label>
+            <input id ="abou" type="radio" name="pages" value="abou"/>
+            <label for="abou" onclick="(() => {window.location.hash = 'abou';})()">About</label>
+            <input id ="cont" type="radio" name="pages" value="cont"/>
+            <label for="cont" onclick="(() => {window.location.hash = 'cont';})()">Contact</label>
+            <div id="sub-nav-bar" class="card">
+                <input id ="fpga" type="radio" name="pages" value="fpga"/>
+                <label for="fpga" onclick="(() => {window.location.hash = 'fpga';})()">FPGA Retro Console</label>
+                <input id ="ttc" type="radio" name="pages" value="ttc"/>
+                <label for="ttc" onclick="(() => {window.location.hash = 'ttc';})()">TTC Navigator</label>
+                <input id ="num" type="radio" name="pages" value="num"/>
+                <label for="num" onclick="(() => {window.location.hash = 'num';})()">Numpad Keyboard</label>
+                <input id ="dyn" type="radio" name="pages" value="dyn"/>
+                <label for="dyn" onclick="(() => {window.location.hash = 'dyn';})()">Dynamic Paddle</label>
+                <input id ="cir" type="radio" name="pages" value="cir"/>
+                <label for="cir" onclick="(() => {window.location.hash = 'cir';})()">Circle Serenity</label>
+            </div>
+        </div>
+        <section id="content">
+            <section id="homeSect"><!--hero section-->
+                <div id="hero">
+                    <div id="desc">
+                        <h1>Alwyn Tong's Personal Portfolio</h1>
+                        <h2>Hello!</h2>
+                        <h3>I am Alwyn Tong, a&nbsp</h3><div id="scrollDescription"><!--weird formatting to avoid whitespace-->
+                            <input id ="descriptionCheckBox" type="checkbox">
+                            <label for="descriptionCheckBox"></label>
+                            <h3>computer engineering student.</h3>
+                            <h3>electrical engineering student.</h3>
+                            <h3>game developer.</h3>
+                            <h3>UI/UX designer.</h3>
+                            <h3>programmer.</h3>
+                            <h3>tinkerer.</h3>
+                            <h3>creator.</h3>
+                            <h3>robotics designer.</h3>
+                            <h3>photographer.</h3>
+                            <h3>lifeguard.</h3>
+                            <h3>computer engineering student.</h3>
+                            <h3>electrical engineering student.</h3>
+                            <h3>game developer.</h3>
+                            <h3>UI/UX designer.</h3>
+                            <h3>programmer.</h3>
+                            <h3>tinkerer.</h3>
+                            <h3>creator.</h3>
+                            <h3>robotics designer.</h3>
+                            <h3>photographer.</h3>
+                            <h3>lifeguard.</h3>
+                        </div>
+                        <div id="description">
+                            <p>Aspiring Computer Engineering student at the University of Toronto, recognized on the Dean's Honour List with a 3.86 GPA. Enthusiastic about robotics, software development, and UI/UX design. Currently based in Vancouver and Toronto, adept at leading impactful projects while excelling in lifeguarding and swim instruction roles, prioritizing safety and mentorship.</p>
+                            <a class="link-card" id="descriptionClick" href="#proj">
+                                Project Documentation and Details
+                            </a>
+                        </div>
+                    </div>
+                    <div id="hook">
+                        <a href="#ttc_navigator"><img class="projectIcon dropShadow" src="/project-assests/TTC Navigator/TTC NAVIGATOR.svg" style="height: 5rem;"></a>
+                        <a href="#numpad_keyboard"><img class="projectIcon dropShadow" src="/project-assests/Numpad Keyboard/NUMPAD KEYBOARD.svg" style="height: 5rem;"></a>
+                        <a href="#dynamic_paddle"><img class="projectIcon dropShadow" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg" style="height: 5rem;"></a>
+                        <a href="#circle_serenity"><img class="projectIcon dropShadow" src="/project-assests/Circle Serenity/CIRCLE SERENITY.svg" style="height: 5rem;"></a>
+                    </div>
+                </div>
+            </section>
+            <section id="projSect">
+                <a class="projectCard" href="#fpga">
+                    <img class="projectIcon dropShadow" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg" style="height: max(30%, 5rem);">
+                    <h2>FPGA Retro Console</h2>
+                    <h3>2023/12/20</h3>
+                    <h4>Tap For More Details</h4>
+                </a>
+                <a class="projectCard" href="#ttc">
+                    <img class="projectIcon dropShadow" src="/project-assests/TTC Navigator/TTC NAVIGATOR.svg" style="height: max(30%, 5rem);">
+                    <h2>TTC Navigator</h2>
+                    <h3>2023/10/25</h3>
+                    <h4>Tap For More Details</h4>
+                </a>
+                <a class="projectCard" href="#num">
+                    <img class="projectIcon dropShadow" src="/project-assests/Numpad Keyboard/NUMPAD KEYBOARD.svg" style="height: max(30%, 5rem);">
+                    <h2>Numpad Keyboard</h2>
+                    <h3>2023/08/16</h3>
+                    <h4>Tap For More Details</h4>
+                </a>
+                <a class="projectCard" href="#dyn">
+                    <img class="projectIcon dropShadow" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg" style="height: max(30%, 5rem);">
+                    <h2>Dynamic Paddle</h2>
+                    <h3>2023/06/25</h3>
+                    <h4>Tap For More Details</h4>
+                </a>
+                <a class="projectCard" style="background-image: url('/project-assests/Circle Serenity/Circle Serenity.png');" href="#cir">
+                    <img class="projectIcon dropShadow" src="/project-assests/Circle Serenity/CIRCLE SERENITY.svg" style="height: max(30%, 5rem);">
                     <h2>Circle Serenity</h2>
-                    <h3>// First official game focused on popping circles while being relaxing</h3>
+                    <h3>2023/01/21</h3>
+                    <h4>Tap For More Details</h4>
+                </a>
+                <!-- <a class="projectCard"></a> -->
+                <!-- previous projects, 9594S youtube -->
+            </section>
+            <section id="abouSect">
+                <h2>About Alwyn Tong</h2>
+                <p><i>Greetings! I'm Alwyn, a driven Computer Engineering student at the University of Toronto, exploring the realms of technology and innovation.</i></p>
+                <h3>Skills</h3>
+                <p>My expertise lies in:</p>
+                <div class="flex-centre">
+                    <div class="card">
+                        <h4>Programming</h4>
+                        <p>Proficient in C++, Java, Dart, Verilog, HTML, CSS, and Javascript, with a knack for crafting efficient code and innovative solutions. No matter the language, problem solving prevails.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Project Management</h4>
+                        <p>Skilled in leading diverse teams, honed through successful endeavors in robotics, app development, PCB design, and game programming.</p>
+                    </div>
+                    <div class="card">
+                        <h4>UI/UX Design</h4>
+                        <p>Proficient in Figma, Flutter and web design, transforming ideas into intuitive and user-friendly designs. Products that are eye catching and satisfying to use.</p>
+                    </div>
                 </div>
-                <div class="description">
-                    Circle Serenity is my first official game. The premise is to pop circles as quick as possible to earn as many points as possible. Make sure to keep the number of circles to a minimum to avoid losing the game. You can find many settings to customize your experience, like the colour theme, cursor, music and much more.
+                <h3>Hobbies & Interests</h3>
+                <p>When not immersed in code or circuits, you'll find me:</p>
+                <div class="flex-centre">
+                    <div class="card">
+                        <h4>Exploring Art</h4>
+                        <p>Whether it is pixel art, photography or origami, I enjoy creating intricate pieces that blend creativity and technology to express unique stories.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Researching and Learning</h4>
+                        <p>Delving into a myriad of YouTube documentaries and internet resources, constantly expanding my knowledge across various domains.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Swimming Enthusiast</h4>
+                        <p>Embracing the tranquility of the water, I find solace and inspiration in swimming, an activity which brings peace and balance to my life.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Embarking on Adventures</h4>
+                        <p>From bouldering to exploring the great outdoors, I seek the calm and grand nature of the wilderness from mountains to lakes.</p>
+                    </div>
                 </div>
-                <iframe frameborder="0" src="https://itch.io/embed/1886880?dark=true" width="552" height="167"><a href="https://alwynt.itch.io/circle-serenity">Circle Serenity by alwynT</a></iframe>
-            </div>
+            </section>
+            <section id="contSect"><!--contact section-->
+                <div id="contacts">
+                    <div id="contactDescription">
+                        <h2>Contact Alwyn Tong</h2>
+                        <p>Feel free to reach out to me if you have any requests or would simply like to chat.</p>
+                    </div>
+                    <!-- linkedin -->
+                    <a class="contactCard card" href="https://www.linkedin.com/in/alwyn-tong/">
+                        <img class="contactIcon dropShadow" src="/contact-assests/linkedin-logo-black.svg" style="height: 4rem;">
+                        <div class="contactText">
+                            <h2>LinkedIn</h2>
+                            <p>@alwyn-tong</p>
+                        </div>
+                    </a>
+                    <!-- github -->
+                    <a class="contactCard card" href="https://github.com/alwyn-t">
+                        <img class="contactIcon dropShadow" src="/contact-assests/github-mark-black.svg" style="height: 4rem;">
+                        <div class="contactText">
+                            <h2>Github</h2>
+                            <p>@alwyn-t</p>
+                        </div>
+                    </a>
+                    <!-- itch.io -->
+                    <a class="contactCard card" href="https://alwynt.itch.io">
+                        <img class="contactIcon dropShadow" src="/contact-assests/itchio-logo-textless-black.svg" style="height: 4rem;">
+                        <div class="contactText">
+                            <h2>Itch.io</h2>
+                            <p>@alwynT</p>
+                        </div>
+                    </a>
+                    <!-- youtube -->
+                    <a class="contactCard card" href="https://www.youtube.com/@alwyntong">
+                        <img class="contactIcon dropShadow" src="/contact-assests/yt_icon_black.svg" style="height: 4rem;">
+                        <div class="contactText">
+                            <h2>Youtube</h2>
+                            <p>@alwyntong</p>
+                        </div>
+                    </a>
+                    <!-- instagram -->
+                    <a class="contactCard card" href="https://www.instagram.com/alwyn.archives">
+                        <img class="contactIcon dropShadow" src="/contact-assests/instagram-glyph-black.svg" style="height: 4rem;">
+                        <div class="contactText">
+                            <h2>Instagram</h2>
+                            <p>@alwyn.archives</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section id="fpgaSect">
+                <div class="photoCard card">
+                    <div class="photoSlider">
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide"></div>
+                    </div>
+                </div>
+                <div class="projTextArea">
+                    <h3>FPGA Retro Console</h3>
+                    <p>Retro console built on the the DE1-SoC FPGA board hardware. This project simulates retro style games using hardware rendering and computing like early consoles. This includes a ROM memory for games, a sprite system, a hardware physics engine, SVGA output, double video buffering and much more. Games included are Pong and Dino (Chrome's offline dino game).</p>
+                    <h3>Features</h3>
+                    <ul>
+                        <li>ROM memory for hard assests like the ASCI character set.</li>
+                        <li>Sprite system with a 15 bit RGB value and 1 bit alpha value allowing for overlapping of sprites.</li>
+                        <li>A simple and a complex hardware based physics engine for low latency and realistic gameplay.</li>
+                        <li>SVGA protocol output with full 800x600 resolution at 60Hz.</li>
+                        <li>Double video buffering to prevent screen tearing and to give a cleaner output signal.</li>
+                        <li>SDRAM to give enough capacity for the double video buffering at 800x600, 60Hz resolution.</li>
+                        <li>PS2 keyboard inputs for user control.</li>
+                    </ul>
+                    <h3>Development Skills</h3>
+                    <ul>
+                        <li>Hardware design.</li>
+                        <li>Game design and optimization.</li>
+                        <li>Various protocols and standards.</li>
+                    </ul>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Quartus Prime.</li>
+                        <li>Verilog.</li>
+                        <li>DE1-SoC board.</li>
+                    </ul>
+                    <h3>More Details</h3>
+                    <a class="link-card" href="https://github.com/alwyn-t/Retro-Graphics-and-Games-on-De1-SoC-FPGA" target="_blank">Github Repository </a>
+                </div>
+            </section>
+            <section id="ttcSect">
+                <div class="photoCard card">
+                    <div class="photoSlider">
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide"></div>
+                        <div class="photoSlide"></div>
+                        <div class="photoSlide"></div>
+                    </div>
+                </div>
+                <div class="projTextArea">
+                    <h3>TTC Navigator</h3>
+                    <p>Mobile transit app dedicated to the Toronto Transit Commission (TTC) focused on displaying information about station connections between different routes and stations on bus, streetcar and subway routes. This app does not try to compete with existing transit apps like Apple Maps and Google Maps but rather is intended for transportation enthusiasts who want to see how the system is connected. </p>
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Station search feature to find nearby stations, the routes that operate through that stations and the next 3 vehicles for each route in all directions.</li>
+                        <li>Station map feature displays all stations and the appropriate vehicle type(s).</li>
+                        <li>Route search feature to look up all bus, streetcar and subway routes with all stations that are found on the route.</li>
+                        <li>Settings feature allows for a ton of customization to the behaviour and visual aesthetic.</li>
+                    </ul>
+                    <h3>Development Skills</h3>
+                    <ul>
+                        <li>Multi-threaded Programming.</li>
+                        <li>API networking.</li>
+                        <li>Graphics design (UI/UX).</li>
+                    </ul>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Dart programming language.</li>
+                        <li>Flutter framework.</li>
+                        <li>OpenStreetMap API.</li>
+                        <li>TTC API.</li>
+                        <li>Unqimo API.</li>
+                    </ul>
+                </div>
+                <!-- left side has photos of the product (sticky and may switch to other images when scrolling), right side has the title+subtitle (and icon to the left of the title) and three points and the button for either the github or active page -->
+                <!--  -->
+            </section>
+            <section id="numSect">
+                <div class="photoCard card">
+                    <div class="photoSlider">
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide"></div>
+                    </div>
+                </div>
+                <div class="projTextArea">
+                    <h3>Numpad Keyboard</h3>
+                    <p>The Numpad Keyboard project is a mechanical numpad and multifunction keyboard for the purpose of learning the basics of PCB design and soldering. With VIA and QMK capabilities, this numpad can be used for any inputs like a macro pad, and includes flexibility for different layouts with the hotswap sockets.</p>
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Multiple layout options using a stack 2U and 2x1U keys.</li>
+                        <li>Reprogrammable ATmega32uA microchip using QMK and VIA software.</li>
+                        <li>Kailh hotswap sockets allow for quick interchanging of mechanical key switches.</li>
+                    </ul>
+                    <h3>Development Skills</h3>
+                    <ul>
+                        <li>Circuit design.</li>
+                        <li>User input analysis.</li>
+                        <li>Board assembly including soldering.</li>
+                    </ul>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Subset of KiCad tools.</li>
+                        <li>Soldering equipment.</li>
+                        <li>VIA and QMK.</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="dynSect">
+                <div class="photoCard card">
+                    <div class="photoSlider">
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide"></div>
+                    </div>
+                </div>
+                <div class="projTextArea">
+                    <h3>Dynamic Paddle</h3>
+                    <p>A short skill based game, created as a challenge to build a game using on HTML, CSS and Javascript. Keep the ball from falling below the screen using only a paddle that dynamically moves as you move your cursor.</p>
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Realistic physics coupled with the dynamic paddle creates fast paced gameplay which is challenging.</li>
+                        <li>Simplistic styling allows for ease of use while looking aesthetically pleasing.</li>
+                        <li>Frame rate compensation ensures that weaker computer systems can have a similar experience.</li>
+                        <li>Lost focus detection makes sure that users who drag the cursor offscreen or switch tabs, the game is paused.</li>
+                    </ul>
+                    <h3>Development Skills</h3>
+                    <ul>
+                        <li>Game design.</li>
+                        <li>Web design, HTML and CSS.</li>
+                        <li>Javascript programming language.</li>
+                        <li>Graphics design (UI/UX).</li>
+                    </ul>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate">HTML5 Boilerplate VSCode extension</a> (Quick set up for initial boilerplate code).</li>
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server VSCode extension</a> (Allows easy development including hot reloading, and various browser support to ensure continuity).</li>
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion">IntelliSense for CSS class names in HTML VSCode extension</a> (Easily identify and locate the class names code).</li>
+                    </ul>
+                    <h3>More Details</h3>
+                    <a class="link-card" href="https://alwyn-t.github.io/Dynamic_Paddle/" target="_blank">Dynamic Paddle Webpage </a>
+                </div>
+            </section>
+            <section id="cirSect">
+                <div class="photoCard card">
+                    <div class="photoSlider">
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide">
+                            <div class="windowOverlay">
+                                <img class="windowOverlay" src="/project-assests/Circle Serenity/Circle Serenity.png">
+                            </div>
+                        </div>
+                        <div class="photoSlide"></div>
+                    </div>
+                </div>
+                <div class="projTextArea">
+                    <h3>Circle Serenity</h3>
+                    <p>Circle Serenity is a short and relaxing game. The main objective is: pop circles for as long as possible. In combination with the in depth colour theme customizablility, and the sound effect and music engine; Circle Serenity provides a zen-like focus and stress-free enjoyment.</p>
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Simple gameplay loop allows for an intuitive and simple learning curve.</li>
+                        <li>Colour themes provides a comfortable viewing experience while being aesthetically pleasing.</li>
+                        <li>Lofi music creates a relaxing atmosphere that is both refreshing and calming.</li>
+                        <li>Window focus detection and lag detection prevents unintentional interference from gameplay.</li>
+                    </ul>
+                    <h3>Development Skills</h3>
+                    <ul>
+                        <li>Gameplay design principles.</li>
+                        <li>UI/UX design principles.</li>
+                    </ul>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Java with the Processing sketchbook.</li>
+                        <li>UI design with Figma.</li>
+                    </ul>
+                    <h3>More Details</h3>
+                    <a class="link-card" href="https://alwynt.itch.io/circle-serenity" target="_blank">Itch.io Page </a>
+                </div>
+            </section>
         </section>
-
-        <section class="chess-page" id="chess-page">
-            <div class="overflow-y">
-                <div class="banner base-center h-center">
-                    <h2>Chess AI</h2>
-                    <h3>// Chess game engine and AI project</h3>
-                </div>
-                <div class="description">
-                    This Chess AI is a joint partner project currently underdevelopment. The goal is to create an AI capable of ~2500 ELO on chess.com; This requires a chess game engine to be built to support our development of an AI. Additional information will come.
-                </div>
-            </div>
-        </section>
-
-        <footer class="base-center">
+        <section id="footSect">
             <div>
-                Created by Alwyn
-                <a href="https://github.com/alwyn-t/alwyn-t.github.io/blob/main/LICENSE" target="_blank"> Licensed under AGPL-3.0 license</a>
+                <h4>Quick Access</h4>
+                <a href="#home">Home</a>
+                <a href="#proj">Projects</a>
+                <a href="#abou">About</a>
+                <a href="#cont">Contact</a>
             </div>
-        </footer>
-        <section class="contact-page" id="contact-page">
-            <div class="overflow-y">
-                <div class="contact-page-content base-center v-center h-center column-gap row-gap">
-                    <div class="content">
-                        <a class="icon" href="https://github.com/alwyn-t" target="_blank">
-                            <img src="/assests/github-mark-white.svg" alt="github-mark-white">
-                        </a>
-                        <h2 class="margin-0">Github Profile</h2>
-                        <a href="https://github.com/alwyn-t" target="_blank">@alwyn-t</a>
-                    </div>
-                    <div class="content">
-                        <a class="icon" href="https://alwynt.itch.io" target="_blank">
-                            <img src="/assests/itchio-logo-textless-white.svg" alt="itchio-logo-textless-white">
-                        </a>
-                        <h2 class="margin-0">Itch.io Profile</h2>
-                        <a href="https://alwynt.itch.io" target="_blank">@alwynT</a>
-                    </div>
-                    <div class="content">
-                        <a class="icon" href="https://www.instagram.com/alwyn.archives" target="_blank">
-                            <img src="/assests/Instagram_Glyph_White.svg" alt="Instagram_Glyph_White">
-                        </a>
-                        <h2 class="margin-0">Instagram Profile</h2>
-                        <a href="https://www.instagram.com/alwyn.archives" target="_blank">@alwyn.archives</a>
-                    </div>
-                    <div class="content">
-                        <a class="icon" href="https://www.youtube.com/@9594S" target="_blank">
-                            <img src="/assests/yt_icon_mono_dark.png" alt="yt_icon_mono_dark" style="height: auto; top: 50%; transform: translateY(-50%); -ms-transform: translateY(-50%);">
-                        </a>
-                        <h2 class="margin-0">Youtube Profile</h2>
-                        <a href="https://www.youtube.com/@9594S" target="_blank">@9594S</a>
-                    </div>
-                    <div class="content">
-                        <a class="icon" href="https://www.youtube.com/@alwyntong" target="_blank">
-                            <img src="/assests/yt_icon_mono_dark.png" alt="yt_icon_mono_dark" style="height: auto; top: 50%; transform: translateY(-50%); -ms-transform: translateY(-50%);">
-                        </a>
-                        <h2 class="margin-0">Youtube Profile</h2>
-                        <a href="https://www.youtube.com/@alwyntong" target="_blank">@alwyntong</a>
-                    </div>
-                </div>
+            <div>
+                <h4>Projects</h4>
+                <a href="#fpga">FPGA Retro Console</a>
+                <a href="#ttc">TTC Navigator</a>
+                <a href="#num">Numpad Keyboard</a>
+                <a href="#dyn">Dynamic Paddle</a>
+                <a href="#cir">Circle Serenity</a>
+            </div>
+            <div>
+                <h4>Copyright</h4>
+                <p>This personal portfolio is under the <a href="https://github.com/alwyn-t/alwyn-t.github.io/blob/main/LICENSE" target="_blank">AGPL-3.0 license</a>.</p>
+                <p>&copy 2023-24 Alwyn Tong</p>
             </div>
         </section>
 
@@ -193,6 +467,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
+        <script src="utility.js"></script>
+        <script src="loading.js"></script>
+        <script src="transitions.js"></script>
+        <script src="scroll.js" async defer></script>
         <script src="script.js" async defer></script>
     </body>
 </html>

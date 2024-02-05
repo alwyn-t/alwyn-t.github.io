@@ -1,0 +1,207 @@
+.projectCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px gray;
+}
+
+.projectCard {
+    border-radius: 16px;
+    /* height: clamp(10rem, 90%, 256px);
+    width: clamp(20rem, 80%, 512px); */
+    /* height: clamp(10rem, 15em, 256px); */
+    /* height: 15em; */
+    width: 32em;
+    max-width: 100%;
+    aspect-ratio: 2;
+    transition-duration: 0.5s;
+    background-size: cover;
+    position: relative;
+    text-align: right;
+    cursor: pointer;
+}
+.projectCard::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 16px;
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.5s;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.85) max(20%, 6rem), transparent max(20%, 6rem));
+}
+.projectCard:hover {
+    box-shadow: 0px 0px 8px black;
+}
+.projectCard:hover::before {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.90) max(20%, 6rem), rgba(255, 255, 255, 0.10) max(20%, 6rem));
+}
+
+.projectCard .projectIcon {
+    position: relative;
+    right: 100%;
+    /* transform: translateX(150%);
+    top: -webkit-calc(100% - max(20%, 6rem) - max(30%, 5rem) / 2);
+    top: -moz-calc(100% - max(20%, 6rem) - max(30%, 5rem) / 2);
+    top: calc(100% - max(20%, 6rem) - max(30%, 5rem) / 2); */
+    top: 0%;
+    border-radius: 22.767871093%;
+    transform: translate3d(150%, 150%, 0);
+}
+
+.projectCard h2 {
+    position: absolute;
+    right: 1rem;
+    top: calc(100% - max(20%, 6rem));
+    color: white;
+    /*mix-blend-mode: color-dodge;*/ /* difference? */
+    mix-blend-mode: difference; /* difference? */
+}
+
+.projectCard h3 {
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    color: white;
+    /*mix-blend-mode: color-dodge;*/ /* difference? */
+    mix-blend-mode: difference; /* difference? */
+}
+
+.projectCard h4 {
+    position: absolute;
+    left: 1.33rem;
+    bottom: 0;
+    color: gray;
+    /*mix-blend-mode: color-dodge;*/ /* difference? */
+    mix-blend-mode: difference; /* difference? */
+}
+
+#projSect {
+    display: flex;
+    align-items: center; /* vertical centre */
+    justify-content: center; /* horizontal centre */
+    flex-wrap: wrap;
+    row-gap: max(16px, 2%);
+    column-gap: max(16px, 2%);
+}
+
+#ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect {
+    padding-top: calc(16px + 8px + 32px + 8px + 16px + 48px);
+    min-height: calc(100% - 16px - 8px - 32px - 8px - 16px - 16px - 48px);
+    /* height: fit-content; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    #ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect {
+        flex-direction: row;
+    }
+}
+
+.photoCard {
+    flex: 3;
+    position: static;
+    height: calc(100vh - 16px - 8px - 32px - 8px - 16px - 16px - 48px - 32px);
+    min-height: 320px;
+    padding: 16px;
+
+    pointer-events: none;
+}
+
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    .photoCard {
+        position: sticky;
+        top: calc(16px + 8px + 32px + 8px + 16px + 48px);
+    }
+}
+/* have a window overlay (round corner, top bar and red, yellow, green circles) */
+.photoCard::after, .photoCard::before {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+
+    content: "←";
+    background-color: rgb(47, 63, 168);
+    padding: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px gray;
+    pointer-events: all;
+
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.photoCard::before {
+    left: 100%;
+    transform: translate(-200%, -50%);
+    z-index: 1;
+
+    content: "→";
+}
+.photoCard .photoSlider {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    /* overflow-x: auto; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.photoCard .photoSlider .photoSlide {
+    height: 100%;
+    width: 75%;
+    padding-inline: 12.5%;
+    max-height: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.photoCard img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    object-fit: contain;
+}
+
+.projTextArea {
+    flex: 1;
+    /* height: 150vh; */
+    padding: 16px;
+}
+
+.windowOverlay {
+    height: fit-content;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    background-color: lightgray;
+    position: relative;
+}
+.windowOverlay::after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    top: 0;
+    width: calc(100% - 8px);
+    height: 32px;
+
+    display: flex;
+    content: "✕ _ □";
+    color: white;
+    background-color: black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    padding-inline-start: 8px;
+    align-items: center;
+}
