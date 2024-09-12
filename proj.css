@@ -1,10 +1,10 @@
 .projectCard {
-    background-color: white;
+    background-color: light-dark(var(--w), var(--g4));
     border-radius: 8px;
     box-shadow: 0px 0px 8px gray;
 }
 
-.projectCard {
+.projectCard, .projectCard-border {
     border-radius: 16px;
     /* height: clamp(10rem, 90%, 256px);
     width: clamp(20rem, 80%, 512px); */
@@ -20,6 +20,10 @@
     text-align: right;
     cursor: pointer;
 }
+.projectCard-border::after {
+    /* Fix for scrolling to not have over barring glow */
+    filter: blur(1rem);
+}
 .projectCard::before {
     content: '';
     position: absolute;
@@ -31,8 +35,9 @@
     transition-duration: 0.5s;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.85) max(20%, 6rem), transparent max(20%, 6rem));
 }
-.projectCard:hover {
+.projectCard:hover, .projectCard-border:hover {
     box-shadow: 0px 0px 8px black;
+    scale: 105%;
 }
 .projectCard:hover::before {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.90) max(20%, 6rem), rgba(255, 255, 255, 0.10) max(20%, 6rem));
@@ -75,6 +80,7 @@
     color: gray;
     /*mix-blend-mode: color-dodge;*/ /* difference? */
     mix-blend-mode: difference; /* difference? */
+    text-align: left;
 }
 
 #projSect {
@@ -86,9 +92,11 @@
     column-gap: max(16px, 2%);
 }
 
-#ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect {
-    padding-top: calc(16px + 8px + 32px + 8px + 16px + 48px);
-    min-height: calc(100% - 16px - 8px - 32px - 8px - 16px - 16px - 48px);
+#ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect, #niosSect, #mediSect {
+    /* padding-top: calc(16px + 8px + 32px + 8px + 16px + 48px);
+    min-height: calc(100% - 16px - 8px - 32px - 8px - 16px - 16px - 48px); */
+    padding-block: 16px;
+    min-height: calc(-16px + 100dvh - 16px);
     /* height: fit-content; */
 
     display: flex;
@@ -96,15 +104,16 @@
     align-items: start;
 }
 @media (min-width:48rem)  { /* ensure scrollDescription has enough space */
-    #ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect {
-        flex-direction: row;
+    #ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect, #niosSect, #mediSect {
+        /* flex-direction: row; */
     }
 }
 
 .photoCard {
     flex: 3;
     position: sticky;
-    height: calc(100vh - 16px - 8px - 32px - 8px - 16px - 16px - 48px - 32px);
+    /* height: calc(100vh - 16px - 8px - 32px - 8px - 16px - 16px - 48px - 32px); */
+    height: calc(-16px + 100dvh - 16px - 32px);
     min-height: 320px;
     padding: 16px;
     width: calc(100% - 32px);
@@ -213,4 +222,287 @@
 
     padding-inline-start: 8px;
     align-items: center;
+}
+
+/* Scrolling Hero Project Cards */
+
+#projCardHolder {
+    position: relative;
+    /* position: absolute;
+    top: max(50dvh, calc(450px + 32px));
+    left: max(32px, 8vw);
+    z-index: 9; */
+
+    /* height: max(calc(50dvh - 32px), calc(84px + 2 * 4rem)); */
+    /* height: calc(450px);
+    width: calc(100% - 2 * max(32px, 8vw)); */
+    height: inherit;
+    width: 100%;
+    /* border-radius: 16px; */
+
+    transition-duration: 0.5s;
+    transition-property: opacity;
+
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 16px
+    );
+}
+/* @supports (mask-image: linear-gradient()) {
+    #projCardHolder {
+        mask-image: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0),
+            rgba(0,0,0,1) 16px
+        );
+    }
+} */
+/* @media (min-width:48rem) {
+    #projCardHolder {
+        top: 32px;
+        left: 50%;
+
+        height: max(calc(100% - 32px - 32px), 464px);
+        width: calc(50% - max(32px, 8vw));
+    }
+} */
+@media (min-width:48rem)  { /* ensure scrollDescription has enough space */
+    #projCardHolder {
+        height: 100%;
+        mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 16px);
+    }
+}
+#projCardHolder::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: "";
+    pointer-events: none;
+}
+#upperProjCardHolder,
+#centreProjCardHolder,
+#lowerProjCardHolder {
+    position: absolute;
+    top: calc(50% - 100px);
+    right: calc(50% - 160px);
+}
+/* 400px is picked to avoid overlap */
+#upperProjCardHolder {
+    top: calc(50% - 100px - 400px);
+    /* top: calc(50dvh - 150px - 400px); */
+}
+#lowerProjCardHolder {
+    top: calc(50% - 100px + 400px);
+    /* top: calc(50dvh - 150px + 400px); */
+}
+#nav-drawer:has(#proj:checked) ~ #projCardHolder,
+#nav-drawer:has(#abou:checked) ~ #projCardHolder,
+#nav-drawer:has(#cont:checked) ~ #projCardHolder,
+#nav-drawer:has( #ttc:checked) ~ #projCardHolder,
+#nav-drawer:has( #num:checked) ~ #projCardHolder,
+#nav-drawer:has( #dyn:checked) ~ #projCardHolder,
+#nav-drawer:has( #cir:checked) ~ #projCardHolder,
+#nav-drawer:has(#fpga:checked) ~ #projCardHolder,
+#nav-drawer:has(#nios:checked) ~ #projCardHolder,
+#nav-drawer:has(#medi:checked) ~ #projCardHolder {
+    opacity: 0;
+    display: none;
+}
+.projCard, .blankProjCard {
+    position: absolute;
+    top: 100px;
+    right: 0;
+
+    border-radius: 16px;
+    height: 260px;
+    width: 360px;
+
+    animation-name: projCardScroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    /* transform: rotate3d(1, 2, 1, 192deg); */
+
+    transform-style: preserve-3d;
+    
+}
+.projCard:hover {
+    cursor: pointer; /* may need to move this to projCard > div */
+}
+/* #projCardHolder:has(#centreProjCardHolder .projCard:hover) * {
+    animation-direction: 0.5;
+} */
+.blankProjCard {
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+}
+.projCard {
+    /* background-color: lightgray; */
+    background-color: var(--g4);
+    box-shadow: inset 0px 0px 32px 8px light-dark(var(--w), var(--b));
+}
+.projCard > div {
+    border-radius: 16px;
+    height: 260px;
+    width: 360px;
+
+    background-color: grey;
+
+    animation-name: projCardRise;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: inherit;
+}
+.emptyProjCard > div { animation-name: none; cursor: not-allowed;}
+.delay0     { animation-delay: -0s; }
+.delay2_5   { animation-delay: -2.5s; }
+.delay5     { animation-delay: -5s; }
+.delay7_5   { animation-delay: -7.5s; }
+.delay10    { animation-delay: -10s; }
+.delay12_5  { animation-delay: -12.5s; }
+.delay15    { animation-delay: -15s; }
+.delay17_5  { animation-delay: -17.5s; }
+
+@keyframes projCardScroll {
+    /* cross over occurs at around 1400px width so limit it to 1400px * 0.75 = 1050px */
+    0% {
+        transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(50deg) rotateY(0deg) rotateZ(-40deg) translateX(0px) translateY(max(75dvw, 1400px)) translateZ(0px) skewX(0deg) skewY(0deg);
+    }
+    100% {
+        transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(50deg) rotateY(0deg) rotateZ(-40deg) translateX(0px) translateY(min(-75dvw, -1400px)) translateZ(0px) skewX(0deg) skewY(0deg);
+    }
+}
+@keyframes projCardRise {
+    0% {
+        transform: translateZ(0px);
+    }
+    45% {
+        transform: translateZ(0px);
+    }
+    50% {
+        transform: translateZ(40px);
+    }
+    55% {
+        transform: translateZ(0px);
+    }
+    100% {
+        transform: translateZ(0px);
+    }
+}
+
+.projCard .projectCard {
+    display: block;
+    /* z-index: 1; */
+
+    outline-color: black;
+    outline-width: 1px;
+    outline-style: solid;
+    
+    animation-name: projCardRise;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: inherit;
+}
+.projCard .projectCard:hover {
+    scale: 102.5%;
+}
+
+#nav-drawer:has( #cir:checked) ~ #projCardHolder {
+    opacity: 1;
+    display: inline;
+}
+#nav-drawer:has( #cir:checked) ~ #projCardHolder #centreProjCardHolder #cirProjCard {
+    animation-name: none;
+}
+
+#projCardHolder .projectIcon:hover {
+    box-shadow: 0px 0px 8px gray !important;
+    scale: 100% !important;
+}
+
+/* Project Page Styling */
+
+#content > section > h3 {
+    margin-block: 48px;
+
+    font-size: 64px;
+    line-height: 72px;
+    text-wrap: balance;
+}
+#content > section > h4 {
+    margin-block: 18px;
+
+    font-size: 32px;
+    line-height: 48px;
+    text-wrap: balance;
+}
+#content > section > h5 {
+    margin-block: 8px;
+
+    font-size: 20px;
+    line-height: 28px;
+    text-wrap: balance;
+    font-weight: 400;
+}
+#content > section > ul {
+    margin: 0;
+
+    padding-bottom: 32px;
+}
+#content > section > ul > li {
+    position: relative;
+
+    list-style: none;
+
+    font-size: 20px;
+    line-height: 28px;
+    text-wrap: balance;
+    font-weight: 400;
+}
+#content > section > ul > li::before {
+    position: absolute;
+    top: -2px;
+    right: 100%;
+
+    height: 28px;
+    width: 28px;
+
+    content: '';
+    /* content: url(icon/nav-drawer/Selected\ Arrow.svg); */
+
+    background-image: url(icon/nav-drawer/d_selected_arrow.svg);
+    /* background-repeat: no-repeat; */
+    background-size: 28px 28px;
+    /* object-fit: cover; */
+}
+
+#content > section > .photoGalleryOuter, #content > section > .listGalleryOuter {
+    margin-inline: auto;
+
+    width: 100%;
+}
+#content > section > .photoGalleryOuter {
+    height: 75vh;
+}
+#content > section > .listGalleryOuter {
+    height: fit-content;
+    max-height: 100rem;
+
+    overflow: hidden;
+
+    /* transition-duration: max-height 0.5s; */
+    transition-duration: 0.5s;
+}
+@media (min-width:48rem) {
+    #content > section > .listGalleryOuter {
+        overflow: visible;
+    }
 }

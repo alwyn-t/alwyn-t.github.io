@@ -4,6 +4,8 @@
 const element = (sel, par) => (par || document).querySelector(sel);
 
 function load(){
+    // run transition logic
+    onPageLoad();
     const elLoadingScreen = element("#loading-screen");
     const images = document.images;
     const imageCount = images.length;
@@ -29,8 +31,7 @@ function load(){
             // elLoadingScreen.style.visibility = 'hidden';
             document.body.classList.remove('disableScroll');
             clearInterval(animationController);
-            // run transition logic
-            onPageLoad();
+            // schedule transition logic
             addEventListener('hashchange', onPageLoad, false);
         })
     }

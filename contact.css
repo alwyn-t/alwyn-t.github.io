@@ -21,6 +21,9 @@
     transition-duration: 0.5s;
 }
 #contSect .contactCard:hover {
+    scale: 105%;
+}
+#contSect .contactCard:hover {
     box-shadow: 0px 0px 8px black;
 }
 #contSect .contactText {

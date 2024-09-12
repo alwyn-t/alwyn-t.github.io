@@ -1,0 +1,506 @@
+
+/* .photoGalleryOuter > .photoGallery {
+    border-radius: 16px;
+
+    height: calc(100% - 44px);
+    width: 100%;
+
+    display: inline-flex;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.photoGalleryOuter > .photoGallery, .listGalleryOuter > .listGallery {
+    width: 100%;
+
+    transition-duration: 0.5s;
+} */
+.photoGalleryOuter > .photoGallery, .listGalleryOuter > .listGallery {
+    border-radius: 16px;
+
+    height: calc(100% - 44px);
+    width: 100%;
+
+    display: inline-flex;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.photoGalleryOuter > .photoGallery:has(*:nth-child(2)),  .listGalleryOuter > .listGallery:has(*:nth-child(2)), 
+.photoGalleryOuter > .photoGallery:has(*:nth-child(2)), .listGalleryOuter > .listGallery:has(*:nth-child(2)) {
+    height: 100%;
+}
+@media (min-width:48rem) {
+    .listGalleryOuter > .listGallery {
+        overflow: visible;
+    }
+}
+.listGalleryOuter > .listGallery {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width:48rem) {
+    .listGalleryOuter > .listGallery {
+        display: inline-flex;
+        flex-direction: row;
+    }
+}
+.photoGalleryOuter > .photoGallery::-webkit-scrollbar, .listGalleryOuter > .listGallery::-webkit-scrollbar {
+    display: none;
+}
+.photoGalleryOuter > .photoGalleryLeftArrow,  .listGalleryOuter > .listGalleryLeftArrow, 
+.photoGalleryOuter > .photoGalleryRightArrow, .listGalleryOuter > .listGalleryRightArrow {
+    position: sticky;
+    right: 0px;
+    bottom: 16px;
+    float: right;
+
+    margin-top: 8px;
+    margin-left: 4px;
+    margin-right: 8px;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+
+    background-color: rgb(173, 173, 173);
+    overflow: hidden;
+    display: block;
+    cursor: pointer;
+    visibility: hidden;
+    transition-duration: opacity 0.5s;
+}
+.photoGalleryOuter > .photoGalleryLeftArrow:hover,  .listGalleryOuter > .listGalleryLeftArrow:hover, 
+.photoGalleryOuter > .photoGalleryRightArrow:hover, .listGalleryOuter > .listGalleryRightArrow:hover {
+    background-color: rgb(210, 210, 210);
+}
+.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
+.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after, 
+.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before, 
+.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before {
+    position: absolute;
+
+    height: 3px;
+    width: 12px;
+    display: block;
+    border-radius: 2px;
+
+    background-color: black;
+    content: '';
+}
+.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
+.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before  { left: 11px; }
+.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after, 
+.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before { right: 11px; }
+.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
+.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after  { top: 13px; }
+.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before, 
+.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before { bottom: 13px; }
+.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
+.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before { rotate: -45deg; }
+.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after, 
+.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before  { rotate: 45deg; }
+.photoGalleryOuter:has(> .photoGallery *:nth-child(2)) > .photoGalleryLeftArrow,  .listGalleryOuter:has(> .listGallery *:nth-child(2)) > .listGalleryLeftArrow, 
+.photoGalleryOuter:has(> .photoGallery *:nth-child(2)) > .photoGalleryRightArrow, .listGalleryOuter:has(> .listGallery *:nth-child(2)) > .listGalleryRightArrow {
+    visibility: visible;
+}
+.photoGallery * {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    display: block;
+    flex: 0 0 100%;
+}
+.listGallery * {
+    height: fit-content;
+    width: 100%;
+
+    display: block;
+}
+@media (min-width:48rem)  {
+    .listGallery * {
+        height: 100%;
+        width: fit-content;
+
+    }
+}
+.listGallery .toolIcon {
+    --tool_side_length: 4rem;
+
+    position: relative;
+
+    flex: 0 0 4rem;
+}
+.listGallery .toolIcon, .listGallery .toolIcon::before, .listGallery .toolIcon::after {
+    height: var(--tool_side_length);
+    width: var(--tool_side_length);
+
+    display: block;
+    background-size: cover;
+
+    content: '';
+    opacity: 1;
+    
+    transition-duration: 0.5s;
+}
+.listGallery .toolIcon::after { opacity: 0; }
+.listGallery .toolIcon::before, .listGallery .toolIcon::after, .listGallery .toolIcon * { position: absolute; }
+.listGallery .toolIcon .toolTip {
+    position: absolute;
+    z-index: 0;
+
+    bottom: 50%;
+    left: calc(50% + 40dvw);
+    transform: translate(-50%, 50%);
+
+    height: fit-content;
+    width: 40dvw;
+    padding: 0.8rem;
+
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: light-dark(var(--g4), var(--g1));
+    border-style: solid;
+
+    text-wrap: balance;
+    text-align: center;
+    
+    transition-duration: opacity 0.5s;
+}
+@media (min-width:48rem) {
+    .listGallery .toolIcon .toolTip {
+        /* left: 0; */
+        left: 50%;
+        bottom: calc(var(--tool_side_length) - 1rem);
+        transform: translate(-50%, 0);
+        /* transform: none; */
+
+        width: fit-content;
+    
+        text-wrap: balance;
+        text-align: center;
+    }
+
+    .listGallery .toolIcon::after { opacity: 1; }
+    .listGallery .toolIcon::before, .listGallery .toolIcon .toolTip { opacity: 0; }
+    .listGallery .toolIcon:hover::before, .listGallery .toolIcon:hover .toolTip { opacity: 1; }
+    .listGallery .toolIcon:hover::after { opacity: 0; }
+}
+.listGallery .toolIcon .toolTip::after {
+    position: absolute;
+    z-index: -1;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 8px;
+
+    display: block;
+    content: '';
+    filter: blur(4px);
+    /* background-color: rgba(230, 230, 230, 0.8); */
+    background-color: light-dark(var(--g1), var(--g4));
+}
+
+
+@media (prefers-color-scheme: light) {
+    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) {
+        --fig_o: url("/icon/tools/l_Figma_outline.svg");
+        --c_o:   url("/icon/tools/l_C_outline.svg");
+        --cpp_o: url("/icon/tools/l_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/l_ASM_outline.svg");
+        --mon_o: url("/icon/tools/l_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/l_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/l_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/l_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/l_Dart_outline.svg");
+        --flu_o: url("/icon/tools/l_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/l_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/l_TTC_outline.svg");
+        --umo_o: url("/icon/tools/l_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/l_Java_outline.svg");
+        --kic_o: url("/icon/tools/l_KiCad_outline.svg");
+        --via_o: url("/icon/tools/l_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/l_QMK_outline.svg");
+        --htm_o: url("/icon/tools/l_HTML_outline.svg");
+        --css_o: url("/icon/tools/l_CSS_outline.svg");
+        --js_o:  url("/icon/tools/l_JS_outline.svg");
+        --gtk_o: url("/icon/tools/l_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/l_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/l_Cairo_outline.svg");
+    }
+    :root:has(#nav-drawer #mode   #dark-mode:checked) {
+        --fig_o: url("/icon/tools/d_Figma_outline.svg");
+        --c_o:   url("/icon/tools/d_C_outline.svg");
+        --cpp_o: url("/icon/tools/d_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/d_ASM_outline.svg");
+        --mon_o: url("/icon/tools/d_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/d_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/d_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/d_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/d_Dart_outline.svg");
+        --flu_o: url("/icon/tools/d_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/d_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/d_TTC_outline.svg");
+        --umo_o: url("/icon/tools/d_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/d_Java_outline.svg");
+        --kic_o: url("/icon/tools/d_KiCad_outline.svg");
+        --via_o: url("/icon/tools/d_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/d_QMK_outline.svg");
+        --htm_o: url("/icon/tools/d_HTML_outline.svg");
+        --css_o: url("/icon/tools/d_CSS_outline.svg");
+        --js_o:  url("/icon/tools/d_JS_outline.svg");
+        --gtk_o: url("/icon/tools/d_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/d_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/d_Cairo_outline.svg");
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode   #dark-mode:checked) {
+        --fig_o: url("/icon/tools/d_Figma_outline.svg");
+        --c_o:   url("/icon/tools/d_C_outline.svg");
+        --cpp_o: url("/icon/tools/d_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/d_ASM_outline.svg");
+        --mon_o: url("/icon/tools/d_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/d_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/d_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/d_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/d_Dart_outline.svg");
+        --flu_o: url("/icon/tools/d_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/d_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/d_TTC_outline.svg");
+        --umo_o: url("/icon/tools/d_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/d_Java_outline.svg");
+        --kic_o: url("/icon/tools/d_KiCad_outline.svg");
+        --via_o: url("/icon/tools/d_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/d_QMK_outline.svg");
+        --htm_o: url("/icon/tools/d_HTML_outline.svg");
+        --css_o: url("/icon/tools/d_CSS_outline.svg");
+        --js_o:  url("/icon/tools/d_JS_outline.svg");
+        --gtk_o: url("/icon/tools/d_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/d_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/d_Cairo_outline.svg");
+    }
+    :root:has(#nav-drawer #mode  #light-mode:checked) {
+        --fig_o: url("/icon/tools/l_Figma_outline.svg");
+        --c_o:   url("/icon/tools/l_C_outline.svg");
+        --cpp_o: url("/icon/tools/l_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/l_ASM_outline.svg");
+        --mon_o: url("/icon/tools/l_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/l_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/l_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/l_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/l_Dart_outline.svg");
+        --flu_o: url("/icon/tools/l_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/l_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/l_TTC_outline.svg");
+        --umo_o: url("/icon/tools/l_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/l_Java_outline.svg");
+        --kic_o: url("/icon/tools/l_KiCad_outline.svg");
+        --via_o: url("/icon/tools/l_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/l_QMK_outline.svg");
+        --htm_o: url("/icon/tools/l_HTML_outline.svg");
+        --css_o: url("/icon/tools/l_CSS_outline.svg");
+        --js_o:  url("/icon/tools/l_JS_outline.svg");
+        --gtk_o: url("/icon/tools/l_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/l_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/l_Cairo_outline.svg");
+    }
+}
+.listGallery .toolFigma::after  {   background-image: var(--fig_o); }
+.listGallery .toolC::after  {       background-image: var(--c_o  ); }
+.listGallery .toolCpp::after  {     background-image: var(--cpp_o); }
+.listGallery .toolASM::after  {     background-image: var(--asm_o); }
+.listGallery .toolMonitor::after  { background-image: var(--mon_o); }
+.listGallery .toolFPGA::after  {    background-image: var(--fpg_o); }
+.listGallery .toolQuartus::after  { background-image: var(--qua_o); }
+.listGallery .toolVerilog::after  { background-image: var(--ver_o); }
+.listGallery .toolDart::after  {    background-image: var(--dar_o); }
+.listGallery .toolFlutter::after  { background-image: var(--flu_o); }
+.listGallery .toolOSM::after  {     background-image: var(--osm_o); }
+.listGallery .toolTTC::after  {     background-image: var(--ttc_o); }
+.listGallery .toolUmoiq::after  {   background-image: var(--umo_o); }
+.listGallery .toolJava::after  {    background-image: var(--jav_o); }
+.listGallery .toolKiCad::after  {   background-image: var(--kic_o); }
+.listGallery .toolVIA::after  {     background-image: var(--via_o); }
+.listGallery .toolQMK::after  {     background-image: var(--qmk_o); }
+.listGallery .toolHTML::after  {    background-image: var(--htm_o); }
+.listGallery .toolCSS::after  {     background-image: var(--css_o); }
+.listGallery .toolJS::after  {      background-image: var(--js_o ); }
+.listGallery .toolGTK::after  {     background-image: var(--gtk_o); }
+.listGallery .toolEZGL::after  {    background-image: var(--ezg_o); }
+.listGallery .toolCairo::after  {   background-image: var(--cai_o); }
+
+.listGallery .toolFigma::before {   background-image: url("/icon/tools/Figma.svg"); }
+.listGallery .toolC::before {       background-image: url("/icon/tools/C.svg"); }
+.listGallery .toolCpp::before {     background-image: url("/icon/tools/Cpp.svg"); }
+.listGallery .toolASM::before {     background-image: url("/icon/tools/ASM.svg"); }
+.listGallery .toolMonitor::before { background-image: url("/icon/tools/Monitor.svg"); }
+.listGallery .toolFPGA::before {    background-image: url("/icon/tools/FPGA.svg"); }
+.listGallery .toolQuartus::before { background-image: url("/icon/tools/Quartus.svg"); }
+.listGallery .toolVerilog::before { background-image: url("/icon/tools/Verilog.svg"); }
+.listGallery .toolDart::before {    background-image: url("/icon/tools/Dart.svg"); }
+.listGallery .toolFlutter::before { background-image: url("/icon/tools/Flutter.svg"); }
+.listGallery .toolOSM::before {     background-image: url("/icon/tools/OSM.svg"); }
+.listGallery .toolTTC::before {     background-image: url("/icon/tools/TTC.svg"); }
+.listGallery .toolUmoiq::before {   background-image: url("/icon/tools/Umoiq.svg"); }
+.listGallery .toolJava::before {    background-image: url("/icon/tools/Java.svg"); }
+.listGallery .toolKiCad::before {   background-image: url("/icon/tools/KiCad.svg"); }
+.listGallery .toolVIA::before {     background-image: url("/icon/tools/VIA.svg"); }
+.listGallery .toolQMK::before {     background-image: url("/icon/tools/QMK.svg"); }
+.listGallery .toolHTML::before {    background-image: url("/icon/tools/HTML.svg"); }
+.listGallery .toolCSS::before {     background-image: url("/icon/tools/CSS.svg"); }
+.listGallery .toolJS::before {      background-image: url("/icon/tools/JS.svg"); }
+.listGallery .toolGTK::before {     background-image: url("/icon/tools/GTK.svg"); }
+.listGallery .toolEZGL::before {    background-image: url("/icon/tools/EZGL.svg"); }
+.listGallery .toolCairo::before {   background-image: url("/icon/tools/Cairo.svg"); }
+/* tooltip will have to be a different element */
+.listGalleryOuter > .listGalleryLeftArrow,
+.listGalleryOuter > .listGalleryRightArrow {
+    display: none;
+}
+@media (min-width:48rem) {
+    .listGalleryOuter > .listGalleryLeftArrow,
+    .listGalleryOuter > .listGalleryRightArrow {
+        display: block;
+    }
+}
+/* 
+#nios-tool-details {
+    display: none;
+}
+#nios-tool-details + label {
+    position: sticky;
+
+    right: 0px;
+    bottom: 16px;
+    float: right;
+
+    margin-top: 8px;
+    margin-left: 4px;
+    margin-right: 8px;
+
+    height: 36px;
+
+    border-radius: 8px;
+    background-color: grey;
+
+    cursor: pointer;
+}
+#nios-tool-details + label::after, 
+#nios-tool-details + label::before {
+    padding-block: 4px;
+    padding-inline: 12px;
+
+    display: block;
+
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+
+    transition-duration: 0.5s;
+}
+#nios-tool-details + label::after {
+    opacity: 1;
+    content: "More Tools";
+}
+#nios-tool-details + label::before {
+    position: absolute;
+
+    width: calc(100% - 24px);
+
+    opacity: 0;
+    content: "Collapse";
+}
+#nios-tool-details:checked + label::after { opacity: 0; }
+#nios-tool-details:checked + label::before { opacity: 1; }
+@media (min-width:48rem) {
+    #nios-tool-details + label {
+        display: none;
+    }
+}
+
+.listGalleryOuter:has(#nios-tool-details:not(:checked)) {
+    max-height: calc(8rem + 22px);
+}
+@media (min-width:48rem) {
+    .listGalleryOuter:has(#nios-tool-details:not(:checked)) {
+        max-height: none;
+    }
+} */
+
+
+.listGalleryOuter input {
+    display: none;
+}
+.listGalleryOuter input + label {
+    position: sticky;
+
+    right: 50%;
+    transform: translate(50%, 0);
+    bottom: 0;
+    float: right;
+
+    margin-top: 8px;
+    margin-left: 4px;
+    margin-right: 8px;
+
+    height: 36px;
+
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(72, 105, 195);
+    border-style: solid;
+    background-color: rgb(124, 178, 239);
+
+    cursor: pointer;
+}
+.listGalleryOuter input + label::after, 
+.listGalleryOuter input + label::before {
+    padding-block: 0.4rem;
+    padding-inline: 0.8rem;
+
+    display: block;
+
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+
+    transition-duration: 0.5s;
+}
+.listGalleryOuter input + label::after {
+    opacity: 1;
+    content: "More Tools";
+}
+.listGalleryOuter input + label::before {
+    position: absolute;
+
+    width: calc(100% - 24px);
+
+    opacity: 0;
+    content: "Collapse";
+}
+.listGalleryOuter input:checked + label::after { opacity: 0; }
+.listGalleryOuter input:checked + label::before { opacity: 1; }
+@media (min-width:48rem) {
+    .listGalleryOuter input + label {
+        display: none;
+    }
+}
+
+.listGalleryOuter:has(input:not(:checked)) {
+    max-height: calc(8rem + 22px) !important;
+}
+@media (min-width:48rem) {
+    .listGalleryOuter:has(input:not(:checked)) {
+        max-height: none;
+    }
+}

@@ -11,6 +11,8 @@ async function onPageLoad() {
     const dyn = element('#dyn');
     const cir = element('#cir');
     const fpga = element('#fpga');
+    const nios = element('#nios');
+    const medi = element('#medi');
 
     home.checked = false;
     proj.checked = false;
@@ -21,6 +23,8 @@ async function onPageLoad() {
     dyn.checked = false;
     cir.checked = false;
     fpga.checked = false;
+    nios.checked = false;
+    medi.checked = false;
 
     switch (hash) {
         case '#home':
@@ -50,6 +54,12 @@ async function onPageLoad() {
         case '#fpga':
             element('#fpgaSect').parentNode.appendChild(element('#fpgaSect'));
             break;
+        case '#nios':
+            element('#niosSect').parentNode.appendChild(element('#niosSect'));
+            break;
+        case '#medi':
+            element('#mediSect').parentNode.appendChild(element('#mediSect'));
+            break;
     
         default:
             element('#homeSect').parentNode.appendChild(element('#homeSect'));
@@ -66,6 +76,8 @@ async function onPageLoad() {
         case '#dyn':
         case '#cir':
         case '#fpga':
+        case '#nios':
+        case '#medi':
             window.location.hash = hash;
             element(hash).checked = true;
             console.log('set page to ' + hash);

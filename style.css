@@ -1,3 +1,311 @@
+#nav-hamburger {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 9;
+
+    cursor: pointer;
+}
+#hamburger, #hamburger::before, #hamburger::after {
+    width: 24px;
+    height: 3px;
+
+    position: absolute;
+    left: 0px;
+
+    border-radius: 2px;
+    background-color: var(--p);
+    transition-duration: 0.5s;
+}
+#hamburger {
+    margin-block: 10px;
+
+    top: 0px;
+}
+#hamburger::before {
+    top: -8px;
+    z-index: 9;
+
+    content: "";
+}
+#hamburger::after {
+    top: 8px;
+    z-index: 9;
+    
+    content: "";
+}
+#nav-hamburger:hover #hamburger::before {
+    animation-name: shift_right_and_back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+#nav-hamburger:hover #hamburger {
+    animation-name: shift_right_and_back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.25s;
+}
+#nav-hamburger:hover #hamburger::after {
+    animation-name: shift_right_and_back;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.50s;
+}
+@keyframes shift_right_and_back {
+    0%  {padding-right: 0;}
+    25% {padding-right: 2px;}
+    50%{padding-right: 0;}
+}
+#nav-toggle:checked + * #hamburger {
+    background-color: transparent;
+
+    animation-name: none;
+}
+#nav-toggle:checked + * #hamburger::before {
+    top: 0;
+    rotate: -45deg;
+
+    animation-name: none;
+}
+#nav-toggle:checked + * #hamburger::after {
+    top: 0;
+    rotate: 45deg;
+
+    animation-name: none;
+}
+#nav-toggle {
+    display: none;
+}
+
+#nav-drawer {
+    /* width: 0px; */
+    width: fit-content;
+    height: 100dvh;
+    padding-inline: 0px;
+    padding-block: 56px;
+
+    position: fixed;
+    left: -100%;
+    z-index: 8;
+
+    box-shadow: 0px 0px 8px black;
+    transition: left 0.5s ease-in-out;
+    background: rgba(216, 216, 216, 0.17);
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    border: 1px solid rgba(226, 226, 226, 0.34);
+
+    float: left;
+}
+#nav-toggle:checked + * + #nav-drawer {
+    /* width: fit-content; */
+    left: 0;
+    padding-inline: 42px;
+}
+
+#nav-drawer > label, #nav-drawer > *:not(#mode) label {
+    height: 28px;
+    padding-inline: 8px;
+
+    border: none;
+    display: flex;
+    background-color: transparent;
+    transition-duration: 0.5s;
+
+    align-items: center;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: transparent;
+    color: light-dark(var(--b), var(--w));
+}
+#nav-drawer label:hover {
+    cursor: pointer;
+    text-decoration-color: lightgray;
+}
+
+#nav-drawer label .nav-selection-line {
+    height: 0px;
+    width: 0px;
+    
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+#nav-drawer label .nav-selection-line::before {
+    height: 28px;
+    width: 28px;
+    margin-right: 4px;
+
+    position: absolute;
+    top: -14px;
+    right: 0px;
+
+    display: block;
+    /* background-image: url('/icon/nav-drawer/Select\ Arrow.svg'); */
+    background-size: cover;
+
+    content: "";
+}
+#sub-nav-drawer {
+    padding-left: 28px;
+}
+
+#sub-nav-drawer label .nav-selection-line::after {
+    height: 28px;
+    width: 28px;
+    margin-right: 4px;
+
+    position: absolute;
+    top: -14px;
+    right: 28px;
+
+    display: block;
+    /* background-image: url('/icon/nav-drawer/Select\ Arrow.svg'); */
+    background-size: cover;
+
+    content: "";
+}
+
+/* Hover Line and Arrow*/
+@media (prefers-color-scheme: light) {
+    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) {
+        --select_line:                      url('icon/nav-drawer/l_select_line.svg');
+        --select_arrow:                     url('icon/nav-drawer/l_select_arrow.svg');
+        --line:                             url('icon/nav-drawer/l_line.svg');
+        --selected_arrow:                   url('icon/nav-drawer/l_selected_arrow.svg');
+        --selected_arrow_select_arrow_below:url('icon/nav-drawer/l_selected_arrow_+_select_arrow_below.svg')!important;
+        --select_arrow_in_line:             url('icon/nav-drawer/l_select_arrow_in_line.svg');
+    }
+    :root:has(#nav-drawer #mode   #dark-mode:checked) {
+        --select_line:                      url('icon/nav-drawer/d_select_line.svg');
+        --select_arrow:                     url('icon/nav-drawer/d_select_arrow.svg');
+        --line:                             url('icon/nav-drawer/d_line.svg');
+        --selected_arrow:                   url('icon/nav-drawer/d_selected_arrow.svg');
+        --selected_arrow_select_arrow_below:url('icon/nav-drawer/d_selected_arrow_+_select_arrow_below.svg')!important;
+        --select_arrow_in_line:             url('icon/nav-drawer/d_select_arrow_in_line.svg');
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode   #dark-mode:checked) {
+        --select_line:                      url('icon/nav-drawer/d_select_line.svg');
+        --select_arrow:                     url('icon/nav-drawer/d_select_arrow.svg');
+        --line:                             url('icon/nav-drawer/d_line.svg');
+        --selected_arrow:                   url('icon/nav-drawer/d_selected_arrow.svg');
+        --selected_arrow_select_arrow_below:url('icon/nav-drawer/d_selected_arrow_+_select_arrow_below.svg');
+        --select_arrow_in_line:             url('icon/nav-drawer/d_select_arrow_in_line.svg');
+    }
+    :root:has(#nav-drawer #mode  #light-mode:checked) {
+        --select_line:                      url('icon/nav-drawer/l_select_line.svg');
+        --select_arrow:                     url('icon/nav-drawer/l_select_arrow.svg');
+        --line:                             url('icon/nav-drawer/l_line.svg');
+        --selected_arrow:                   url('icon/nav-drawer/l_selected_arrow.svg');
+        --selected_arrow_select_arrow_below:url('icon/nav-drawer/l_selected_arrow_+_select_arrow_below.svg');
+        --select_arrow_in_line:             url('icon/nav-drawer/l_select_arrow_in_line.svg');
+    }
+}
+
+#nav-drawer label:has(~ label:hover):not(:has(~ input:checked)) .nav-selection-line::before,
+#nav-drawer label:has(~ label ~ #sub-nav-drawer label:hover):not(:has(~ input:checked)):not(:has(~ label ~ #sub-nav-drawer input:checked)) .nav-selection-line::before,
+#sub-nav-drawer:has(~ label:hover) label .nav-selection-line::after {
+    background-image: var(--select_line);
+}
+#nav-drawer input:not(:checked) + label:has(+ #sub-nav-drawer label:hover):not(:has(~ input:checked)):not(:has(+ #sub-nav-drawer input:checked)) .nav-selection-line::before,
+#nav-drawer label:hover .nav-selection-line::before {
+    background-image: var(--select_arrow);
+}
+/* Checked Line and Arrow */
+#nav-drawer label:has(~ input:checked) .nav-selection-line::before,
+#nav-drawer label:has(~ label ~ #sub-nav-drawer input:checked) .nav-selection-line::before,
+#sub-nav-drawer:has(~ input:checked) label .nav-selection-line::after {
+    background-image: var(--line);
+}
+#nav-drawer label:has(+ #sub-nav-drawer input:checked) .nav-selection-line::before,
+#nav-drawer input:checked + label .nav-selection-line::before {
+    background-image: var(--selected_arrow);
+}
+
+/* Checked and Hover */
+#nav-drawer input:checked + label:has(~ label:hover) .nav-selection-line::before,
+#nav-drawer input:checked + label:has(~ label ~ #sub-nav-drawer label:hover) .nav-selection-line::before,
+#nav-drawer label:has(+ #sub-nav-drawer input:checked):has(~ label:hover) .nav-selection-line::before {
+    background-image: var(--selected_arrow_select_arrow_below)!important;/*!important*/
+}
+#nav-drawer label:hover:has(~ input:checked) .nav-selection-line::before,
+#nav-drawer label:hover:has(~ label ~ #sub-nav-drawer input:checked) .nav-selection-line::before,
+#nav-drawer label:has(+ #sub-nav-drawer label:hover):has(~ input:checked) .nav-selection-line::before {
+    background-image: var(--select_arrow_in_line);
+}
+
+#nav-drawer #mode {
+    position: absolute;
+    left: 1rem;
+    bottom: 8rem;
+
+    height: 2rem;
+    width: 6rem;
+
+    border-radius: 0.8rem;
+    border-width: 2px;
+    border-color: gray;
+    border-style: solid;
+    box-shadow: 0px 0px 8px gray;
+
+    display: flex;
+
+    background-color: lightgray;
+}
+#nav-drawer #mode label {
+    height: 2rem;
+    width: 2rem;
+
+    display: inline-block;
+}
+#nav-drawer #mode label img {
+    padding: 0.4rem;
+
+    height: 1.2rem;
+    width: 1.2rem;
+
+    object-fit: cover;
+}
+#nav-drawer #mode::before {
+    position: absolute;
+
+    margin: 0.15rem;
+
+    width: calc(1.7rem - 2px * 2);
+    height: calc(1.7rem - 2px * 2);
+
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-color: gray;
+    border-style: solid;
+    box-shadow: 0px 0px 8px gray;
+
+    display: block;
+
+    background-color: rgba(255, 255, 255, 0.175);
+    content: '';
+    pointer-events: none;
+    transition: left 0.25s ease-in-out;
+}
+#nav-drawer #mode:has(#system-mode:checked)::before { left: 0; }
+#nav-drawer #mode:has( #light-mode:checked)::before { left: 2rem; }
+#nav-drawer #mode:has(  #dark-mode:checked)::before { left: 4rem; }
+
+:root {color-scheme: light dark;}
+:root:has(#nav-drawer #mode #system-mode:checked) {color-scheme: normal;}
+:root:has(#nav-drawer #mode  #light-mode:checked) {color-scheme: light;}
+:root:has(#nav-drawer #mode   #dark-mode:checked) {color-scheme: dark;}
+
 #nav-bar {
     height: 32px;
     width: fit-content;
@@ -11,54 +319,38 @@
     z-index: 5;
 }
 
-#nav-bar input {
+#nav-drawer input {
     display: none;
 }
-#nav-bar input:nth-child(n):checked + label {
+#nav-drawer input:nth-child(n):checked + label {
     text-decoration-color: gray;
 }
-#nav-bar:has(#sub-nav-bar input:nth-of-type(n):checked) > label:nth-of-type(2) {
+#nav-drawer:has(#sub-nav-bar input:nth-of-type(n):checked) > label:nth-of-type(2) {
     text-decoration-color: gray;
 }
 
-label {
-    font-size: 14px;
-    font-weight: 300;
-    height: inherit;
-    background-color: transparent;
-    border: none;
-    display: table-cell;
-    vertical-align: middle;
-    padding-inline: 4px;
-    transition-duration: 0.5s;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: transparent;
-}
-
-label:hover {
-    cursor: pointer;
-    text-decoration-color: lightgray;
-}
-
-#nav-bar:has(#home:checked) ~ #content #homeSect, 
-#nav-bar:has(#proj:checked) ~ #content #projSect, 
-#nav-bar:has(#abou:checked) ~ #content #abouSect, 
-#nav-bar:has(#cont:checked) ~ #content #contSect, 
-#nav-bar:has( #ttc:checked) ~ #content #ttcSect, 
-#nav-bar:has( #num:checked) ~ #content #numSect, 
-#nav-bar:has( #dyn:checked) ~ #content #dynSect, 
-#nav-bar:has( #cir:checked) ~ #content #cirSect, 
-#nav-bar:has(#fpga:checked) ~ #content #fpgaSect,
-#nav-bar:has(#home:checked) ~ #content #homeSect > *, 
-#nav-bar:has(#proj:checked) ~ #content #projSect > *, 
-#nav-bar:has(#abou:checked) ~ #content #abouSect > *, 
-#nav-bar:has(#cont:checked) ~ #content #contSect > *, 
-#nav-bar:has( #ttc:checked) ~ #content #ttcSect > *, 
-#nav-bar:has( #num:checked) ~ #content #numSect > *, 
-#nav-bar:has( #dyn:checked) ~ #content #dynSect > *, 
-#nav-bar:has( #cir:checked) ~ #content #cirSect > *, 
-#nav-bar:has(#fpga:checked) ~ #content #fpgaSect > *{
+#nav-drawer:has(#home:checked) ~ #content #homeSect, 
+#nav-drawer:has(#proj:checked) ~ #content #projSect, 
+#nav-drawer:has(#abou:checked) ~ #content #abouSect, 
+#nav-drawer:has(#cont:checked) ~ #content #contSect, 
+#nav-drawer:has( #ttc:checked) ~ #content #ttcSect, 
+#nav-drawer:has( #num:checked) ~ #content #numSect, 
+#nav-drawer:has( #dyn:checked) ~ #content #dynSect, 
+#nav-drawer:has( #cir:checked) ~ #content #cirSect, 
+#nav-drawer:has(#fpga:checked) ~ #content #fpgaSect,
+#nav-drawer:has(#nios:checked) ~ #content #niosSect,
+#nav-drawer:has(#medi:checked) ~ #content #mediSect,
+#nav-drawer:has(#home:checked) ~ #content #homeSect > *, 
+#nav-drawer:has(#proj:checked) ~ #content #projSect > *, 
+#nav-drawer:has(#abou:checked) ~ #content #abouSect > *, 
+#nav-drawer:has(#cont:checked) ~ #content #contSect > *, 
+#nav-drawer:has( #ttc:checked) ~ #content #ttcSect > *, 
+#nav-drawer:has( #num:checked) ~ #content #numSect > *, 
+#nav-drawer:has( #dyn:checked) ~ #content #dynSect > *, 
+#nav-drawer:has( #cir:checked) ~ #content #cirSect > *, 
+#nav-drawer:has(#fpga:checked) ~ #content #fpgaSect > *,
+#nav-drawer:has(#nios:checked) ~ #content #niosSect > *,
+#nav-drawer:has(#medi:checked) ~ #content #mediSect > *{
     -webkit-animation-name: "animateShowExpand";
        -moz-animation-name: "animateShowExpand";
         -ms-animation-name: "animateShowExpand";
@@ -66,8 +358,8 @@ label:hover {
             animation-name: "animateShowExpand";
 }
 
-#homeSect, #projSect, #abouSect, #contSect, #ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect,
-#homeSect > *, #projSect > *, #abouSect > *, #contSect > *, #ttcSect > *, #numSect > *, #dynSect > *, #cirSect > *, #fpgaSect > *{
+#homeSect, #projSect, #abouSect, #contSect, #ttcSect, #numSect, #dynSect, #cirSect, #fpgaSect, #niosSect, #mediSect,
+#homeSect > *, #projSect > *, #abouSect > *, #contSect > *, #ttcSect > *, #numSect > *, #dynSect > *, #cirSect > *, #fpgaSect > *, #niosSect > *, #mediSect > *{
     -webkit-animation-name: "animateHideCollapse";
        -moz-animation-name: "animateHideCollapse";
         -ms-animation-name: "animateHideCollapse";
@@ -75,9 +367,9 @@ label:hover {
             animation-name: "animateHideCollapse";
 }
 
-#sub-nav-bar {
+/* #sub-nav-bar {
     height: 32px;
-    /* max-height: 32px; */
+    /* max-height: 32px;
     width: max-content;
     margin-block: 8px;
     padding: 8px;
@@ -91,14 +383,14 @@ label:hover {
     opacity: 0;
     visibility: hidden;
     max-width: 90vw;
-}
+} */
 
-/* #nav-bar:has(#proj:checked) > #sub-nav-bar,  */
-#sub-nav-bar:has( #ttc:checked), 
-#sub-nav-bar:has( #num:checked), 
-#sub-nav-bar:has( #dyn:checked), 
-#sub-nav-bar:has( #cir:checked), 
-#sub-nav-bar:has(#fpga:checked){
+#sub-nav-drawer:has( #ttc:checked), 
+#sub-nav-drawer:has( #num:checked), 
+#sub-nav-drawer:has( #dyn:checked), 
+#sub-nav-drawer:has( #cir:checked), 
+#sub-nav-drawer:has(#fpga:checked), 
+#sub-nav-drawer:has(#nios:checked){
     top: 48px;
     opacity: 1;
     visibility: visible;
@@ -117,28 +409,35 @@ label:hover {
     box-shadow: 0px 0px 8px gray;
 }
 
-.card {
-    background-color: white;
+.card-border {
     border-radius: 8px;
-    box-shadow: 0px 0px 8px gray;
-    /* border-style: solid; */
-    /* border-width: 1px; */
+
+    pointer-events: none;
+}
+.card {
+    background-color: var(--a);
+    border-radius: 8px;
+    border-style: solid;
+    border-color: light-dark(var(--g4), var(--g2));
+    border-width: 3px;
+    box-shadow: 0px 0px 16px light-dark(var(--g2), var(--g4));
 }
 
 .link-card {
-    background-color: #0083f7;
-    color: white;
     border-radius: 16px;
+    border-width: 2px;
     box-shadow: 0px 0px 8px gray;
-    padding: 1rem;
+    color: var(--p);
+    padding: 0.8rem;
     cursor: pointer;
 }
-.link-card::after {
-    content: "→";
+.link-card::hover {
+    scale: 105%;
 }
 
 #footSect {
-    background-color: lightgray;
+    /* background-color: light-dark(var(--g2), var(--g4)); */
+    background-color: var(--pa);
 }
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
