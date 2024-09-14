@@ -428,28 +428,35 @@
     scale: 100% !important;
 }
 
-/* Project Page Styling */
+/* Individual Project Page Styling */
+/* + contact and about pages */
 
-#content > section > h3 {
+#content > section:not(#projSect):not(#homeSect) h3 {
+    font-family: Satoshi-Bold, var(--d_fonts);
+
     margin-block: 48px;
 
     font-size: 64px;
     line-height: 72px;
     text-wrap: balance;
 }
-#content > section > h4 {
+#content > section:not(#projSect):not(#homeSect) h4 {
+    font-family: Satoshi-Bold, var(--d_fonts);
+
     margin-block: 18px;
 
     font-size: 32px;
     line-height: 48px;
     text-wrap: balance;
 }
-#content > section > h5 {
+#content > section:not(#projSect):not(#homeSect) h5 {
+    font-family: Erode-SemiBoldItalic, var(--d_fonts);
+
     margin-block: 8px;
 
     font-size: 20px;
     line-height: 28px;
-    text-wrap: balance;
+    /* text-wrap: balance; */
     font-weight: 400;
 }
 #content > section > ul {
@@ -464,21 +471,21 @@
 
     font-size: 20px;
     line-height: 28px;
-    text-wrap: balance;
+    /* text-wrap: balance; */
     font-weight: 400;
 }
 #content > section > ul > li::before {
     position: absolute;
-    top: -2px;
+    /* top: -2px; */
     right: 100%;
 
     height: 28px;
     width: 28px;
 
-    content: '';
+    content: '→';
     /* content: url(icon/nav-drawer/Selected\ Arrow.svg); */
 
-    background-image: url(icon/nav-drawer/d_selected_arrow.svg);
+    /* background-image: url(../icon/nav-drawer/d_selected_arrow.svg); */
     /* background-repeat: no-repeat; */
     background-size: 28px 28px;
     /* object-fit: cover; */
