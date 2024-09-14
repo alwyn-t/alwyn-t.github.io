@@ -1,5 +1,5 @@
 .projectCard {
-    background-color: light-dark(var(--w), var(--g4));
+    background-color: var(--s1);
     border-radius: 8px;
     box-shadow: 0px 0px 8px gray;
 }
@@ -346,8 +346,8 @@
 }
 .projCard {
     /* background-color: lightgray; */
-    background-color: var(--g4);
-    box-shadow: inset 0px 0px 32px 8px light-dark(var(--w), var(--b));
+    background-color: var(--s4);
+    box-shadow: inset 0px 0px 32px 8px var(--a);
 }
 .projCard > div {
     border-radius: 16px;

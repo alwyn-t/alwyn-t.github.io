@@ -149,7 +149,6 @@ body {
 body * {
     transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, scale 0.25s ease-in-out, box-shadow 0.25s ease-in-out, height 0.25s ease-in-out;
 
-    /* color: light-dark(var(--b), var(--w)); */
     color: var(--p);
 }
 
@@ -199,7 +198,6 @@ section {
 
     overflow: hidden;
 
-    /* background-color: light-dark(var(--w), var(--b)); */
     background-color: var(--a);
 }
 section > section {
@@ -226,7 +224,6 @@ section > section {
 }
 
 a {
-    /* color: light-dark(#0a6fc8, #5ba3e3); */
     color: var(--link);
     text-decoration-line: none;
 }

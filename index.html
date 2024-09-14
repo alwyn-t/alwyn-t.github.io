@@ -45,58 +45,69 @@
             <input id ="home" type="radio" name="pages" value="home"/>
             <label for="home" onclick="(() => {window.location.hash = 'home'; document.getElementById('nav-toggle').checked = false;})()">
                 <div class="nav-selection-line"></div>
+                <div class="emoji" style="display: none;">🏠 </div>
                 Home
             </label>
             <input id ="proj" type="radio" name="pages" value="proj"/>
             <label for="proj" onclick="(() => {window.location.hash = 'proj'; document.getElementById('nav-toggle').checked = false;})()">
                 <div class="nav-selection-line"></div>
+                <div class="emoji" style="display: none;">💼 </div>
                 Projects
             </label>
             <div id="sub-nav-drawer">
                 <input id ="medi" type="radio" name="pages" value="medi"/>
                 <label for="medi" onclick="(() => {window.location.hash = 'medi'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">🚑 </div>
                     MediPath
                 </label>
                 <input id ="nios" type="radio" name="pages" value="nios"/>
                 <label for="nios" onclick="(() => {window.location.hash = 'nios'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">🎮 </div>
                     2D Minecraft on Nios II
                 </label>
                 <input id ="fpga" type="radio" name="pages" value="fpga"/>
                 <label for="fpga" onclick="(() => {window.location.hash = 'fpga'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">📟 </div>
                     FPGA Retro Console
                 </label>
                 <input id ="ttc" type="radio" name="pages" value="ttc"/>
                 <label for="ttc" onclick="(() => {window.location.hash = 'ttc'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">🚇 </div>
                     TTC Navigator
                 </label>
                 <input id ="num" type="radio" name="pages" value="num"/>
                 <label for="num" onclick="(() => {window.location.hash = 'num'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">⌨️ </div>
                     Numpad Keyboard
                 </label>
                 <input id ="dyn" type="radio" name="pages" value="dyn"/>
                 <label for="dyn" onclick="(() => {window.location.hash = 'dyn'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">🏓 </div>
                     Dynamic Paddle
                 </label>
                 <input id ="cir" type="radio" name="pages" value="cir"/>
                 <label for="cir" onclick="(() => {window.location.hash = 'cir'; document.getElementById('nav-toggle').checked = false;})()">
                     <div class="nav-selection-line"></div>
+                    <div class="emoji" style="display: none;">🔵 </div>
                     Circle Serenity
                 </label>
             </div>
             <input id ="abou" type="radio" name="pages" value="abou"/>
             <label for="abou" onclick="(() => {window.location.hash = 'abou'; document.getElementById('nav-toggle').checked = false;})()">
                 <div class="nav-selection-line"></div>
+                <div class="emoji" style="display: none;">🧑🏻‍💻 </div>
                 About
             </label>
             <input id ="cont" type="radio" name="pages" value="cont"/>
             <label for="cont" onclick="(() => {window.location.hash = 'cont'; document.getElementById('nav-toggle').checked = false;})()">
                 <div class="nav-selection-line"></div>
+                <div class="emoji" style="display: none;">☎️ </div>
                 Contact
             </label>
             <div id="mode">
@@ -107,7 +118,10 @@
                 <label for="light-mode"><img src="icon/mode/d_flare.svg"></label>
                 <label for="dark-mode"><img src="icon/mode/d_dark.svg"></label>
             </div>
-
+            <div id="emoji-mode">
+                <input id="emoji-toggle" type="checkbox" name="emoji-toggle" value="emoji-toggle"/>
+                <label for="emoji-toggle">🤔</label>
+            </div>
         </div>
         <!-- <div id="nav-bar" class="card">
             <input id ="home" type="radio" name="pages" value="home"/>
@@ -339,7 +353,7 @@
                 <!-- previous projects, 9594S youtube -->
             </section>
             <section id="abouSect">
-                <h3>About Alwyn Tong</h3>
+                <h3><div class="emoji" style="display: none;">🧑🏻‍💻 </div>About Alwyn Tong</h3>
                 <p><i>Greetings! I'm Alwyn, a driven Computer Engineering student at the University of Toronto, exploring the realms of technology and innovation.</i></p>
                 <h4>Skills</h4>
                 <p>My expertise lies in:</p>
@@ -381,12 +395,12 @@
             <section id="contSect"><!--contact section-->
                 <div id="contacts">
                     <div id="contactDescription">
-                        <h3>Contact Alwyn Tong</h3>
+                        <h3><div class="emoji" style="display: none;">☎️ </div>Contact Alwyn Tong</h3>
                         <p>Feel free to reach out to me if you have any requests or would simply like to chat.</p>
                     </div>
                     <!-- github -->
                     <a class="contactCard card" target="_blank" href="https://github.com/alwyn-t">
-                        <img class="contactIcon dropShadow" src="/contact-assests/github-mark-black.svg" style="height: 4rem;">
+                        <img class="contactIcon dropShadow" src="icon/contacts/github-mark-black.svg" style="height: 4rem;">
                         <div class="contactText">
                             <h5>Github</h5>
                             <p>@alwyn-t</p>
@@ -394,7 +408,7 @@
                     </a>
                     <!-- itch.io -->
                     <a class="contactCard card" target="_blank" href="https://alwynt.itch.io">
-                        <img class="contactIcon dropShadow" src="/contact-assests/itchio-logo-textless-black.svg" style="height: 4rem;">
+                        <img class="contactIcon dropShadow" src="icon/contacts/itchio-logo-textless-black.svg" style="height: 4rem;">
                         <div class="contactText">
                             <h5>Itch.io</h5>
                             <p>@alwynT</p>
@@ -402,7 +416,7 @@
                     </a>
                     <!-- linkedin -->
                     <a class="contactCard card" target="_blank" href="https://www.linkedin.com/in/alwyn-tong/">
-                        <img class="contactIcon dropShadow" src="/contact-assests/linkedin-logo-black.svg" style="height: 4rem;">
+                        <img class="contactIcon dropShadow" src="icon/contacts/linkedin-logo-black.svg" style="height: 4rem;">
                         <div class="contactText">
                             <h5>LinkedIn</h5>
                             <p>@alwyn-tong</p>
@@ -410,7 +424,7 @@
                     </a>
                     <!-- youtube -->
                     <a class="contactCard card" target="_blank" href="https://www.youtube.com/@alwyntong">
-                        <img class="contactIcon dropShadow" src="/contact-assests/yt_icon_black.svg" style="height: 4rem;">
+                        <img class="contactIcon dropShadow" src="icon/contacts/yt_icon_black.svg" style="height: 4rem;">
                         <div class="contactText">
                             <h5>Youtube</h5>
                             <p>@alwyntong</p>
@@ -418,7 +432,7 @@
                     </a>
                     <!-- instagram -->
                     <a class="contactCard card" target="_blank" href="https://www.instagram.com/alwyn.archives">
-                        <img class="contactIcon dropShadow" src="/contact-assests/instagram-glyph-black.svg" style="height: 4rem;">
+                        <img class="contactIcon dropShadow" src="icon/contacts/instagram-glyph-black.svg" style="height: 4rem;">
                         <div class="contactText">
                             <h5>Instagram</h5>
                             <p>@alwyn.archives</p>
@@ -427,7 +441,7 @@
                 </div>
             </section>
             <section id="mediSect">
-                <h3>MediPath</h3>
+                <h3><div class="emoji" style="display: none;">🚑 </div>MediPath</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -467,7 +481,7 @@
                 </ul>
             </section>
             <section id="niosSect">
-                <h3>2D Minecraft on Nios II</h3>
+                <h3><div class="emoji" style="display: none;">🎮 </div>2D Minecraft on Nios II</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -506,7 +520,7 @@
                 </ul>
             </section>
             <section id="fpgaSect">
-                <h3>FPGA Retro Console</h3>
+                <h3><div class="emoji" style="display: none;">📟 </div>FPGA Retro Console</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -546,7 +560,7 @@
                 </ul>
             </section>
             <section id="ttcSect">
-                <h3>TTC Navigator</h3>
+                <h3><div class="emoji" style="display: none;">🚇 </div>TTC Navigator</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -585,7 +599,7 @@
                 </ul>
             </section>
             <section id="numSect">
-                <h3>Numpad Keyboard</h3>
+                <h3><div class="emoji" style="display: none;">⌨️ </div>Numpad Keyboard</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -621,7 +635,7 @@
                 </ul>
             </section>
             <section id="dynSect">
-                <h3>Dynamic Paddle</h3>
+                <h3><div class="emoji" style="display: none;">🏓 </div>Dynamic Paddle</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -659,7 +673,7 @@
                 </ul>
             </section>
             <section id="cirSect">
-                <h3>Circle Serenity</h3>
+                <h3><div class="emoji" style="display: none;">🔵 </div>Circle Serenity</h3>
                 <div class="photoGalleryOuter">
                     <div class="photoGallery">
                         <img src="/project-assests/Circle Serenity/Circle Serenity.png">
@@ -719,28 +733,28 @@
                     </a>
                 </div>
                 <h4>Quick Access</h4>
-                <a href="#home">Home</a>
-                <a href="#proj">Projects</a>
-                <a href="#abou">About</a>
-                <a href="#cont">Contact</a>
+                <a href="#home"><div class="emoji" style="display: none;">🏠 </div>Home</a>
+                <a href="#proj"><div class="emoji" style="display: none;">💼 </div>Projects</a>
+                <a href="#abou"><div class="emoji" style="display: none;">🧑🏻‍💻 </div>About</a>
+                <a href="#cont"><div class="emoji" style="display: none;">☎️ </div>Contact</a>
             </div>
             <div>
                 <h4>Projects</h4>
-                <a href="#medi">MediPath</a>
-                <a href="#nios">2D Minecraft Nios II</a>
-                <a href="#fpga">FPGA Retro Console</a>
-                <a href="#ttc">TTC Navigator</a>
-                <a href="#num">Numpad Keyboard</a>
-                <a href="#dyn">Dynamic Paddle</a>
-                <a href="#cir">Circle Serenity</a>
+                <a href="#medi"><div class="emoji" style="display: none;">🚑 </div>MediPath</a>
+                <a href="#nios"><div class="emoji" style="display: none;">🎮 </div>2D Minecraft Nios II</a>
+                <a href="#fpga"><div class="emoji" style="display: none;">📟 </div>FPGA Retro Console</a>
+                <a href="#ttc"><div class="emoji" style="display: none;">🚇 </div>TTC Navigator</a>
+                <a href="#num"><div class="emoji" style="display: none;">⌨️ </div>Numpad Keyboard</a>
+                <a href="#dyn"><div class="emoji" style="display: none;">🏓 </div>Dynamic Paddle</a>
+                <a href="#cir"><div class="emoji" style="display: none;">🔵 </div>Circle Serenity</a>
             </div>
             <div>
                 <h4>Copyright</h4>
                 <p>This personal portfolio falls under the <a href="https://github.com/alwyn-t/alwyn-t.github.io/blob/main/LICENSE" target="_blank">AGPL-3.0 license</a>.</p>
                 <p>&copy 2023-24 Alwyn Tong</p>
-                <div id="footIcon">
+                <a id="footIcon" href="#home">
                     <img src="/icon/logo_white.svg">
-                </div>
+                </a>
             </div>
         </section>
 
