@@ -451,6 +451,7 @@
 }
 #content > section:not(#projSect):not(#homeSect) h5 {
     font-family: Erode-SemiBoldItalic, var(--d_fonts);
+    font-style: italic;
 
     margin-block: 8px;
 

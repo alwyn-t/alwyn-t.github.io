@@ -19,6 +19,7 @@
         <meta name="theme-color" content="#2d89ef">
 
         <link rel="stylesheet" href="css/utility.css">
+        <link rel="stylesheet" href="css/tool-graph.css">
         <link rel="stylesheet" href="css/loading.css">
         <link rel="stylesheet" href="css/gallery.css">
         <link rel="stylesheet" href="css/style.css">
@@ -453,20 +454,16 @@
                 <h5>An intuitive and responsive emergency response routing and mapping application or GIS (geographic information system). Dedicated to Canadian ambulance drivers, this product supports live traffic data, highly optimized routing algorithms, clean UI and animations. Built using C++, OpenStreetMaps data and the EZGL library (Cario and GTK handler).</h5>
                 <!-- <a class="primary-link-card" href="https://github.com/alwyn-t/2D-Minecraft-Nios-II" target="_blank">Github Repository </a> -->
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolCpp"><div class="toolTip">C++ Programming Language</div></div>
-                        <div class="toolIcon toolGTK"><div class="toolTip">GTK</div></div>
-                        <div class="toolIcon toolCSS"><div class="toolTip">CSS</div></div>
-                        <div class="toolIcon toolEZGL"><div class="toolTip">EZGL</div></div>
-                        <div class="toolIcon toolCairo"><div class="toolTip">Cairo</div></div>
-                        <div class="toolIcon toolOSM"><div class="toolTip">Open Street Maps</div></div>
-                        <div class="toolIcon toolFigma"><div class="toolTip">Figma</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="medi-tool-details" type="checkbox" name="medi-tool-details" value="medi-tool-details"/>
-                    <label for="medi-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg">
+                    <div class="toolIcon toolCpp tool-node"></div>
+                    <div class="toolIcon toolGTK tool-node"></div>
+                    <div class="toolIcon toolCSS tool-node"></div>
+                    <div class="toolIcon toolEZGL tool-node"></div>
+                    <div class="toolIcon toolCairo tool-node"></div>
+                    <div class="toolIcon toolOSM tool-node"></div>
+                    <div class="toolIcon toolFigma tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>Clean and intuitive user interface with a navigation panel, animated routes and dynamic health care icons</li>
@@ -493,17 +490,13 @@
                 <h5>The game Minecraft is known for its immersive gameplay and unique rendering techniques. Here, we bring the same game into 2 dimensions and onto the Nios II processor. The player can traverse the world, placing and breaking blocks to build structures. Being built for the Nios II processor, this game explores the intricacies of low level programming, the compute limitations and the difference between hardware and software.</h5>
                 <a class="primary-link-card" href="https://github.com/alwyn-t/2D-Minecraft-Nios-II" target="_blank">Github Repository </a>
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolC"><div class="toolTip">C Programming Language</div></div>
-                        <div class="toolIcon toolASM"><div class="toolTip">Assembly Language</div></div>
-                        <div class="toolIcon toolMonitor"><div class="toolTip">Intel Monitor Program</div></div>
-                        <div class="toolIcon toolFPGA"><div class="toolTip">DE1-SoC Nios II / ARM Cortex-A9</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="nios-tool-details" type="checkbox" name="nios-tool-details" value="nios-tool-details"/>
-                    <label for="nios-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg">
+                    <div class="toolIcon toolC tool-node"></div>
+                    <div class="toolIcon toolASM tool-node"></div>
+                    <div class="toolIcon toolMonitor tool-node"></div>
+                    <div class="toolIcon toolFPGA tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>Procedurally generated world spanning 16 chunks of 64 blocks x 128 blocks.</li>
@@ -532,16 +525,12 @@
                 <h5>Stemming from a fascination of retro consoles including the SNES and ATARI game systems, this project replicates the low level hardware based game consoles. Built using the DE1-SoC FPGA board, the console supports an SVGA output and PS/2 input. Additionally, a configured ROM memory for tile sprites and sub set of ASCII characters, a sprite system, a hardware physics engine, SDRAM with clock domain crossing (CDC) and double video buffering, and much more. Games provided include the classic pong game and the chrome dino game (offline dinosaur game). Full documentation, including detailed descriptions of standards are provided on the Github repository.</h5>
                 <a class="primary-link-card" href="https://github.com/alwyn-t/Retro-Graphics-and-Games-on-De1-SoC-FPGA" target="_blank">Github Repository </a>
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolQuartus"><div class="toolTip">Quartus Prime</div></div>
-                        <div class="toolIcon toolVerilog"><div class="toolTip">Verilog Hardware Description Language</div></div>
-                        <div class="toolIcon toolFPGA"><div class="toolTip">DE1-SoC Soft Processor</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="fpga-tool-details" type="checkbox" name="fpga-tool-details" value="fpga-tool-details"/>
-                    <label for="fpga-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg">
+                    <div class="toolIcon toolQuartus tool-node"></div>
+                    <div class="toolIcon toolVerilog tool-node"></div>
+                    <div class="toolIcon toolFPGA tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>ROM memory for hard assets including the ASCII character set.</li>
@@ -572,17 +561,13 @@
                 <h5>A mobile transit app dedicated to the Toronto Transit Commission (TTC) focused on displaying information about station connections between different routes and stations on bus, streetcar and subway routes. This app does not try to compete with existing transit apps like Apple Maps and Google Maps but rather is intended for transportation enthusiasts who want to see how the system is connected.</h5>
                 <!-- <a class="primary-link-card" href="https://github.com/Double-Digit-Studio/TTC_Navigator" target="_blank">Github Repository </a> -->
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolDart"><div class="toolTip">Dart Programming Language</div></div>
-                        <div class="toolIcon toolFlutter"><div class="toolTip">Flutter Framework</div></div>
-                        <div class="toolIcon toolOSM"><div class="toolTip">OpenStreetMap API</div></div>
-                        <div class="toolIcon toolTTC"><div class="toolTip">TTC API</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="ttc-tool-details" type="checkbox" name="ttc-tool-details" value="ttc-tool-details"/>
-                    <label for="ttc-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/TTC Navigator/TTC NAVIGATOR.svg">
+                    <div class="toolIcon toolDart tool-node"></div>
+                    <div class="toolIcon toolFlutter tool-node"></div>
+                    <div class="toolIcon toolOSM tool-node"></div>
+                    <div class="toolIcon toolTTC tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>Station search allows browsing of nearby stations, of which the next 3 vehicles in each direction and for each route is listed</li>
@@ -611,16 +596,12 @@
                 <h5>For those who value the typing experience, this generically named numpad keyboard project aims to bring a clean and compact mechanical keyboard. With multiple layouts built in and a small footprint, the PCB gives a great base to create a full mechanical numpad keyboard or a mechanical multifunction pad. Additionally, the board comes with hot swap sockets and VIA / QMK capabilities.</h5>
                 <!-- <a class="primary-link-card" href="https://github.com/dt-7148/Numpad_PCB" target="_blank">Github Repository </a> -->
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolKiCad"><div class="toolTip">KiCad</div></div>
-                        <div class="toolIcon toolVIA"><div class="toolTip">VIA</div></div>
-                        <div class="toolIcon toolQMK"><div class="toolTip">QMK</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="num-tool-details" type="checkbox" name="num-tool-details" value="num-tool-details"/>
-                    <label for="num-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/Numpad Keyboard/NUMPAD KEYBOARD.svg">
+                    <div class="toolIcon toolKiCad tool-node"></div>
+                    <div class="toolIcon toolVIA tool-node"></div>
+                    <div class="toolIcon toolQMK tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>Multiple layout options using a stacked 2U or 2 x 1U</li>
@@ -647,16 +628,12 @@
                 <h5>A short skill based game, created as a challenge to build a game using on vanilla HTML, CSS and Javascript. It is your task to keep the ball from falling below the screen using only a paddle to continually bounce the ball. Remember, to use the walls to your advantage and the higher you hit it, the harder it is to catch it.</h5>
                 <a class="primary-link-card" href="https://alwyn-t.github.io/Dynamic_Paddle/" target="_blank">Dynamic Paddle Webpage </a>
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolHTML"><div class="toolTip">HTML</div></div>
-                        <div class="toolIcon toolCSS"><div class="toolTip">CSS</div></div>
-                        <div class="toolIcon toolJS"><div class="toolTip">Javascript</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="dyn-tool-details" type="checkbox" name="dyn-tool-details" value="dyn-tool-details"/>
-                    <label for="dyn-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/Dynamic Paddle/DYNAMIC PADDLE.svg">
+                    <div class="toolIcon toolHTML tool-node"></div>
+                    <div class="toolIcon toolCSS tool-node"></div>
+                    <div class="toolIcon toolJS tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>Realistic physics coupled with the dynamic paddle creates fast paced gameplay which is challenging</li>
@@ -685,15 +662,11 @@
                 <h5>Circle Serenity is a short and relaxing game. The main objective is: pop circles for as long as possible. In combination with the in depth colour theme customizablility, and the sound effect and music engine; Circle Serenity provides a zen-like focus and stress-free enjoyment.</h5>
                 <a class="primary-link-card" href="https://alwynt.itch.io/circle-serenity" target="_blank">Circle Serenity Itch.io Page </a>
                 <h4>Tools Used</h4>
-                <div class="listGalleryOuter">
-                    <div class="listGallery">
-                        <div class="toolIcon toolJava"><div class="toolTip">Java with Processing</div></div>
-                        <div class="toolIcon toolFigma"><div class="toolTip">Figma</div></div>
-                    </div>
-                    <a class="listGalleryRightArrow"></a><a class="listGalleryLeftArrow"></a>
-                    <input id ="cir-tool-details" type="checkbox" name="cir-tool-details" value="cir-tool-details"/>
-                    <label for="cir-tool-details"></label>
-                </div>
+                <tool-graph>
+                    <img class="projectIcon centre-node" src="/project-assests/Circle Serenity/CIRCLE SERENITY.svg">
+                    <div class="toolIcon toolJava tool-node"></div>
+                    <div class="toolIcon toolFigma tool-node"></div>
+                </tool-graph>
                 <h4>Features</h4>
                 <ul>
                     <li>Simple gameplay loop allows for an intuitive and simple learning curve</li>
@@ -766,6 +739,7 @@
         <script src="scripts/utility.js"></script>
         <script src="scripts/loading.js"></script>
         <script src="scripts/transitions.js"></script>
+        <script src="scripts/tool-graph.js"></script>
         <script src="scripts/scroll.js" async defer></script>
         <script src="scripts/script.js" async defer></script>
     </body>

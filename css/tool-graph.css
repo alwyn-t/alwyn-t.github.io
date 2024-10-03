@@ -1,0 +1,196 @@
+tool-graph {
+    width: 100%;
+    height: 16rem;
+
+    position: relative;
+}
+
+tool-graph img, tool-graph .tool-node {
+    position: relative;
+
+    width: 4rem;
+    height: 4rem;
+
+    transform: translate3d(0, 0, 0);
+}
+
+tool-graph .centre-node, tool-graph .tool-node {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+
+tool-graph .tool-node::after, tool-graph .tool-node::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: inherit;
+    height: inherit;
+
+    display: block;
+    content: '';
+    
+    transition-duration: 0.5s;
+}
+
+
+
+/* custom icons */
+tool-graph > .tool-node::after { opacity: 1; }
+tool-graph > .tool-node::before, .listGallery .toolIcon .toolTip { opacity: 0; }
+tool-graph > .tool-node:hover::before, .listGallery .toolIcon:hover .toolTip { opacity: 1; }
+tool-graph > .tool-node:hover::after { opacity: 0; }
+@media (prefers-color-scheme: light) {
+    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) {
+        --fig_o: url("/icon/tools/l_Figma_outline.svg");
+        --c_o:   url("/icon/tools/l_C_outline.svg");
+        --cpp_o: url("/icon/tools/l_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/l_ASM_outline.svg");
+        --mon_o: url("/icon/tools/l_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/l_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/l_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/l_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/l_Dart_outline.svg");
+        --flu_o: url("/icon/tools/l_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/l_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/l_TTC_outline.svg");
+        --umo_o: url("/icon/tools/l_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/l_Java_outline.svg");
+        --kic_o: url("/icon/tools/l_KiCad_outline.svg");
+        --via_o: url("/icon/tools/l_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/l_QMK_outline.svg");
+        --htm_o: url("/icon/tools/l_HTML_outline.svg");
+        --css_o: url("/icon/tools/l_CSS_outline.svg");
+        --js_o:  url("/icon/tools/l_JS_outline.svg");
+        --gtk_o: url("/icon/tools/l_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/l_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/l_Cairo_outline.svg");
+    }
+    :root:has(#nav-drawer #mode   #dark-mode:checked) {
+        --fig_o: url("/icon/tools/d_Figma_outline.svg");
+        --c_o:   url("/icon/tools/d_C_outline.svg");
+        --cpp_o: url("/icon/tools/d_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/d_ASM_outline.svg");
+        --mon_o: url("/icon/tools/d_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/d_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/d_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/d_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/d_Dart_outline.svg");
+        --flu_o: url("/icon/tools/d_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/d_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/d_TTC_outline.svg");
+        --umo_o: url("/icon/tools/d_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/d_Java_outline.svg");
+        --kic_o: url("/icon/tools/d_KiCad_outline.svg");
+        --via_o: url("/icon/tools/d_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/d_QMK_outline.svg");
+        --htm_o: url("/icon/tools/d_HTML_outline.svg");
+        --css_o: url("/icon/tools/d_CSS_outline.svg");
+        --js_o:  url("/icon/tools/d_JS_outline.svg");
+        --gtk_o: url("/icon/tools/d_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/d_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/d_Cairo_outline.svg");
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode   #dark-mode:checked) {
+        --fig_o: url("/icon/tools/d_Figma_outline.svg");
+        --c_o:   url("/icon/tools/d_C_outline.svg");
+        --cpp_o: url("/icon/tools/d_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/d_ASM_outline.svg");
+        --mon_o: url("/icon/tools/d_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/d_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/d_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/d_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/d_Dart_outline.svg");
+        --flu_o: url("/icon/tools/d_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/d_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/d_TTC_outline.svg");
+        --umo_o: url("/icon/tools/d_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/d_Java_outline.svg");
+        --kic_o: url("/icon/tools/d_Kicad_outline.svg");
+        --via_o: url("/icon/tools/d_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/d_QMK_outline.svg");
+        --htm_o: url("/icon/tools/d_HTML_outline.svg");
+        --css_o: url("/icon/tools/d_CSS_outline.svg");
+        --js_o:  url("/icon/tools/d_JS_outline.svg");
+        --gtk_o: url("/icon/tools/d_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/d_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/d_Cairo_outline.svg");
+    }
+    :root:has(#nav-drawer #mode  #light-mode:checked) {
+        --fig_o: url("/icon/tools/l_Figma_outline.svg");
+        --c_o:   url("/icon/tools/l_C_outline.svg");
+        --cpp_o: url("/icon/tools/l_Cpp_outline.svg");
+        --asm_o: url("/icon/tools/l_ASM_outline.svg");
+        --mon_o: url("/icon/tools/l_Monitor_outline.svg");
+        --fpg_o: url("/icon/tools/l_FPGA_outline.svg");
+        --qua_o: url("/icon/tools/l_Quartus_outline.svg");
+        --ver_o: url("/icon/tools/l_Verilog_outline.svg");
+        --dar_o: url("/icon/tools/l_Dart_outline.svg");
+        --flu_o: url("/icon/tools/l_Flutter_outline.svg");
+        --osm_o: url("/icon/tools/l_OSM_outline.svg");
+        --ttc_o: url("/icon/tools/l_TTC_outline.svg");
+        --umo_o: url("/icon/tools/l_Umoiq_outline.svg");
+        --jav_o: url("/icon/tools/l_Java_outline.svg");
+        --kic_o: url("/icon/tools/l_Kicad_outline.svg");
+        --via_o: url("/icon/tools/l_VIA_outline.svg");
+        --qmk_o: url("/icon/tools/l_QMK_outline.svg");
+        --htm_o: url("/icon/tools/l_HTML_outline.svg");
+        --css_o: url("/icon/tools/l_CSS_outline.svg");
+        --js_o:  url("/icon/tools/l_JS_outline.svg");
+        --gtk_o: url("/icon/tools/l_GTK_outline.svg");
+        --ezg_o: url("/icon/tools/l_EZGL_outline.svg");
+        --cai_o: url("/icon/tools/l_Cairo_outline.svg");
+    }
+}
+tool-graph > .tool-node.toolFigma::after   { background-image: var(--fig_o); }
+tool-graph > .tool-node.toolC::after       { background-image: var(--c_o  ); }
+tool-graph > .tool-node.toolCpp::after     { background-image: var(--cpp_o); }
+tool-graph > .tool-node.toolASM::after     { background-image: var(--asm_o); }
+tool-graph > .tool-node.toolMonitor::after { background-image: var(--mon_o); }
+tool-graph > .tool-node.toolFPGA::after    { background-image: var(--fpg_o); }
+tool-graph > .tool-node.toolQuartus::after { background-image: var(--qua_o); }
+tool-graph > .tool-node.toolVerilog::after { background-image: var(--ver_o); }
+tool-graph > .tool-node.toolDart::after    { background-image: var(--dar_o); }
+tool-graph > .tool-node.toolFlutter::after { background-image: var(--flu_o); }
+tool-graph > .tool-node.toolOSM::after     { background-image: var(--osm_o); }
+tool-graph > .tool-node.toolTTC::after     { background-image: var(--ttc_o); }
+tool-graph > .tool-node.toolUmoiq:after    { background-image: var(--umo_o); }
+tool-graph > .tool-node.toolJava:after     { background-image: var(--jav_o); }
+tool-graph > .tool-node.toolKiCad::after   { background-image: var(--kic_o); }
+tool-graph > .tool-node.toolVIA::after     { background-image: var(--via_o); }
+tool-graph > .tool-node.toolQMK::after     { background-image: var(--qmk_o); }
+tool-graph > .tool-node.toolHTML::after    { background-image: var(--htm_o); }
+tool-graph > .tool-node.toolCSS::after     { background-image: var(--css_o); }
+tool-graph > .tool-node.toolJS::after      { background-image: var(--js_o ); }
+tool-graph > .tool-node.toolGTK::after     { background-image: var(--gtk_o); }
+tool-graph > .tool-node.toolEZGL::after    { background-image: var(--ezg_o); }
+tool-graph > .tool-node.toolCairo::after   { background-image: var(--cai_o); }
+
+tool-graph > .tool-node.toolFigma::before  { background-image: url("/icon/tools/Figma.svg"); }
+tool-graph > .tool-node.toolC::before      { background-image: url("/icon/tools/C.svg"); }
+tool-graph > .tool-node.toolCpp::before    { background-image: url("/icon/tools/Cpp.svg"); }
+tool-graph > .tool-node.toolASM::before    { background-image: url("/icon/tools/ASM.svg"); }
+tool-graph > .tool-node.toolMonitor::before{ background-image: url("/icon/tools/Monitor.svg"); }
+tool-graph > .tool-node.toolFPGA::before   { background-image: url("/icon/tools/FPGA.svg"); }
+tool-graph > .tool-node.toolQuartus::before{ background-image: url("/icon/tools/Quartus.svg"); }
+tool-graph > .tool-node.toolVerilog::before{ background-image: url("/icon/tools/Verilog.svg"); }
+tool-graph > .tool-node.toolDart::before   { background-image: url("/icon/tools/Dart.svg"); }
+tool-graph > .tool-node.toolFlutter::before{ background-image: url("/icon/tools/Flutter.svg"); }
+tool-graph > .tool-node.toolOSM::before    { background-image: url("/icon/tools/OSM.svg"); }
+tool-graph > .tool-node.toolTTC::before    { background-image: url("/icon/tools/TTC.svg"); }
+tool-graph > .tool-node.toolUmoiq::before  { background-image: url("/icon/tools/Umoiq.svg"); }
+tool-graph > .tool-node.toolJava::before   { background-image: url("/icon/tools/Java.svg"); }
+tool-graph > .tool-node.toolKiCad::before  { background-image: url("/icon/tools/Kicad.svg"); }
+tool-graph > .tool-node.toolVIA::before    { background-image: url("/icon/tools/VIA.svg"); }
+tool-graph > .tool-node.toolQMK::before    { background-image: url("/icon/tools/QMK.svg"); }
+tool-graph > .tool-node.toolHTML::before   { background-image: url("/icon/tools/HTML.svg"); }
+tool-graph > .tool-node.toolCSS::before    { background-image: url("/icon/tools/CSS.svg"); }
+tool-graph > .tool-node.toolJS::before     { background-image: url("/icon/tools/JS.svg"); }
+tool-graph > .tool-node.toolGTK::before    { background-image: url("/icon/tools/GTK.svg"); }
+tool-graph > .tool-node.toolEZGL::before   { background-image: url("/icon/tools/EZGL.svg"); }
+tool-graph > .tool-node.toolCairo::before  { background-image: url("/icon/tools/Cairo.svg"); }
