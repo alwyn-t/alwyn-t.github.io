@@ -14,12 +14,16 @@ tool-graph img, tool-graph .tool-node {
     transform: translate3d(0, 0, 0);
 }
 
+tool-graph .centre-node {
+    translate: -50% -50%;
+}
+
 tool-graph .centre-node, tool-graph .tool-node {
     position: absolute;
+    z-index: 1;
 
     left: 50%;
     top: 50%;
-    translate: -50% -50%;
 }
 
 tool-graph .tool-node::after, tool-graph .tool-node::before {
@@ -36,13 +40,60 @@ tool-graph .tool-node::after, tool-graph .tool-node::before {
     transition-duration: 0.5s;
 }
 
+tool-graph > .tool-node > tool-tip {
+    position: absolute;
+    top: 50%;
+    translate: 0% -50%;
+
+    padding-inline: 0.5rem;
+
+    background-color: var(--link);
+    border-radius: 1rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 4rem;
+}
+@media (min-width:36rem) {
+    tool-graph > .tool-node > tool-tip {
+        max-width: 8rem;
+    }
+}
+tool-graph > .tool-node > tool-tip.left {
+    text-align: left;
+    left: 100%;
+    right: unset;
+}
+tool-graph > .tool-node > tool-tip.right {
+    text-align: right;
+    left: unset;
+    right: 100%;
+}
+@media (min-width:36rem) {
+    tool-graph > .tool-node > tool-tip.left {
+        text-align: right;
+        left: unset;
+        right: 100%;
+    }
+    tool-graph > .tool-node > tool-tip.right {
+        text-align: left;
+        left: 100%;
+        right: unset;
+    }
+}
 
 
 /* custom icons */
-tool-graph > .tool-node::after { opacity: 1; }
-tool-graph > .tool-node::before, .listGallery .toolIcon .toolTip { opacity: 0; }
-tool-graph > .tool-node:hover::before, .listGallery .toolIcon:hover .toolTip { opacity: 1; }
-tool-graph > .tool-node:hover::after { opacity: 0; }
+tool-graph > .tool-node::after { opacity: 0; }
+tool-graph > .tool-node::before, tool-graph > .tool-node > tool-tip { opacity: 1; }
+@media (min-width:48rem) {
+    tool-graph > .tool-node::after { opacity: 1; }
+    tool-graph > .tool-node::before, tool-graph > .tool-node > tool-tip { opacity: 0; }
+    tool-graph > .tool-node:hover::before, 
+    tool-graph > .tool-node:hover > tool-tip { opacity: 1; }
+    tool-graph > .tool-node:hover::after { opacity: 0; }
+}
 @media (prefers-color-scheme: light) {
     :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) {
         --fig_o: url("/icon/tools/l_Figma_outline.svg");

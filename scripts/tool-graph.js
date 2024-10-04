@@ -25,16 +25,24 @@ function initToolGraphs() {
                 if(i <= midIndex) {
                     // place node on left
                     var relativeAngle = i * (angleSpread / (midIndex + 1)); // angle in the angle window
-                    angle = -90 - angleSpread/2 + relativeAngle; // get global angle
+                    angle = 180 - angleSpread/2 + relativeAngle; // get global angle
                 } else {
                     // place node on right
                     var relativeAngle = (i - midIndex) * (angleSpread / (endNodes.length - midIndex + 1)); // angle in the angle window
-                    angle = 90 - angleSpread/2 + relativeAngle; // get global angle
+                    angle = 0 - angleSpread/2 + relativeAngle; // get global angle
                 }
                 console.log("angle: " + angle);
-                console.log("calc(-50% + " + Math.sin(angle * DEGREE_TO_RADIANS) + " * " + distance + "rem) calc(-50% + " + Math.cos(angle * DEGREE_TO_RADIANS) + " * " + distance + "rem)");
-                node.style.translate = "calc(-50% + " + Math.sin(angle * DEGREE_TO_RADIANS) + " * " + distance + "rem) calc(-50% + " + Math.cos(angle * DEGREE_TO_RADIANS) + " * " + distance + "rem)";
-                positions.push([Math.sin(angle * DEGREE_TO_RADIANS) * distance, Math.cos(angle * DEGREE_TO_RADIANS) * distance])
+                const dy = Math.sin(angle * DEGREE_TO_RADIANS) * distance;
+                const dx = Math.cos(angle * DEGREE_TO_RADIANS) * distance;
+                console.log("translate3d(calc(-50% + " + dx + "rem), calc(-50% + " + dy + "rem), 0)");
+                node.style.transform = "translate3d(calc(-50% + " + dx + "rem), calc(-50% + " + dy + "rem), 0)";
+                positions.push([dx, dy])
+                const toolTip = node.firstElementChild;
+                console.log(toolTip.tagName);
+                if(toolTip != null && toolTip.tagName == "TOOL-TIP") {
+                    console.log("test");
+                    toolTip.classList.add(dx > 0 ? "right" : "left");
+                }
             }
     
             // add curved lines to connect (same prioritization so it looks like a spider)
@@ -75,9 +83,14 @@ function initToolGraphs() {
             }
             positions.forEach(endPosition => {
                 const curve = document.createElementNS(svgURL, "path");
-                curve.setAttribute("d", "M 50 50 q " + (endPosition[0] * 0.3) + " " + (endPosition[1] * 0.75) + " " + (endPosition[0]) + " " + (endPosition[1]));
+                if(endPosition[1] != 0) {
+                    curve.setAttribute("d", "M 50 50 q " + (endPosition[0] * 0.3) + " " + (endPosition[1] * 0.75) + " " + (endPosition[0]) + " " + (endPosition[1]));
+                } else {
+                     // when drawing a straight horizontal line, it bugs out and doesn't render, so this is a small fix so the line is at a slight angle
+                    curve.setAttribute("d", "M 50 50 l " + (endPosition[0]) + " 1E-5");
+                }
                 // curve.setAttribute("stroke", "grey");
-                curve.setAttribute("stroke", endPosition[0] > 0 ? "url(#leftLinGrad)" : "url(#rightLinGrad");
+                curve.setAttribute("stroke", endPosition[0] > 0 ? "url(#leftLinGrad)" : "url(#rightLinGrad)");
                 curve.setAttribute("fill", "transparent");
                 curve.setAttribute("stroke-width", 0.15);
                 curve.setAttribute("stroke-linecap", "round");
