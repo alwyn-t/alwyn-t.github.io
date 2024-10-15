@@ -1,5 +1,4 @@
-
-/* .photoGalleryOuter > .photoGallery {
+.photoGalleryOuter > .photoGallery {
     border-radius: 16px;
 
     height: calc(100% - 44px);
@@ -12,48 +11,15 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-.photoGalleryOuter > .photoGallery, .listGalleryOuter > .listGallery {
-    width: 100%;
-
-    transition-duration: 0.5s;
-} */
-.photoGalleryOuter > .photoGallery, .listGalleryOuter > .listGallery {
-    border-radius: 16px;
-
-    height: calc(100% - 44px);
-    width: 100%;
-
-    display: inline-flex;
-
-    overflow-y: hidden;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-.photoGalleryOuter > .photoGallery:has(*:nth-child(2)),  .listGalleryOuter > .listGallery:has(*:nth-child(2)), 
-.photoGalleryOuter > .photoGallery:has(*:nth-child(2)), .listGalleryOuter > .listGallery:has(*:nth-child(2)) {
+.photoGalleryOuter > .photoGallery:has(*:nth-child(2)),
+.photoGalleryOuter > .photoGallery:has(*:nth-child(2)) {
     height: 100%;
 }
-@media (min-width:48rem) {
-    .listGalleryOuter > .listGallery {
-        overflow: visible;
-    }
-}
-.listGalleryOuter > .listGallery {
-    display: flex;
-    flex-direction: column;
-}
-@media (min-width:48rem) {
-    .listGalleryOuter > .listGallery {
-        display: inline-flex;
-        flex-direction: row;
-    }
-}
-.photoGalleryOuter > .photoGallery::-webkit-scrollbar, .listGalleryOuter > .listGallery::-webkit-scrollbar {
+.photoGalleryOuter > .photoGallery::-webkit-scrollbar {
     display: none;
 }
-.photoGalleryOuter > .photoGalleryLeftArrow,  .listGalleryOuter > .listGalleryLeftArrow, 
-.photoGalleryOuter > .photoGalleryRightArrow, .listGalleryOuter > .listGalleryRightArrow {
+.photoGalleryOuter > .photoGalleryLeftArrow, 
+.photoGalleryOuter > .photoGalleryRightArrow {
     position: sticky;
     right: 0px;
     bottom: 16px;
@@ -74,17 +40,17 @@
     visibility: hidden;
     transition-duration: opacity 0.5s;
 }
-.photoGalleryOuter > .photoGalleryRightArrow, .listGalleryOuter > .listGalleryRightArrow {
+.photoGalleryOuter > .photoGalleryRightArrow {
     margin-right: 16px;
 }
-.photoGalleryOuter > .photoGalleryLeftArrow:hover,  .listGalleryOuter > .listGalleryLeftArrow:hover, 
-.photoGalleryOuter > .photoGalleryRightArrow:hover, .listGalleryOuter > .listGalleryRightArrow:hover {
+.photoGalleryOuter > .photoGalleryLeftArrow:hover, 
+.photoGalleryOuter > .photoGalleryRightArrow:hover {
     background-color: rgb(210, 210, 210);
 }
-.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
-.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after, 
-.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before, 
-.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before {
+.photoGalleryOuter > .photoGalleryLeftArrow::after,  
+.photoGalleryOuter > .photoGalleryRightArrow::after, 
+.photoGalleryOuter > .photoGalleryLeftArrow::before, 
+.photoGalleryOuter > .photoGalleryRightArrow::before {
     position: absolute;
 
     height: 3px;
@@ -95,20 +61,20 @@
     background-color: black;
     content: '';
 }
-.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
-.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before  { left: 11px; }
-.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after, 
-.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before { right: 11px; }
-.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
-.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after  { top: 13px; }
-.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before, 
-.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before { bottom: 13px; }
-.photoGalleryOuter > .photoGalleryLeftArrow::after,  .listGalleryOuter > .listGalleryLeftArrow::after,  
-.photoGalleryOuter > .photoGalleryRightArrow::before,.listGalleryOuter > .listGalleryRightArrow::before { rotate: -45deg; }
-.photoGalleryOuter > .photoGalleryRightArrow::after, .listGalleryOuter > .listGalleryRightArrow::after, 
-.photoGalleryOuter > .photoGalleryLeftArrow::before, .listGalleryOuter > .listGalleryLeftArrow::before  { rotate: 45deg; }
-.photoGalleryOuter:has(> .photoGallery *:nth-child(2)) > .photoGalleryLeftArrow,  .listGalleryOuter:has(> .listGallery *:nth-child(2)) > .listGalleryLeftArrow, 
-.photoGalleryOuter:has(> .photoGallery *:nth-child(2)) > .photoGalleryRightArrow, .listGalleryOuter:has(> .listGallery *:nth-child(2)) > .listGalleryRightArrow {
+.photoGalleryOuter > .photoGalleryLeftArrow::after, 
+.photoGalleryOuter > .photoGalleryLeftArrow::before { left: 11px; }
+.photoGalleryOuter > .photoGalleryRightArrow::after,
+.photoGalleryOuter > .photoGalleryRightArrow::before{ right: 11px; }
+.photoGalleryOuter > .photoGalleryLeftArrow::after, 
+.photoGalleryOuter > .photoGalleryRightArrow::after { top: 13px; }
+.photoGalleryOuter > .photoGalleryLeftArrow::before,
+.photoGalleryOuter > .photoGalleryRightArrow::before{ bottom: 13px; }
+.photoGalleryOuter > .photoGalleryLeftArrow::after, 
+.photoGalleryOuter > .photoGalleryRightArrow::before{ rotate: -45deg; }
+.photoGalleryOuter > .photoGalleryRightArrow::after,
+.photoGalleryOuter > .photoGalleryLeftArrow::before { rotate: 45deg; }
+.photoGalleryOuter:has(> .photoGallery *:nth-child(2)) > .photoGalleryLeftArrow, 
+.photoGalleryOuter:has(> .photoGallery *:nth-child(2)) > .photoGalleryRightArrow {
     visibility: visible;
 }
 .photoGallery * {
@@ -119,100 +85,6 @@
     display: block;
     flex: 0 0 100%;
 }
-.listGallery * {
-    height: fit-content;
-    width: 100%;
-
-    display: block;
-}
-@media (min-width:48rem)  {
-    .listGallery * {
-        height: 100%;
-        width: fit-content;
-
-    }
-}
-.listGallery .toolIcon {
-    --tool_side_length: 4rem;
-
-    position: relative;
-
-    flex: 0 0 4rem;
-}
-.listGallery .toolIcon, .listGallery .toolIcon::before, .listGallery .toolIcon::after {
-    height: var(--tool_side_length);
-    width: var(--tool_side_length);
-
-    display: block;
-    background-size: cover;
-
-    content: '';
-    opacity: 1;
-    
-    transition-duration: 0.5s;
-}
-.listGallery .toolIcon::after { opacity: 0; }
-.listGallery .toolIcon::before, .listGallery .toolIcon::after, .listGallery .toolIcon * { position: absolute; }
-.listGallery .toolIcon .toolTip {
-    position: absolute;
-    z-index: 0;
-
-    bottom: 50%;
-    left: calc(50% + 40dvw);
-    transform: translate(-50%, 50%);
-
-    height: fit-content;
-    width: 40dvw;
-    padding: 0.8rem;
-
-    border-radius: 8px;
-    border-width: 2px;
-    border-color: var(--s4);
-    border-style: solid;
-
-    text-wrap: balance;
-    text-align: center;
-    
-    transition-duration: opacity 0.5s;
-}
-@media (min-width:48rem) {
-    .listGallery .toolIcon .toolTip {
-        /* left: 0; */
-        left: 50%;
-        bottom: calc(var(--tool_side_length) - 1rem);
-        transform: translate(-50%, 0);
-        /* transform: none; */
-
-        width: fit-content;
-    
-        text-wrap: balance;
-        text-align: center;
-    }
-
-    .listGallery .toolIcon::after { opacity: 1; }
-    .listGallery .toolIcon::before, .listGallery .toolIcon .toolTip { opacity: 0; }
-    .listGallery .toolIcon:hover::before, .listGallery .toolIcon:hover .toolTip { opacity: 1; }
-    .listGallery .toolIcon:hover::after { opacity: 0; }
-}
-.listGallery .toolIcon .toolTip::after {
-    position: absolute;
-    z-index: -1;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 8px;
-
-    display: block;
-    content: '';
-    filter: blur(4px);
-    /* background-color: rgba(230, 230, 230, 0.8); */
-    background-color: var(--s1);
-}
-
 
 @media (prefers-color-scheme: light) {
     :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) {
