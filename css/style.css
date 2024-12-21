@@ -1,3 +1,25 @@
+body {
+    background-color: var(--back);
+}
+body {
+    /* used for the nav drawer pull out from behind, and the content gets pushed into a smaller card */
+    --content-push-in-distance: 24px;
+    /* this value is for the nav drawer width, update if the width needs to be larger or smaller without overflow */
+    --nav-drawer-width-estimate: 320px;
+    --nav-drawer-left-padding: 42px;
+    --nav-drawer-right-padding: 16px;
+}
+body:has(#nav-drawer > #emoji-mode > #emoji-toggle:checked) {
+    --nav-drawer-width-estimate: 340px;
+}
+
+#nav-drawer {
+    --padding-block: 3.5rem;
+
+    --h: 2rem; /* height of common elements like labels and bottom buttons */
+    --p_t: 0px; /*padding top*/
+}
+
 #nav-hamburger {
     width: 24px;
     height: 24px;
@@ -9,7 +31,23 @@
     z-index: 9;
 
     cursor: pointer;
+
+    transition: left 0.3s ease-in-out, top 0.15s ease-in-out;
 }
+
+@media (min-width:961px)  {
+    #nav-hamburger {
+        top: 24px;
+        left: 24px;
+    }
+    #nav-toggle:checked + #nav-hamburger {
+        top: calc(var(--content-push-in-distance) / 2 + 24px);
+        left: calc(var(--nav-drawer-width-estimate) + 24px);
+
+        transition: left 0.3s ease-in-out, top 0.5s ease-in-out;
+    }
+}
+
 #hamburger, #hamburger::before, #hamburger::after {
     width: 24px;
     height: 3px;
@@ -61,18 +99,18 @@
     25% {padding-right: 2px;}
     50%{padding-right: 0;}
 }
-#nav-toggle:checked + * #hamburger {
+#nav-toggle:checked + #nav-hamburger > #hamburger {
     background-color: transparent;
 
     animation-name: none;
 }
-#nav-toggle:checked + * #hamburger::before {
+#nav-toggle:checked + #nav-hamburger > #hamburger::before {
     top: 0;
     rotate: -45deg;
 
     animation-name: none;
 }
-#nav-toggle:checked + * #hamburger::after {
+#nav-toggle:checked + #nav-hamburger > #hamburger::after {
     top: 0;
     rotate: 45deg;
 
@@ -81,7 +119,25 @@
 #nav-toggle {
     display: none;
 }
+#nav-tap-out {
+    position: fixed;
+    width: 100%;
+    height: 100%;
 
+    cursor: pointer;
+
+    z-index: 1;
+
+    display: none;
+}
+#nav-toggle:checked + #nav-hamburger + #nav-tap-out {
+    display: block;
+}
+@media (min-width:961px)  {
+    #nav-tap-out {
+        display: none !important;
+    }
+}
 
 @media (prefers-color-scheme: light) {
     :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) #nav-drawer {
@@ -117,35 +173,154 @@
 }
 #nav-drawer {
     /* --padding-block: 56px; */
-    --padding-block: 3.5rem;
     /* width: 0px; */
-    width: fit-content;
+    /* width: fit-content; */
+    width: calc(var(--nav-drawer-width-estimate) - var(--nav-drawer-left-padding) - var(--nav-drawer-right-padding));
     height: calc(100dvh - 2 * var(--padding-block));
-    padding-inline: 0px;
     padding-block: var(--padding-block);
 
     position: fixed;
+    padding-inline: 0px;
     left: -100%;
     z-index: 8;
 
+    background-image: linear-gradient(  var(--a) calc(var(--padding-block) - 0.5rem),
+                                        transparent var(--padding-block),
+                                        transparent calc(100dvh - var(--padding-block) - 0.5rem),
+                                        var(--a) calc(100dvh - var(--padding-block)));
+    background-blend-mode: multiply;
     box-shadow: 0px 0px 8px black;
-    transition: left 0.5s ease-in-out;
-    background: rgba(var(--nd_1), 0.4);
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-    backdrop-filter: blur(8.2px);
-    -webkit-backdrop-filter: blur(8.2px);
+    transition: left 0.5s ease-in-out, padding-inline 0.5s ease-in-out;
     border: 1px solid rgba(63, 63, 63, 0.34);
 
     float: left;
 
     font-family: Satoshi-Regular, Helvetica, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --h: 30px;
-    --p_t: 0px; /*padding top*/
 }
-#nav-toggle:checked + * + #nav-drawer {
+#nav-drawer::before, #nav-drawer::after {
+    position: fixed;
+    height: 100%;
+    width: var(--nav-drawer-width-estimate);
+
+    top: 0;
+    left: -100%;
+
+    content: '';
+
+    transition: left 0.5s ease-in-out;
+}
+#nav-drawer::before {
+    background: rgba(var(--nd_1), 0.4);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    
+    z-index: -1;
+}
+#nav-drawer::after {
+    background-image: linear-gradient(  var(--a) calc(var(--padding-block) - 0.25rem),
+                                        transparent var(--padding-block),
+                                        transparent calc(100dvh - var(--padding-block) - 0.25rem),
+                                        var(--a) calc(100dvh - var(--padding-block)));
+
+    pointer-events: none;
+    
+    z-index: 0;
+}
+#nav-drawer {
+    overflow-y: auto;
+    -ms-overflow-style: none;   /* IE and Edge */
+    scrollbar-width: none;      /* Firefox */
+}
+#nav-drawer::-webkit-scrollbar {
+    display: none;
+}
+@media (min-width:961px)  {
+    #nav-drawer::before, #nav-drawer::after {
+        top: unset;
+        left: unset;
+
+        background: unset;
+        backdrop-filter: unset;
+        -webkit-backdrop-filter: unset;
+
+        pointer-events: unset;
+
+        z-index: unset;
+
+        transition: unset;
+    }
+    #nav-drawer::before {
+        --height: 3.5rem;
+        --distance_to_opaque: 0.5rem;
+        --transition_distance: 0.5rem;
+
+        position: fixed;
+        width: var(--nav-drawer-width-estimate);
+        height: calc(var(--height) + var(--distance_to_opaque));
+
+        left: 0;
+        bottom: 0;
+
+        display: block;
+
+        background-image: linear-gradient(180deg, 
+                                        transparent, 
+                                        var(--back) calc(0% + var(--distance_to_opaque)) );
+
+        content: '';
+    }
+    #nav-drawer::after {
+        --height: 1rem;
+        --distance_to_opaque: 0.5rem;
+
+        position: fixed;
+        width: var(--nav-drawer-width-estimate);
+        height: calc(var(--height) + var(--distance_to_opaque));
+
+        left: 0;
+        top: 0;
+
+        display: block;
+
+        background-image: linear-gradient(0deg, 
+                                        transparent, 
+                                        var(--back) calc(0% + var(--distance_to_opaque)) );
+
+        content: '';
+    }
+}
+#nav-toggle:checked + #nav-hamburger + #nav-tap-out + #nav-drawer {
     /* width: fit-content; */
+    padding-left: var(--nav-drawer-left-padding);
+    padding-right: var(--nav-drawer-right-padding);
     left: 0;
-    padding-inline: 42px;
+}
+#nav-toggle:checked + #nav-hamburger + #nav-tap-out + #nav-drawer::before, #nav-toggle:checked + #nav-hamburger + #nav-tap-out + #nav-drawer::after {
+    left: 0;
+}
+@media (min-width:961px)  {
+    #nav-drawer {
+        height: calc(100dvh - 24px - 4rem);
+        padding-top: 24px;
+        padding-bottom: 4rem;
+
+        padding-left: var(--nav-drawer-left-padding);
+        padding-right: var(--nav-drawer-right-padding);
+        left: unset;
+        z-index: unset;
+
+        box-shadow: unset;
+        transition: unset;
+        background: unset;
+        backdrop-filter: unset;
+        -webkit-backdrop-filter: unset;
+        border: unset;
+    }
+    #nav-toggle:checked + * + #nav-drawer {
+        left: unset;
+        padding-left: var(--nav-drawer-left-padding);
+        padding-right: var(--nav-drawer-right-padding);
+    }
 }
 
 #nav-drawer > label, #nav-drawer > *:not(#mode):not(#emoji-mode) label {
@@ -288,55 +463,111 @@
     background-image: var(--select_arrow_in_line);
 }
 
-#nav-drawer #mode {
-    position: absolute;
-    left: 1rem;
+#nav-drawer > #mode {
+    position: fixed;
+    left: calc(2rem - 100%);
     bottom: 1rem;
 
-    height: 2rem;
-    width: 6rem;
+    height: var(--h);
+    width: calc(3 * var(--h));
 
-    border-radius: 0.8rem;
-    border-width: 2px;
-    border-color: gray;
-    border-style: solid;
-    box-shadow: 0px 0px 8px gray;
+    display: inline-flex;
 
-    display: flex;
+    z-index: 2;
 
-    background-color: lightgray;
+    transition: left 0.5s ease-in-out;
 }
-#nav-drawer #mode label {
-    height: 2rem;
-    width: 2rem;
+#nav-toggle:checked + * + * + #nav-drawer > #mode {
+    left: 2rem;
+}
+@media (min-width:961px) {
+    #nav-drawer > #mode {
+        left: 2rem;
+    }
+}
+#nav-drawer > #mode > label {
+    height: var(--h);
+    width: var(--h);
 
     display: inline-block;
 }
-#nav-drawer #mode label img {
-    padding: 0.4rem;
-
-    height: 1.2rem;
-    width: 1.2rem;
-
-    object-fit: cover;
-}
-#nav-drawer #mode::before {
+#nav-drawer > #mode > label::before {
     position: absolute;
 
-    margin: 0.15rem;
+    --percentage_size: 0.85;
 
-    width: calc(1.7rem - 2px * 2);
-    height: calc(1.7rem - 2px * 2);
+    margin: calc((1 - var(--percentage_size))  * var(--h) / 2); /* default 0.15rem */
+
+    width: calc(var(--percentage_size) * var(--h)); /* default 1.7rem */
+    height: calc(var(--percentage_size) * var(--h)); /* default 1.7rem */
 
     border-radius: 0.5rem;
-    border-width: 2px;
-    border-color: gray;
-    border-style: solid;
-    box-shadow: 0px 0px 8px gray;
+    background-color: transparent;
 
     display: block;
 
-    background-color: rgba(255, 255, 255, 0.175);
+    content: '';
+
+    transition: background-color 0.5s ease-in-out;
+}
+#nav-drawer > #mode > label:hover::before {
+    background-color: rgba(var(--nd_2), 0.3);
+}
+#nav-drawer > #mode > label > img {
+    --percentage_size: 0.6;
+
+    padding: calc((1 - var(--percentage_size))  * var(--h) / 2); /* default 0.4rem */
+
+    height: calc(var(--percentage_size) * var(--h)); /* default 1.2rem */
+    width: calc(var(--percentage_size) * var(--h)); /* default 1.2rem */
+
+    object-fit: cover;
+}
+#nav-drawer > #mode > label > img {
+    position: absolute;
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+#nav-drawer > #mode > label > img {
+    opacity: 0;
+}
+@media (prefers-color-scheme: light) {
+    #nav-drawer #mode:has(#system-mode:checked) > label > img:first-child, #nav-drawer #mode:has(#light-mode:checked) > label > img:first-child {
+        /* d */
+        opacity: 1;
+    }
+    #nav-drawer #mode:has(#dark-mode:checked) > label > img:last-child {
+        /* l */
+        opacity: 1;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    #nav-drawer #mode:has(#system-mode:checked) > label > img:last-child, #nav-drawer #mode:has(#dark-mode:checked) > label > img:last-child {
+        /* l */
+        opacity: 1;
+    }
+    #nav-drawer #mode:has(#light-mode:checked) > label > img:first-child {
+        /* d */
+        opacity: 1;
+    }
+}
+/* selection highlight */
+#nav-drawer > #mode::before {
+    position: absolute;
+
+    --percentage_size: 0.85;
+
+    margin: calc((1 - var(--percentage_size))  * var(--h) / 2); /* default 0.15rem */
+
+    width: calc(var(--percentage_size) * var(--h)); /* default 1.7rem */
+    height: calc(var(--percentage_size) * var(--h)); /* default 1.7rem */
+
+    border-radius: 0.5rem;
+    background-color: rgba(var(--nd_3), 0.8);
+
+    display: block;
+
     content: '';
     pointer-events: none;
     transition: left 0.25s ease-in-out;
@@ -350,27 +581,32 @@
 :root:has(#nav-drawer #mode  #light-mode:checked) {color-scheme: light;}
 :root:has(#nav-drawer #mode   #dark-mode:checked) {color-scheme: dark;}
 
-#nav-drawer #emoji-mode {
-    position: absolute;
-    right: 1rem;
+#nav-drawer > #emoji-mode {
+    position: fixed;
+    left: calc(var(--nav-drawer-width-estimate) - 4rem - 100%);
     bottom: 1rem;
 
-    height: 2rem;
-    width: 2rem;
+    height: var(--h);
+    width: var(--h);
 
-    border-radius: 0.8rem;
-    border-width: 2px;
-    border-color: gray;
-    border-style: solid;
-    box-shadow: 0px 0px 8px gray;
+    display: inline-block;
 
-    /* display: flex; */
+    z-index: 2;
 
-    background-color: lightgray;
+    transition: left 0.5s ease-in-out;
+}
+#nav-toggle:checked + * + * + #nav-drawer > #emoji-mode {
+    left: calc(var(--nav-drawer-width-estimate) - 4rem);
+}
+@media (min-width:961px) {
+    #nav-drawer > #emoji-mode {
+        left: calc(var(--nav-drawer-width-estimate) - 4rem);
+    }
 }
 #nav-drawer #emoji-mode label {
-    height: 2rem;
-    width: 2rem;
+    position: absolute;
+    height: var(--h);
+    width: var(--h);
 
     padding: 0;
 
@@ -381,26 +617,28 @@
 #nav-drawer #emoji-mode::before {
     position: absolute;
 
-    margin: 0.15rem;
+    --percentage_size: 0.85;
 
-    width: calc(1.7rem - 2px * 2);
-    height: calc(1.7rem - 2px * 2);
+    margin: calc((1 - var(--percentage_size))  * var(--h) / 2); /* default 0.15rem */
+
+    width: calc(var(--percentage_size) * var(--h)); /* default 1.7rem */
+    height: calc(var(--percentage_size) * var(--h)); /* default 1.7rem */
 
     border-radius: 0.5rem;
-    border-width: 2px;
-    border-color: gray;
-    border-style: solid;
-    box-shadow: 0px 0px 8px gray;
+    background-color: transparent;
 
     display: block;
-    opacity: 0;
 
-    background-color: rgba(255, 255, 255, 0.175);
     content: '';
     pointer-events: none;
-    transition: opacity 0.25s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
 }
-#nav-drawer #emoji-mode:has(#emoji-toggle:checked)::before { opacity: 1; }
+#nav-drawer #emoji-mode:hover::before {
+    background-color: rgba(var(--nd_2), 0.3);
+}
+#nav-drawer #emoji-mode:has(#emoji-toggle:checked)::before {
+    background-color: rgba(var(--nd_3), 0.8);
+}
 :root:has(#nav-drawer #emoji-mode #emoji-toggle:checked) {
     --emoji_display: inline;
 }
@@ -502,9 +740,23 @@
 
 #content {
     padding: 0;
+    margin: 0;
     /* overflow-y: hidden; */
     min-height: 100%;
     width: 100%;
+    top: 0;
+    transition: margin 0.3s ease-in-out, width 0.3s ease-in-out, top 0.15s ease-in-out;
+}
+@media (min-width:961px)  {
+    #nav-toggle:checked + * + * + * + #content {
+        width: calc(100% - var(--nav-drawer-width-estimate) - var(--content-push-in-distance));
+        top: calc(var(--content-push-in-distance) / 2);
+        margin-right: var(--content-push-in-distance);
+        margin-bottom: var(--content-push-in-distance);
+        margin-left: var(--nav-drawer-width-estimate);
+        border-radius: 24px;
+        transition: margin 0.3s ease-in-out, width 0.3s ease-in-out, top 0.5s ease-in-out;
+    }
 }
 
 .emoji {

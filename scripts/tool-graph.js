@@ -83,7 +83,7 @@ function initToolGraphs() {
             }
             positions.forEach(endPosition => {
                 const curve = document.createElementNS(svgURL, "path");
-                if(endPosition[1] != 0) {
+                if(Math.abs(endPosition[1]) > 0.1) {
                     curve.setAttribute("d", "M 50 50 q " + (endPosition[0] * 0.3) + " " + (endPosition[1] * 0.75) + " " + (endPosition[0]) + " " + (endPosition[1]));
                 } else {
                      // when drawing a straight horizontal line, it bugs out and doesn't render, so this is a small fix so the line is at a slight angle

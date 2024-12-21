@@ -42,6 +42,7 @@
         <label id="nav-hamburger" for="nav-toggle" onclick="(() => {})">
             <div id="hamburger"></div>
         </label>
+        <label id="nav-tap-out" for="nav-toggle" onclick="(() => {})"></label>
         <div id="nav-drawer">
             <input id ="home" type="radio" name="pages" value="home"/>
             <label for="home" onclick="(() => {window.location.hash = 'home'; document.getElementById('nav-toggle').checked = false;})()">
@@ -115,37 +116,15 @@
                 <input id="system-mode" type="radio" name="colour-mode" value="system-mode" checked="true"/>
                 <input id="light-mode" type="radio" name="colour-mode" value="light-mode"/>
                 <input id="dark-mode" type="radio" name="colour-mode" value="dark-mode"/>
-                <label for="system-mode"><img src="icon/mode/d_desktop.svg"></label>
-                <label for="light-mode"><img src="icon/mode/d_flare.svg"></label>
-                <label for="dark-mode"><img src="icon/mode/d_dark.svg"></label>
+                <label for="system-mode"><img src="icon/mode/d_desktop.svg"><img src="icon/mode/l_desktop.svg"></label>
+                <label for="light-mode"><img src="icon/mode/d_flare.svg"><img src="icon/mode/l_flare.svg"></label>
+                <label for="dark-mode"><img src="icon/mode/d_dark.svg"><img src="icon/mode/l_dark.svg"></label>
             </div>
             <div id="emoji-mode">
                 <input id="emoji-toggle" type="checkbox" name="emoji-toggle" value="emoji-toggle"/>
                 <label for="emoji-toggle">🤔</label>
             </div>
         </div>
-        <!-- <div id="nav-bar" class="card">
-            <input id ="home" type="radio" name="pages" value="home"/>
-            <label for="home" onclick="(() => {window.location.hash = 'home';})()">Home</label>
-            <input id ="proj" type="radio" name="pages" value="proj"/>
-            <label for="proj" onclick="(() => {window.location.hash = 'proj';})()">Projects</label>
-            <input id ="abou" type="radio" name="pages" value="abou"/>
-            <label for="abou" onclick="(() => {window.location.hash = 'abou';})()">About</label>
-            <input id ="cont" type="radio" name="pages" value="cont"/>
-            <label for="cont" onclick="(() => {window.location.hash = 'cont';})()">Contact</label>
-            <div id="sub-nav-bar" class="card">
-                <input id ="fpga" type="radio" name="pages" value="fpga"/>
-                <label for="fpga" onclick="(() => {window.location.hash = 'fpga';})()">FPGA Retro Console</label>
-                <input id ="ttc" type="radio" name="pages" value="ttc"/>
-                <label for="ttc" onclick="(() => {window.location.hash = 'ttc';})()">TTC Navigator</label>
-                <input id ="num" type="radio" name="pages" value="num"/>
-                <label for="num" onclick="(() => {window.location.hash = 'num';})()">Numpad Keyboard</label>
-                <input id ="dyn" type="radio" name="pages" value="dyn"/>
-                <label for="dyn" onclick="(() => {window.location.hash = 'dyn';})()">Dynamic Paddle</label>
-                <input id ="cir" type="radio" name="pages" value="cir"/>
-                <label for="cir" onclick="(() => {window.location.hash = 'cir';})()">Circle Serenity</label>
-            </div>
-        </div> -->
         
         <section id="content">
             <section id="homeSect"><!--hero section-->

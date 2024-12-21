@@ -1,4 +1,6 @@
+/* note, the overlay texture does not show as it's pure atmosphere */
 #footSect {
+    position: relative;
     padding-block: 2rem;
     padding-inline: max(2rem, 20% - 2rem);
     display: grid;
@@ -8,12 +10,28 @@
     /* row-gap: max(2rem, 10%); */
     row-gap: 8px;
 }
+@media (min-width:961px)  {
+    #footSect {
+        z-index: 10;
+    }
+}
 @media (min-width:48rem) {
     #footSect {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
 }
+/* #footSect::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 100%;
+    left: 0;
+
+    background-color: var(--pa);
+
+    content: '';
+} */
 
 #footSect > * {
     display: flex;
@@ -32,19 +50,19 @@
     margin-block: 0.25rem;
 }
 
-#footSect #contactIconGallery{
+#footSect > div:first-child > #contactIconGallery{
     display: flex;
     flex-direction: row;
     gap: 8px;
 }
-#footSect .contactIcon, #footSect .contactIcon > * {
+#footSect > div:first-child > #contactIconGallery > .contactIcon, #footSect > div:first-child > #contactIconGallery > .contactIcon > * {
     height: 2rem;
     width: 2rem;
     transform: translate3d(0, 0, 0);
     /* background-color: white; */
 }
 
-#footIcon {
+#footSect > div:last-child > #footIcon {
     margin: 4px;
 
     height: 4rem;
@@ -54,7 +72,7 @@
     border-radius: 0.75rem;
 }
 
-#footIcon > img {
+#footSect > div:last-child > #footIcon > img {
     padding: 0.5rem;
 
     height: calc(100% - 1rem);
@@ -62,14 +80,14 @@
 }
 
 @media (prefers-color-scheme: light) {
-    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode  #light-mode:checked) #contactIconGallery {
+    :root:has(#nav-drawer #mode #system-mode:checked) #footSect > div:first-child > #contactIconGallery, :root:has(#nav-drawer #mode #light-mode:checked) #footSect > div:first-child > #contactIconGallery {
         --gitIcon:   url(/icon/contacts/github-mark-white.svg);
         --itchIcon:  url(/icon/contacts/itchio-logo-textless-white.svg);
         --linkIcon:  url(/icon/contacts/linkedin-logo-white.svg);
         --ytIcon:    url(/icon/contacts/yt_icon_white.svg);
         --instaIcon: url(/icon/contacts/instagram-glyph-white.svg);
     }
-    :root:has(#nav-drawer #mode   #dark-mode:checked) #contactIconGallery {
+    :root:has(#nav-drawer #mode #dark-mode:checked) #footSect > div:first-child > #contactIconGallery {
         --gitIcon:   url(/icon/contacts/github-mark-black.svg);
         --itchIcon:  url(/icon/contacts/itchio-logo-textless-black.svg);
         --linkIcon:  url(/icon/contacts/linkedin-logo-black.svg);
@@ -78,14 +96,14 @@
     }
 }
 @media (prefers-color-scheme: dark) {
-    :root:has(#nav-drawer #mode #system-mode:checked), :root:has(#nav-drawer #mode   #dark-mode:checked) #contactIconGallery {
+    :root:has(#nav-drawer #mode #system-mode:checked) #footSect > div:first-child > #contactIconGallery, :root:has(#nav-drawer #mode #dark-mode:checked) #footSect > div:first-child > #contactIconGallery {
         --gitIcon:   url(/icon/contacts/github-mark-black.svg);
         --itchIcon:  url(/icon/contacts/itchio-logo-textless-black.svg);
         --linkIcon:  url(/icon/contacts/linkedin-logo-black.svg);
         --ytIcon:    url(/icon/contacts/yt_icon_black.svg);
         --instaIcon: url(/icon/contacts/instagram-glyph-black.svg);
     }
-    :root:has(#nav-drawer #mode  #light-mode:checked) #contactIconGallery {
+    :root:has(#nav-drawer #mode #light-mode:checked) #footSect > div:first-child > #contactIconGallery {
         --gitIcon:   url(/icon/contacts/github-mark-white.svg);
         --itchIcon:  url(/icon/contacts/itchio-logo-textless-white.svg);
         --linkIcon:  url(/icon/contacts/linkedin-logo-white.svg);
@@ -93,18 +111,18 @@
         --instaIcon: url(/icon/contacts/instagram-glyph-white.svg);
     }
 }
-#footSect #gitIcon {
+#footSect > div:first-child > #contactIconGallery > .contactIcon #gitIcon {
     content: var(--gitIcon);
 }
-#footSect #itchIcon {
+#footSect > div:first-child > #contactIconGallery > .contactIcon #itchIcon {
     content: var(--itchIcon);
 }
-#footSect #linkIcon {
+#footSect > div:first-child > #contactIconGallery > .contactIcon #linkIcon {
     content: var(--linkIcon);
 }
-#footSect #ytIcon {
+#footSect > div:first-child > #contactIconGallery > .contactIcon #ytIcon {
     content: var(--ytIcon);
 }
-#footSect #instaIcon {
+#footSect > div:first-child > #contactIconGallery > .contactIcon #instaIcon {
     content: var(--instaIcon);
 }

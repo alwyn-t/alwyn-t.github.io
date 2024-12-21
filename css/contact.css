@@ -1,4 +1,4 @@
-#contSect #contacts {
+#contSect > #contacts {
     padding-block: 2rem;
     margin-block: 0;
     min-height: calc(100vh - 16px - 8px - 32px - 8px - 16px - 16px - 2rem - 2rem);
@@ -8,10 +8,10 @@
     column-gap: 5rem;
     row-gap: 2rem;
 }
-#contSect  #contacts #contactDescription {
+#contSect  > #contacts > #contactDescription {
     width: 100%;
 }
-#contSect .contactCard {
+#contSect > #contacts > .contactCard {
     min-width: 10rem;
     display: flex;
     padding: 1rem;
@@ -20,22 +20,22 @@
     margin-inline: auto;
     transition-duration: 0.5s;
 }
-#contSect .contactCard:hover {
+#contSect > #contacts > .contactCard:hover {
     scale: 105%;
 }
-#contSect .contactCard:hover {
+#contSect > #contacts > .contactCard:hover {
     box-shadow: 0px 0px 8px black;
 }
-#contSect .contactText {
+#contSect > #contacts > .contactCard .contactText {
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
 }
-#contSect .contactText > * {
+#contSect > #contacts > .contactCard .contactText > * {
     margin: 0;
 }
 
-#contSect .contactIcon {
+#contSect > #contacts > .contactCard .contactIcon {
     border-radius: 22.767871093%;
     transform: translate3d(0, 0, 0);
 }
