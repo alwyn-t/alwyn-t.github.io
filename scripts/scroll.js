@@ -64,12 +64,12 @@ for (let galleryWrapperElement of galleryWrapperElements) {
         var galleryRect = gallery.getBoundingClientRect(); // bounding box needs to be updated in case the user updates the window size
         var galleryWidth = galleryRect.right - galleryRect.left;
         var galleryStartRect = galleryStart.getBoundingClientRect();
-        var position = (galleryStartRect.left - galleryRect.left)/galleryWidth;
+        var position = (galleryRect.left - galleryStartRect.left)/galleryWidth;
 
         console.log("scroll to the left");
         console.log(position);
         for (let i = galleryElements.length-1; i >= 0; i--) {
-            if (position < -i) {
+            if (position > i) {
                 gallery.scrollTo({left: (galleryWidth * i), behavior: "smooth"});
                 break;
             }
@@ -79,12 +79,12 @@ for (let galleryWrapperElement of galleryWrapperElements) {
         var galleryRect = gallery.getBoundingClientRect(); // bounding box needs to be updated in case the user updates the window size
         var galleryWidth = galleryRect.right - galleryRect.left;
         var galleryStartRect = galleryStart.getBoundingClientRect();
-        var position = (galleryStartRect.left - galleryRect.left)/galleryWidth;
+        var position = (galleryRect.left - galleryStartRect.left)/galleryWidth;
 
         console.log("scroll to the right");
         console.log(position);
         for (let i = 1; i < galleryElements.length; i++) {
-            if (position > -i) {
+            if (position + 0.01 < i) {
                 gallery.scrollTo({left: (galleryWidth * i), behavior: "smooth"});
                 break;
             }
